@@ -1,0 +1,79 @@
+  <section class="section" style="padding-bottom:0px;max-width: 750px;margin-left: auto;margin-right: auto;margin-top:{{ section.settings.mtop }}%;margin-bottom:{{ section.settings.mbot }}%">
+
+    <div class="site-width">
+      <div class="section__header" style="margin-bottom:15px;">
+        {% if section.settings.subtitle != blank %}
+          <span class="section__subtitle">{{section.settings.subtitle}}</span>
+        {% endif %}
+        {% if section.settings.title != blank %}
+          <h2 class="section__title">{{section.settings.title}}</h2>
+        {% endif %}
+      </div>
+      <div class="content">
+        <div style="text-align:center;">
+          {{section.settings.description}}
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+{% schema %}
+  {
+    "name": "Heading",
+    "settings": [
+
+		{
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+		{
+		  "type": "text",
+		  "id": "title",
+		  "label": "Title"
+		},
+{
+		  "type": "richtext",
+		  "id": "description",
+		  "label": "Description"
+		},
+{
+"type":"range",
+"id":"mtop",
+  "min": 0,
+  "max": 30,
+  "step": 1,
+  "unit": "%",
+  "label": "Space Top",
+  "default": 0
+},
+{
+"type":"range",
+"id":"mbot",
+  "min": 0,
+  "max": 30,
+  "step": 1,
+  "unit": "%",
+  "label": "Space Bottom",
+  "default": 0
+}
+	  
+	
+
+
+],
+"presets": [
+        {
+        "category": "heading",
+        "name": "heading"
+        }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

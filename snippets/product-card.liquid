@@ -1,0 +1,226 @@
+<style>
+  .jdgm-widget *{
+  	line-height: 18.4px;
+  }
+  
+  .product-card__price .jdgm-star{
+  	float: none;
+  }
+  .jdgm-widget.jdgm-widget{
+    display: inline-block !important;
+  	float: right;
+  }
+
+  .product-card__price .jdgm-star:before{
+  	font-size:12px;
+    color: {{settings.reviews-color}} !important;
+  }
+  .jdgm-prev-badge__text{
+  	margin-left: 3px;
+    font-size: 10px;
+  }
+
+  .product-discount-tag{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 2;
+    width: 38%;
+  }
+  .product-discount-tag span{
+    display:inline-block;
+    min-width:76px;
+    text-align:center;
+    background-color: #ff1617;
+    color: white;
+    font-size: 2rem;
+    padding: 18px 4px;
+    border-radius: 50%;
+  }
+  .product-card-add-to-cart{
+  	padding: 12px 24px;
+    margin-top: 12px;
+    color: {{settings.cart-btn-color}};
+    background-color: {{settings.cart-btn-bg-color}};
+  }
+  @media (max-width: 600px){
+  	.product-card__price .jdgm-star:before{
+  	  font-size:8px;
+    }
+    .product-card-add-to-cart{
+        padding: 8px 6px;
+    	font-size: 14px;
+    }
+    .jdgm-widget *{
+  	  line-height: 11.4px;
+    }
+  }
+  
+  @media (max-width: 420px){
+    .featured-collection__content .product-discount-tag span{
+      min-width: 43px;
+      font-size: 1rem;
+      padding: 12px 4px;
+    }
+  }
+  
+  @media (max-width: 400px){
+    .product-card__details .product-card__price {
+      font-size: 14px;
+    }
+    
+    .featured-collection__content .product-card__details .product-card__price {
+      font-size: 12px;
+    }
+    
+  }
+  
+</style>
+
+
+{%- assign color_label = 'farbe,color,colour,couleur,colore' | split: ',' -%}
+
+<div class="product-card" data-product-id="{{ product.id }}">
+		<div class="product-card__container">
+          	{% render "icon-wishlist" , product: product%}
+          <a class="product-card__link" href="{{ product.url }}">
+		
+            <div class="swiper-container" id="sf_product_image_slider">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                {% for img in product.media limit:3 %}
+                    {%- assign image_url = img | img_url: '300x' -%}
+                    {%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,300,400,600,800,1000,1200', image: product.featured_image -%}{%- endcapture -%}
+                         <div class="product-card__image u-aspect-ratio swiper-slide" style="--aspect-ratio: {{ aspect_ratio }};">
+                           <img data-src="{{image_url}}" class="swiper-lazy">
+                           <div class="swiper-lazy-preloader skeleton"></div>
+<!--                            <img
+                                    src="{{image_url}}" 
+                                    alt="{{ img.alt | escape }}"
+                                    data-src="{{ image_url }}" 	
+                                    data-sizes="auto"
+                                    data-widths="[{{ supported_sizes }}]"
+                                    > -->
+                            </div>
+                      
+                
+                {% endfor %}
+             </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            {% assign variant = product.selected_or_first_available_variant %}
+            <!--Tag for new product-->
+             {% for tag in product.tags %}
+        		{% if tag contains 'tag_new' %}
+            <div class="product-new-tag" style="position:absolute;right:0;top:0;width:25%;z-index:9;">
+              <img src="{{ 'new-tag.png' | asset_img_url: '300x' }}">
+            </div>  
+            {% endif %}
+              {% endfor %}
+              {% if variant.price < variant.compare_at_price %}
+              {% assign dividend = variant.compare_at_price | minus: variant.price | times: 100.0 %}
+              {% assign discount = dividend | divided_by: variant.compare_at_price | round %}
+              <div class="product-discount-tag" data-discount="{{discount}}" data-dividend="{{dividend}}">
+                <span>-{{ discount }}%</span>
+              </div>
+              {% endif %}
+              <style>
+                .product--tags{
+                  position: absolute;
+                  bottom: 0px;
+                  display: flex;
+                  justify-content: flex-end;
+                  z-index:5;
+                }
+                .product--tags img{
+                  width: 32%;
+                  padding: 2px 7px;
+                }
+              </style>
+              <div class="product--tags">
+                {% for tag in product.tags %}
+                  {% if tag contains 'tag_bio' %}
+                    <img src="{{ settings.tag_img01 | img_url: '300x' }}">
+                  {% endif %}
+                {% if tag contains 'tag_zero-waste' %}
+                    <img src="{{ settings.tag_img02 | img_url: '300x' }}">
+                  {% endif %}
+                {% if tag contains 'tag_geringer' %}
+                    <img src="{{ settings.tag_img03 | img_url: '300x' }}">
+                  {% endif %}
+                {% endfor %}
+              </div>
+              
+            </div>
+		    <div class="product-card__details">
+				<span class="product-card__title u-nobreak">{{ product.title }}</span>
+				<span class="product-card__price">
+              		{% if product.compare_at_price %}
+                  		<del style="color:gray;margin-right:5%;">{{product.compare_at_price | money_with_currency }}</del><spam style="color:red;font-weight:bold;">{{product.price | money_with_currency}}</spam>
+                  	{% else %}
+                  		{{ product.price | money_with_currency }}
+                  	{% endif %}
+                  
+                  {% if settings.show-reviews %}
+                     {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: false, product: product %}
+                  {% endif %}
+              	</span>
+				{%- for option in product.options_with_values -%}
+					{%- assign downcased_option = option.name | downcase -%}
+
+					{%- if color_label contains downcased_option -%}
+						<ul class="product-card__variants u-nolist">
+							{%- for value in option.values limit: 4 -%}
+								<li class="swatch-{{ value | handle }}">
+									<span class="u-visually-hidden">{{ value }}</span>
+								</li>
+							{%- endfor -%}
+							{%- if option.values.size > 4 -%}
+								<li class="tooltip">
+									+ {{ option.values.size | minus: 4 }}
+									<span class="u-visually-hidden"> weitere Farben</span>
+								</li>
+							{%- endif -%}
+						</ul>
+					{%- endif -%}
+				{%- endfor -%}
+              {%- assign selected_variant = product.selected_or_first_available_variant -%}
+              {% if settings.show-cart-btn %}
+              <button 
+                class="btn btn-fullwidth product-card-add-to-cart product-card-add-to-cart--js"
+                data-id="{{selected_variant.id}}"
+                {% if selected_variant.available == false %}disabled="disabled"{% endif %}
+                >
+                <p>
+                  {%- if selected_variant.available == true -%}
+                    {{ 'product.form.add_to_cart' | t }}
+                  {%- else -%}
+                    {{ 'product.form.sold_out' | t }}
+                  {%- endif -%}
+                </p>
+              </button>
+              {% endif %}
+			</div>
+          </a>
+		</div>
+</div>
+
+<!-- <script>
+  (function(){
+//   	product-card__title
+    fetch('https://judge.me/api/v1/widgets/preview_badge?api_token=PNK1MNOeXiji_LA3gmhLUvyLmu4&shop_domain=getfabulous-de.myshopify.com&handle={{product.handle}}')
+          .then((response)=>response.json())
+          .then((data)=>{
+            const str = data.badge;
+            const startIndex = str.indexOf("data-number-of-reviews='")+21;
+            const lastIndex = str.indexOf("data-number-of-reviews='")+29;
+            let rating = data.badge.substring(startIndex,lastIndex);
+            rating = rating.match(/\d/g);
+            rating = rating.join("");
+            if(rating){
+              $("[data-id='{{product.id}}']").find('.jdgm-prev-badge__text').text(`(${rating})`);
+            }
+          });
+  })();
+</script> -->

@@ -1,0 +1,143 @@
+<div class="lh-sections-wrapper" data-id="60108ff8e8c8090e3506ab52" data-type="page">
+   <section id="" data-section-id="1hp9qodeh44" data-section="banner-15" data-dev="dat" 
+            data-lh-page-id="808" 
+            data-lh-page-name="Joon - Collection" 
+            data-layouthub="section"
+            style="background: transparent url('{{section.settings.image | img_url: 'original'}}') center bottom/contain no-repeat scroll;">
+      <div class="lh-banner">
+         <div class="lh-container">
+            <div class="lh-title">
+               <h3 class="lh-title-top" data-lhi="heading1" data-lh-lang=""></h3>
+               <h3 class="lh-title-bottom" data-lhi="heading2" data-lh-lang=""></h3>
+            </div>
+         </div>
+      </div>
+   </section>
+     {% if section.settings.show_video %}
+        <div class="section-hura-video">
+          <video {% if section.settings.autoplay %}autoplay{%endif%} {% if section.settings.mute %}muted{%endif%} {% if section.settings.loop %}loop{%endif%} playsinline {% if section.settings.controls %}controls{%endif%} class="hurabg-video">
+            <source src="{{ section.settings.link }}" type="video/mp4">
+          </video>
+        </div>
+    {% endif %}
+   <section id="" data-section-id="DWLhvr4e0s" data-section="faq-2" data-dev="le-vi" data-lh-page-id="401" data-lh-page-name="FAQs 2" data-layouthub="section">
+      <div class="lh-accordion-section">
+         <div class="lh-container">
+            <div class="lh-heading">
+               <h3 data-lhi="accordion_title" data-lh-lang="">{{section.settings.text}}</h3>
+            </div>
+            <div class="lh-accordion-wrapper">
+              {% for block in section.blocks %}
+               <div class="lh-accordion-item">
+                  <div class="lh-header">
+                     <p class="title" data-lhi="accordion_items[0]ai_name" data-lh-lang="" data-lhis="accordion_items-ai_name">
+                       <strong>{{block.settings.title}}</strong></p>
+                     <span class="arrow">
+                        <i class="stt-icon fa">
+                           <svg height="14px" width="14px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+                              <g fill="#5E6D77">
+                                 <path d="M12,18.999c-0.4,0-0.776-0.156-1.059-0.438L0.22,7.841C0.078,7.699,0,7.511,0,7.31c0-0.2,0.078-0.389,0.22-0.53
+                                    c0.142-0.142,0.33-0.22,0.53-0.22s0.389,0.078,0.53,0.22L12,17.499L22.72,6.78c0.142-0.142,0.33-0.22,0.53-0.22
+                                    s0.389,0.078,0.53,0.22C23.922,6.922,24,7.11,24,7.31c0,0.2-0.078,0.389-0.22,0.53L13.06,18.56
+                                    C12.778,18.843,12.401,18.999,12,18.999z"></path>
+                              </g>
+                           </svg>
+                        </i>
+                     </span>
+                  </div>
+                  <div class="content" data-lhi="accordion_items[0]ai_content" data-lh-lang="" data-lhis="accordion_items-ai_content">
+                     {{block.settings.content}}
+                     <span class="btn btn-primary modal-toggle" data-title="{{block.settings.title}}">Jetzt Bewerben</span>
+                  </div>
+               </div>
+              {% endfor %}
+            </div>
+         </div>
+      </div>
+   </section>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Jobs Page",
+    "settings": [
+	  {
+		"type": "image_picker",
+		"id": "image",
+		"label": "Banner Image"
+	  },
+	  {
+		"type": "html",
+		"id": "text",
+		"label": "Text"
+	  },
+      {
+      "type": "header",
+      "content": "Video"
+      },
+      {
+      "type": "checkbox",
+      "id": "show_video",
+      "label": "Show Video",
+      "default": false
+      },
+      {
+      "type": "text",
+      "id": "link",
+      "label": "Video Link",
+      "default": "https://cdn.shopify.com/s/files/1/0382/4185/files/huraapps-intro.mp4?830",
+      "info": "MP4 videos only"
+      },
+      {
+      "type": "checkbox",
+      "id": "mute",
+      "label": "Mute",
+      "default": true
+      },
+      {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "AutoPlay",
+      "default": true
+      },
+      {
+      "type": "checkbox",
+      "id": "controls",
+      "label": "Controls",
+      "default": false,
+      "info": "If you wanna show controls or hide them?"
+      },
+      {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Loop",
+      "default": true
+      }
+	],
+	"blocks": [
+	  {
+		"type": "job",
+		"name": "Job",
+		"settings": [
+		  {
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		  },
+		  {
+			"type": "html",
+			"id": "content",
+			"label": "Content"
+		  }
+		]
+	  }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

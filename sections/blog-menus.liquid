@@ -1,0 +1,46 @@
+<nav class="blog-menu">
+  <ul id="menu-blog-header-menu" class="menu">
+    {% if section.blocks.size > 0 %}
+    	{% for block in section.blocks %}
+    		<li id="menu-item-{{forloop.index}}" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8382">
+              <a href="{{block.settings.menu_url}}">{{block.settings.menu_title}}</a>
+    		</li>
+    	{% endfor %}
+    {% endif %}
+  </ul>
+</nav>
+
+
+
+{% schema %}
+  {
+    "name": "Blog Menus",
+    "settings": [],
+	"blocks":[
+		{
+			"name":"Menu",
+            "type":"menu",
+            "settings":[
+                {
+                    "type":"text",
+                    "id":"menu_title",
+                    "label":"Menu title"
+                },
+                {
+                    "type":"url",
+                    "id":"menu_url",
+                    "label":"Menu Url"
+                }
+            ]
+
+		}
+	]
+	
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

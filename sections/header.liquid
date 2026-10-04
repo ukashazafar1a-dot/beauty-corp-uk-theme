@@ -1,0 +1,240 @@
+{%- assign main_menu_handle = section.settings.navigation_menu | default: 'main-menu' -%}
+{%- assign main_menu = linklists[main_menu_handle] -%}
+
+<header class="header">
+    <div class="site-width" style="position:unset;">
+
+        <div class="header-top">
+            <button class="header-top__menu hamburger-menu" aria-label="Menü öffnen">
+                {%- render 'icon', type: 'hamburger-menu' -%}
+            </button>
+            <div class="header-top__brand">
+                <a href="{{ routes.root_url }}">
+                    {%- if section.settings.logo != blank -%}
+                        <img src="{{ section.settings.logo | img_url: 'master' }}" alt="{{ section.settings.logo | alt | default: shop.name | escape }}">
+                    {%- endif -%}
+                </a>
+            </div>
+            <nav class="header-navigation">
+                <ul class="header-navigation-list">
+                    {%- for link in main_menu.links -%}
+                  		{%- if link.links == blank-%}
+                        <li class="header-navigation-list__item" style="position:unset;">
+                            <a href="{{ link.url }}">
+                                <span>{{ link.title }}</span>
+                            </a>
+                        </li>
+                  		{%- else -%}
+                        <li class="header-navigation-list__item" style="position:unset;">
+                            <a href="{{ link.url }}">
+                                <span>{{ link.title }}</span>
+                            </a>
+                            {%- render 'mega-menu', link: link,blocks:section.blocks -%}
+                        </li>
+                  		{%- endif -%}
+                    {%- endfor -%}
+                </ul>
+            </nav>
+            <div class="header-top__icons">
+                <ul style='align-items:center;'>
+                    {%- comment -%}
+                    <li class="header-icon search-icon" data-icon-type="Suchen">
+                        <div class="header-icon__wrapper">
+                            <a href="{{ routes.cart_url }}" aria-label="{{ shop.name }} durchsuchen">
+                                {%- render 'icon', type: 'search' -%}
+                            </a>
+                        </div>
+                    </li>
+                    {%- endcomment -%}
+
+                   
+                    <li class="header-icon cart-icon" data-icon-type="{{ section.settings.searchtext }}">
+                          <span class="header-icon__wrapper header-icon--js">
+                              {%- render 'icon', type: 'search' -%}
+                          </span>
+                    </li>
+                    <li class="header-icon cart-icon" data-icon-type="{{ section.settings.carttext }}">
+                          <a 
+                            class="header-icon__wrapper"
+                            href="/cart"
+                            data-item-count="{{ cart.item_count }}"
+                            aria-label="{{ cart.item_count }} Artikel im Warenkorb"
+                            >
+                              {%- render 'icon', type: 'cart' -%}
+                          </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  <div class="site-width search-drawer">
+    <div class="search-bar__interior">
+		{%- render 'search-bar' -%}
+    </div>
+  </div>
+</header>
+
+<script>
+  $('.header-icon--js').click(function(){
+    console.log('clicked');
+    $('.search-drawer').toggleClass('drawer-active');
+  });
+</script>
+
+{% schema %}
+{
+	"name": "Header",
+	"settings": [
+		
+		{
+			"type": "link_list",
+			"id": "navigation_menu",
+			"label": "Menu"
+		},
+		{
+			"type": "image_picker",
+			"id": "logo",
+			"label": "Logo"
+		},
+		{
+			"type": "checkbox",
+			"id": "header_language_switcher_enabled",
+			"label": "Language Switcher"
+		},
+        {
+			"type": "text",
+			"id": "carttext",
+			"label": "Cart Text",
+			"default": "Warenkorb"
+		  },
+          {
+			"type": "text",
+			"id": "searchtext",
+			"label": "Search Text",
+			"default": "Suche"
+		  }
+
+
+	],
+	"blocks": [
+	  {
+		"name": "Mega Menu",
+		"type": "mega-menu",
+		"settings": [
+		  {
+			"type": "text",
+			"id": "menu_item",
+			"label": "Menu Item",
+			"info": "The mega menu will appear below this parent link"
+		  },
+		  {
+			"type": "link_list",
+			"id": "menu",
+			"label": "Menu"
+		  },
+		  {
+			"type": "header",
+			"content": "Image 1"
+		  },
+		  {
+			"type": "image_picker",
+			"id": "image",
+			"label": "Image"
+		  },
+		  {
+			"type": "url",
+			"id": "url",
+			"label": "Image URL"
+		  },
+		  {
+			"type": "text",
+			"id": "image_caption",
+			"label": "Image Caption"
+		  },
+		  {
+			"type": "color",
+			"id": "bg_color",
+			"label": "Background Color",
+			"default": "#f2ca3c"
+		  },
+		  {
+			"type": "header",
+			"content": "Image 2"
+		  },
+		  {
+			"type": "image_picker",
+			"id": "image_2",
+			"label": "Image"
+		  },
+		  {
+			"type": "url",
+			"id": "url_2",
+			"label": "Image URL"
+		  },
+		  {
+			"type": "text",
+			"id": "image_caption_2",
+			"label": "Image Caption"
+		  },
+		  {
+			"type": "color",
+			"id": "bg_color_2",
+			"label": "Background Color",
+			"default": "#f2ca3c"
+		  },
+		  {
+			"type": "header",
+			"content": "Image 3"
+		  },
+		  {
+			"type": "image_picker",
+			"id": "image_3",
+			"label": "Image"
+		  },
+		  {
+			"type": "url",
+			"id": "url_3",
+			"label": "Image URL"
+		  },
+		  {
+			"type": "text",
+			"id": "image_caption_3",
+			"label": "Image Caption"
+		  },
+		  {
+			"type": "color",
+			"id": "bg_color_3",
+			"label": "Background Color",
+			"default": "#f2ca3c"
+		  },
+		  {
+			"type": "header",
+			"content": "Image 4"
+		  },
+		  {
+			"type": "image_picker",
+			"id": "image_4",
+			"label": "Image"
+		  },
+		  {
+			"type": "url",
+			"id": "url_4",
+			"label": "Image URL"
+		  },
+		  {
+			"type": "text",
+			"id": "image_caption_4",
+			"label": "Image Caption"
+		  },
+		  {
+			"type": "color",
+			"id": "bg_color_4",
+			"label": "Background Color",
+			"default": "#f2ca3c"
+		  }
+		]
+	  }
+	]
+}
+{% endschema %}
+

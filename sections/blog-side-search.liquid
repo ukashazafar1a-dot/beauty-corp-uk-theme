@@ -1,0 +1,25 @@
+<section id="search-3" class="filled widget widget_search" style="background-color: #ffeec5">
+			<h2 class="widget-title">{{"blog.search.title" | t}}</h2>
+			<form class="search-form" action="{{ routes.search_url }}">
+				<label> <span class="screen-reader-text"></span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="{{ search.terms | escape }}" name="q"> </label>
+				<button type="submit" class="search-submit" value="Search"> 
+                  <span class="svg-icon icon-search size-normal ">
+                    <svg viewBox="0 0 24 24" id="search"><path fill="none" d="M0 0h24v24H0z"></path><path d="M20 18.586l-3.402-3.402A6.953 6.953 0 0 0 18 11c0-3.86-3.141-7-7-7-3.86 0-7 3.14-7 7 0 3.859 3.14 7 7 7 1.57 0 3.015-.526 4.184-1.402L18.586 20 20 18.586zM6 11c0-2.757 2.243-5 5-5s5 2.243 5 5-2.243 5-5 5-5-2.243-5-5z"></path></svg>
+                  </span> <span class="button-text screen-reader-text">Search</span> </button>
+			</form>
+</section>
+
+{% schema %}
+  {
+    "name": "Blog Side Search",
+    "settings": [
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,193 @@
+{% assign number_of_comments = article.comments_count %}
+{% if comment and comment.created_at %}
+  {% assign number_of_comments = article.comments_count %}
+{% endif %}
+{% capture author %}<strong>{{ article.author }}</strong>{% endcapture %}
+{% comment %}
+<h1>{{ article.title }}</h1>
+{% capture author %}<strong>{{ article.author }}</strong>{% endcapture %}
+{% capture date %}<time datetime="{{ article.published_at | date: '%Y.%m.%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>{% endcapture %}
+{{ article.author }} @ {{ article.created_at }}
+
+<div>{{ article.content }}</div>
+
+{% if blog.comments_enabled? %}
+  <h2>{{ number_of_comments }} comments</h2>
+  {% paginate article.comments by 5 %}
+    {% for comment in article.comments %}
+      <div>
+        <div>{{ comment.content }}</div>
+        {{ comment.author }} @ {{ comment.created_at }}
+      </div>
+    {% endfor %}
+    {% if paginate.pages > 1 %}
+      {{ paginate | default_pagination }}
+    {% endif %}
+  {% endpaginate %}
+
+  <div>
+    {% form 'new_comment', article %}
+      {{ form.errors | default_errors }}
+      <label for="CommentAuthor">name</label>
+      <input type="text" name="comment[author]" id="CommentAuthor" placeholder="name" value="{{ form.author }}" autocapitalize="words">
+
+      <label for="CommentEmail">email</label>
+      <input type="email" name="comment[email]" id="CommentEmail" placeholder="email" value="{{ form.email }}" autocorrect="off" autocapitalize="off">
+
+      <label for="CommentBody">message</label>
+      <textarea name="comment[body]" id="CommentBody" placeholder="message">{{ form.body }}</textarea>
+
+      <input type="submit" value="post">
+    {% endform %}
+  </div>
+{% endif %}
+{% endcomment %}
+
+<!-- Custom Template Start Here -->
+<link rel="stylesheet" id="konte-css" href="{{'sf-bootstrap.css' | asset_url}}" type="text/css" media="all">
+<link rel="stylesheet" id="konte-css" href="{{'sf-new-style.css' | asset_url}}" type="text/css" media="all">
+
+<style id='konte-inline-css' type='text/css'>
+		
+	.topbar {
+		height: 40px
+	}
+	
+	.header-main,
+	.header-v10 .site-branding {
+		height: 120px;
+	}
+	
+	.header-bottom {
+		height: 90px;
+	}
+	
+	.header-mobile {
+		height: 60px
+	}
+	
+	.featured-content-carousel,
+	.featured-content-carousel .featured-item {
+		height: 790px
+	}
+	 .entry-thumbnail .attachment-full{
+  max-width:800px;
+  }
+	@media screen and (max-width: 1440px) {
+		.featured-content-carousel,
+		.featured-content-carousel .featured-item {
+			height: 592px
+		}
+	}
+	
+	@media screen and (max-width: 1280px) {
+		.featured-content-carousel,
+		.featured-content-carousel .featured-item {
+			height: 526px
+		}
+	}
+	
+	@media screen and (max-width: 1199px) {
+		.featured-content-carousel,
+		.featured-content-carousel .featured-item {
+			height: 493px
+		}
+	}
+	
+	@media screen and (max-width: 991px) {
+		.featured-content-carousel,
+		.featured-content-carousel .featured-item {
+			height: 407px
+		}
+	}
+	
+	@media screen and (max-width: 767px) {
+		.featured-content-carousel,
+		.featured-content-carousel .featured-item {
+			height: 315px
+		}
+	}
+ 
+  .site-content-container img{
+  width:auto;
+  }
+</style>
+
+<div class="post-template-default single single-post postid-9832 single-format-standard wp-embed-responsive no-sidebar post-shareable wpb-js-composer js-comp-ver-6.0.5 vc_responsive">
+<div id="page" class="site">
+  <!-- #masthead -->
+	<div id="content" class="site-content">
+      	<!--Top Menu -->
+        <div class="blog-header-menu">
+            <div class="container">
+                {% section 'blog-menus' %}		
+            </div>
+        </div>
+
+		<header class="entry-header">
+			<div class="entry-thumbnail konte-container"> 
+              <img src="{{article.image.src | img_url:'1024x'}}" class="attachment-full size-full wp-post-image" alt=""> 
+            </div>
+			<div class="post-info container">
+				<div class="cat-links"><a href="fashion.html" rel="category tag">Fashion</a></div>
+				<p class="entry-title">{{article.title}}</p>
+				<div class="entry-meta"> <span class="posted-on"><time class="entry-date published updated" datetime="{{ article.published_at | date: '%d.%m.%Y' }}">{{ article.published_at | date: '%d.%m.%Y' }}</time></span><span class="total-shares " data-post_id="9832"><span class="svg-icon icon-share size-small "><svg role="img"> <use href="#share" xlink:href="#share"></use> </svg></span><span class="count">0 Share</span></span><span class="comments-link"><span class="svg-icon icon-comment size-small "><svg role="img"> <use href="#comment" xlink:href="#comment"></use> </svg></span><a href="https://carmushka.de/last-minute-weihnachtsgeschenke-von-amazon#respond">Keine Kommentare<span class="screen-reader-text"> zu Last-Minute-Weihnachtsgeschenke von Amazon</span></a></span>
+				</div>
+			</div>
+		</header>
+		<div class="site-content-container container">
+			<div id="primary" class="content-area">
+				<main id="main" class="site-main">
+					<article id="post-9832" class="post-9832 post type-post status-publish format-standard has-post-thumbnail hentry category-fashion">
+						<header class="entry-header screen-reader-text">
+							<h1 class="entry-title">{{article.title}}</h1>
+							<div class="entry-meta"> <span class="posted-on"><time class="entry-date published updated" datetime="{{ article.published_at | date: '%d.%m.%Y' }}">{{ article.published_at | date: '%d.%m.%Y' }}</time></span><span class="total-shares " data-post_id="{{article.id}}"><span class="svg-icon icon-share size-small "><svg role="img"> <use href="#share" xlink:href="#share"></use> </svg></span><span class="count">0 Share</span></span><span class="comments-link"><span class="svg-icon icon-comment size-small "><svg role="img"> <use href="#comment" xlink:href="#comment"></use> </svg></span><a href="https://carmushka.de/last-minute-weihnachtsgeschenke-von-amazon#respond">Keine Kommentare<span class="screen-reader-text"> zu Last-Minute-Weihnachtsgeschenke von Amazon</span></a></span>
+							</div>
+							<!-- .entry-meta -->
+						</header>
+						<!-- .entry-header -->
+						<div class="entry-content">
+							{{article.content }}
+						</div>
+						<!-- .entry-content -->
+						<!-- .entry-footer -->
+					</article>
+                   <div style="display:flex;justify-content:flex-end;">
+				   {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image.src %}
+                   </div>
+					<!-- #post-9832 -->
+					<div id="comments" class="comments-area">
+						<div id="respond" class="comment-respond">
+							<h3 id="reply-title" class="comment-reply-title">Schreibe einen Kommentar <small><a rel="nofollow" id="cancel-comment-reply-link" href="/last-minute-weihnachtsgeschenke-von-amazon#respond" style="display:none;">Antworten abbrechen</a></small></h3>
+							<form action="https://carmushka.de/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+								<p class="comment-notes"><span id="email-notes">Deine E-Mail-Adresse wird nicht ver&ouml;ffentlicht.</span> Erforderliche Felder sind mit <span class="required">*</span> markiert.</p>
+								<p class="comment-form-comment">
+									<textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required" placeholder="Kommentar"></textarea>
+								</p>
+								<p class="comment-form-author">
+									<input id="author" name="author" type="text" value="" size="30" maxlength="245" placeholder="Name *" aria-required="true" required="required">
+								</p>
+								<p class="comment-form-email">
+									<input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" placeholder="Email *" aria-required="true" required="required">
+								</p>
+								<p class="form-submit">
+									<input name="submit" type="submit" id="submit" class="submit" value="Kommentar abschicken">
+									<input type="hidden" name="comment_post_ID" value="9832" id="comment_post_ID">
+									<input type="hidden" name="comment_parent" id="comment_parent" value="0"> </p>
+							</form>
+						</div>
+						<!-- #respond -->
+					</div>
+					<!-- #comments -->
+				</main>
+				<!-- #main -->
+			</div>
+			<!-- #primary -->
+		</div>
+		<!-- .site-content-container -->
+	</div>
+	
+</div>
+<!-- #page -->
+</div>
+

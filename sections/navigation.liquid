@@ -1,0 +1,120 @@
+{%- assign mobile-menu = section.settings.navigation_mobile -%}
+<div class="nav-mobile">
+	{%- comment -%}<div class="overlay"></div>
+
+	<div class="nav-mobile__image">
+		<img class="lazy fade-in" data-src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt }}">
+	</div>
+
+	<div class="nav-mobile__search">
+		{%- render 'search-bar' -%}
+	</div>{%- endcomment -%}
+	<nav class="nav-mobile__menu">
+		<ul class="nav-mobile__list">
+			{%- for link in linklists[mobile-menu].links -%}
+				{%- assign link_value = link.title | replace: 'ä', 'ae' | handle | prepend: 'nav-' | append: '.png' -%}
+				{%- assign link_image = images[link_value] | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+				{%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,300,400,600,800,1000,1200', image: link_image -%}{%- endcapture -%}
+
+				<li class="nav-mobile-item">
+					<a 	class="nav-mobile-item__link {% if link.active %}is-active{% endif %} {% if link.links != blank %}nav-mobile-item__link--js{% endif %}"
+						href="{{ link.url }}"
+						>
+						{%- if link_image != empty and link_image contains 'png' -%}
+							<div class="nav-mobile-item__image">
+								<img 	
+									class="lazy fade-in" 
+									alt="{{ shop.name | escape }}"
+									data-src="{{ link_image }}" 	
+									data-sizes="auto"
+									data-widths="[{{ supported_sizes }}]"
+									>
+							</div>  
+						{%- endif -%}
+
+						<span>{{- link.title -}}</span>
+                        {% if link.links != blank %}
+                        <div class="z-navicat-header_listItemIconRight">
+                          <svg class="DlJ4rT" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-labelledby="chevron-right-17" role="img" aria-hidden="false">
+                            <title id="chevron-right-17">chevron-right</title>
+                            <path d="M7.63 21.14a.75.75 0 0 1 0-1.06l7.55-7.55a.751.751 0 0 0 0-1.06L7.63 3.92a.75.75 0 1 1 1.06-1.061l7.55 7.55a2.252 2.252 0 0 1 0 3.182l-7.55 7.55a.748.748 0 0 1-1.06 0z"></path>
+                          </svg>
+                        </div>
+                        {% endif %}
+					</a>
+                  {% if link.links != blank %}
+                  <div class="nav-mobile-item__sub-link">
+                    <div class="nav-mobile-item__sub-link-header">
+                        <div class="z-navicat-header_listItemIconLeft">
+                          <svg class="DlJ4rT" height="1em" width="1em" focusable="false" 
+                               fill="currentColor" viewBox="0 0 24 24" 
+                               aria-labelledby="chevron-right-17" role="img" aria-hidden="false"
+                               style="transform: rotateY(180deg);">
+                            <title id="chevron-right-17">chevron-right</title>
+                            <path d="M7.63 21.14a.75.75 0 0 1 0-1.06l7.55-7.55a.751.751 0 0 0 0-1.06L7.63 3.92a.75.75 0 1 1 1.06-1.061l7.55 7.55a2.252 2.252 0 0 1 0 3.182l-7.55 7.55a.748.748 0 0 1-1.06 0z"></path>
+                          </svg>
+                        </div>
+                    </div>
+                    <ul class="z-navicat-header_categoryPanelGrid">
+                      {% for sublink in link.links %}
+                      {%- assign link_value = sublink.title | replace: 'ä', 'ae' | handle | prepend: 'nav-' | append: '.jpg' -%}
+	    			  {%- assign link_image = images[link_value] | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+					  {%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,300,400,600,800,1000,1200', image: link_image -%}{%- endcapture -%}
+                      <li class="z-navicat-header_categoryPanelElement z-navicat-header_categoryPanelGridElement">
+                        <a class="z-navicat-header_categoryPanelLink" href="{{sublink.url}}">
+                          <div class="z-navicat-header_categoryPanelImage">
+                            <div class="mo6ZnF lazy">
+                              <img 
+                                   class="lazy fade-in" 
+								   alt="{{ shop.name | escape }}"
+								   data-src="{{ link_image }}" 	
+								   data-sizes="auto"
+								   data-widths="[{{ supported_sizes }}]"
+                                   style="width:100%;height:auto;margin:auto" />
+                            </div>
+                          </div>
+                          <div class="z-navicat-header_categoryPanelLinkText">
+                            <span class="uMhVZi">{{sublink.title}}</span>
+                          </div>
+                        </a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                  {% endif %}
+				</li>
+			{%- endfor -%}
+		</ul>
+	</nav>
+</div>
+
+<script>
+  $('.nav-mobile-item__link--js').click(function(e){
+    e.preventDefault();
+    console.log('clicked');
+    $(this).closest('.nav-mobile-item').find('.nav-mobile-item__sub-link').addClass('nav-mobile-item__sub-link--active');
+  });
+  
+  $('.z-navicat-header_listItemIconLeft').click(function(e){
+    $(this).closest('.nav-mobile-item__sub-link').removeClass('nav-mobile-item__sub-link--active');
+  });
+</script>
+
+{% schema %}
+{
+	"name": "Navigation",
+	"settings": [	
+        {
+			"type": "link_list",
+			"id": "navigation_mobile",
+			"label": "Mobile Menu"
+		},
+		{
+			"type": "image_picker",
+			"id": "image",
+			"label": "Image"
+		}
+	]
+}
+{% endschema %}

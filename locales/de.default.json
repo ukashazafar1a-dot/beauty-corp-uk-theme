@@ -1,0 +1,265 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "general": {
+    "404": {
+      "title": "Not found",
+      "subtext_html": "The page you were looking for does not exist"
+    },
+    "social": {
+      "share_on_facebook": "Share",
+      "share_on_twitter": "Tweet",
+      "share_on_pinterest": "Pin it",
+      "share_on_whatsapp": "Whatsapp",
+      "share_on_instagram": "Insta",
+      "share_on_tick-tok": "Tick Tok",
+      "alt_text": {
+        "share_on_facebook": "Share on Facebook",
+        "share_on_twitter": "Tweet on Twitter",
+        "share_on_pinterest": "Pin on Pinterest",
+        "share_on_whatsapp": "Share on Whatsapp",
+        "share_on_instagram": "Share on Instagram",
+        "share_on_tick-tok": "Share on Tick Tok"
+      }
+    },
+    "search": {
+      "no_results": "Versuchen Sie, Ihre Rechtschreibung zu überprüfen oder andere Wörter zu verwenden.",
+      "empty_search_message": "Suchfeld darf nicht leer sein",
+      "results_with_count": {
+        "one": "{{ count }} Ergebnis für “{{ terms }}”",
+        "other": "{{ count }} Treffer für “{{ terms }}”"
+      },
+      "title": "Unsere Website durchsuchen",
+      "placeholder": "Suche",
+      "submit": "Einreichen",
+      "close": "Suche schließen",
+      "heading": {
+        "one": "Suchergebnis",
+        "other": "Suchergebnisse"
+      },
+      "search_for": "Suchen nach",
+      "products": "Produkte",
+      "loading": "Wird geladen",
+      "clear_search_term": "Suchbegriff löschen",
+      "number_of_results": "{{ result_number }} von {{ results_count }}",
+      "number_of_results_found": "{{ results_count }} ergebnisse gefunden",
+      "one_result_found": "1 ergebnis gefunden"
+    },
+    "jobs-form": {
+      "title": "Jetzt bewerben",
+      "note": "notwendig",
+      "name": "Name",
+      "email": "Email",
+      "send": "Senden",
+      "success-message": "Vielen Dank für Deine Bewerbung!Wir werden uns bei Dir melden."
+    }
+  },
+  "products": {
+    "product": {
+      "regular_price": "Regular price",
+      "sold_out": "Sold out",
+      "unavailable": "Unavailable",
+      "availability": "Availability",
+      "on_sale": "Sale",
+      "from_lowest_price_html": "from {{ lowest_price }}",
+      "sale_price": "Sale price",
+      "quantity": "Quantity",
+      "add_to_cart": "Add to cart",
+      "loader_label": "Adding product to your cart",
+      "back_to_collection": "Back to",
+      "vendor": "Vendor",
+      "quantity_minimum_message": "Quantity must be 1 or more",
+      "include_taxes": "Tax included.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
+      "unit_price_label": "Unit price",
+      "view_cart": "View cart",
+      "view_in_space": "View in your space",
+      "view_in_space_label": "View in your space, loads item in augmented reality window"
+    }
+  },
+  "bag": {
+    "header": {
+      "title": "Dein Warenkorb ",
+      "article": "Artikel",
+      "announcement": "Kostenloser Versand in Deutschland",
+      "note": "Artikel im Warenkorb werden nicht reserviert"
+    },
+    "footer": {
+      "title": "Zusammenfassung",
+      "shipping": "Versandkosten",
+      "calculateship": "Wird im Checkout berechnet",
+      "savings": "Du sparst",
+      "total": "Gesamtbetrag",
+      "vat": "inkl. MwSt.",
+      "checkout_button": "Jetzt sicher zur Kasse"
+    }
+  },
+  "collection": {
+    "header": {
+      "collection_label": "Kollektion: ",
+      "products_count": {
+        "one": "{{ count }} Produkt gefunden",
+        "other": "{{ count }} Produkte gefunden"
+      }
+    },
+    "actions": {
+      "filter": "Filtern",
+      "sort_by": "Sortieren",
+      "sort_by_a11y": "nach"
+    },
+    "filter": {
+      "title": "Filter",
+      "button": "Zeige alle Ergebnisse"
+    },
+    "sort": {
+      "manual": "",
+      "best-selling": "Bestseller",
+      "title-ascending": "",
+      "title-descending": "",
+      "price-ascending": "Preis aufsteigend",
+      "price-descending": "Preis absteigend",
+      "created-ascending": "Neuheiten",
+      "created-descending": ""
+    },
+    "products": {
+      "empty_text": "Keine Produkte gefunden"
+    },
+    "pagination": {
+      "text": "Du hast {{ viewed_items }} von {{ total_items }} Produkten angesehen",
+      "show_more": "Mehr Produkte anzeigen",
+      "is_loading": "Wird geladen..."
+    }
+  },
+  "product": {
+    "meta": {
+      "vat": "inkl. MwSt."
+    },
+    "form": {
+      "add_to_cart": "In den Warenkorb",
+      "sold_out": "Ausverkauft",
+      "unavailable": "Nicht verfügbar",
+      "pre_order": "Jetzt vorbestellen"
+    }
+  },
+  "cart": {
+    "header": {
+      "title": "Dein Warenkorb"
+    },
+    "announcement": {
+      "text": "Kostenloser Versand in Deutschland"
+    },
+    "body": {
+      "empty_title": "Dein Warenkorb ist leer",
+      "button_text": "Jetzt shoppen"
+    },
+    "footer": {
+      "subtotal_price": "Zwischensumme inkl. MwSt.",
+      "shipping": "Versandkosten",
+      "checkout": "Jetzt sicher zur Kasse"
+    }
+  },
+  "blog": {
+    "search": {
+      "title": "Suche"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "review": {
+        "review_notice_html": "Mit dem Klick auf \"Kaufen\" erkläre ich mich mit den {{ terms_of_service }} einverstanden und die {{ refund_policy }} habe ich zur Kenntnis genommen."
+      },
+      "contact": {
+        "civic_number_warning": "❗️❗️❗️ Bitte eine Hausnummer hinzufügen ❗️❗️❗️"
+      }
+    }
+  },
+  "customer": {
+    "login": {
+      "title": "Anmelden",
+      "email": "Email",
+      "password": "Passwort",
+      "signin": "Anmeldung",
+      "register": "Registrieren"
+    },
+    "register": {
+      "title": "Anmelden",
+      "first_name": "Vorname",
+      "last_name": "Nachname",
+      "email": "Email",
+      "password": "Passwort",
+      "submit": "Registrieren",
+      "success": "Aktiviere Dein Konto Hallo! Du hast ein neues Kundenkonto bei GetFabulous erstellt. Jetzt musst Du es nur noch aktivieren. Innerhalb kurzer Zeit erhältst Du eine Mail mit der Du Dein Konto aktivieren kannst."
+    },
+    "recover-password": {
+      "title": "Setze dein Passwort zurück",
+      "subtitle": "Wir senden Ihnen eine E-Mail, um Ihr Passwort zurückzusetzen",
+      "success": "Formular erfolgreich eingereicht. Bitte überprüfen Sie Ihre Post.",
+      "submit": "Einreichen",
+      "cancel": "Abbrechen"
+    },
+    "log_out": "Ausloggen",
+    "account": {
+      "title": "Konto",
+      "details": "Einzelheiten",
+      "return": "Zurück",
+      "view_addresses": "Adressen Anzeigen"
+    },
+    "orders": {
+      "title": "Bestellliste",
+      "order_number": "Bestellen",
+      "order_number_link": "Bestellnummer {{ number }}",
+      "date": "Datum",
+      "payment_status": "Zahlungsstatus",
+      "fulfillment_status": "Erfüllungsstatus",
+      "total": "Gesamt",
+      "none": "Sie haben noch keine Bestellungen aufgegeben."
+    },
+    "order": {
+      "title": "Bestellen {{ name }}",
+      "date_html": "Platziert auf {{ date }}",
+      "cancelled_html": "Bestellung storniert am {{ date }}",
+      "cancelled_reason": "Grund: {{ reason }}",
+      "billing_address": "Rechnungsadresse",
+      "payment_status": "Zahlungsstatus",
+      "shipping_address": "Lieferanschrift",
+      "fulfillment_status": "Erfüllungsstatus",
+      "discount": "Rabatt",
+      "shipping": "Versand",
+      "tax": "Steuer",
+      "product": "Produkt",
+      "sku": "SKU",
+      "price": "Preis",
+      "quantity": "Menge",
+      "total": "Gesamt",
+      "fulfilled_at_html": "Erfüllt {{ date }}",
+      "subtotal": "Zwischensumme",
+      "track_shipment": "Sendung verfolgen"
+    },
+    "addresses": {
+      "title": "Adressen",
+      "add_new": "Neue Hinzufügen",
+      "first_name": "Vorname",
+      "last_name": "Nachname",
+      "company": "Begleitung ",
+      "address1": "Adresse 1",
+      "address2": "Adresse 2",
+      "city": "Stadt",
+      "country": "Land",
+      "zip": "Postleitzahl",
+      "phone": "Telefon #",
+      "set_default": "Standardadresse",
+      "add": "Speichern",
+      "cancel": "Abbrechen",
+      "edit": "bearbeiten",
+      "delete": "löschen",
+      "default": "Ursprünglich"
+    }
+  }
+}

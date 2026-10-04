@@ -1,0 +1,267 @@
+<style>
+  .container {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 400px;
+    min-width: 370px;
+    margin: 3% auto;
+    padding: 5%;
+   
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-container {
+    /*display: flex;*/
+  }
+
+  .left-container {
+    flex: 1;
+    height: 480px;
+    background-color: #FDEAE6;
+  }
+
+  .right-container {
+    display: flex;
+    flex: 1;
+    /*height: 460px;*/
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .left-container {
+    display: flex;
+    flex: 1;
+    height: 480px;
+    justify-content: center;
+    color: gray;
+    padding-top:1%;
+  }
+
+  .left-container p {
+    font-size: 0.9rem;
+    margin-top:opx;
+  }
+  .left-container p strong {
+    font-size: medium;
+    color:gray;
+  }
+
+  .right-inner-container {
+    width: 70%;
+    height: 80%;
+    text-align: left;
+  }
+
+  .left-inner-container {
+    height: 50%;
+    width: 80%;
+    text-align: left;
+    line-height: 22px;
+  }
+
+  input, textarea {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  input:focus, textarea:focus {
+    outline: 1px solid #00b4cf;
+  }
+
+  button {
+    border-radius: 20px;
+    border: 1px solid #00b4cf;
+    background-color: #00b4cf;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    cursor: pointer;
+  }
+
+  button:hover {
+    opacity: 0.7;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .container {
+        box-shadow: none;
+        width: 98%;
+        margin: 3% auto;
+      
+      	min-width: 300px;
+    }
+    .form-container{
+    	flex-wrap:wrap;
+      	flex-direction:column;
+      	
+    }
+    
+
+    .lg-view {
+      display: block;
+      margin-top: 5% !important;
+    }
+    .right-container {
+		flex:none;
+      	width:98%;
+      	margin:0 auto;
+      	padding:1%;
+      	display:block;
+    }
+    .left-container {
+        display: block;
+        flex: none;
+        padding: 3%;
+      	width:100%;
+    }
+    .left-inner-container {
+        height: 50%;
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 22px;
+    }
+    .right-inner-container {
+      width: 100%;
+      text-align:left;
+    }
+    .sf-col-50{
+      width:90%;
+      margin:auto;
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    .sm-view {
+      display: none;
+    }
+  }
+  form p {
+    text-align: left;
+  }
+  .form-message--error{
+  	color:red;
+  }
+  .email{
+  	text-align:left;
+  }
+  .password{
+  	text-align:left;
+  }
+  .sf-row{
+  	display:flex;
+  }
+  .sf-col-50{
+  	width:49%;
+    margin:auto;
+  }
+  .btn-block{
+  	width:100%;
+    text-transform:uppercase;
+  }
+  .input--error {
+    border:1px solid;
+    border-color: #d20000;
+    background-color: #fff8f8;
+    color: #d20000;
+    margin-bottom: 11.66667px; 
+  }
+</style>
+
+
+<div class="container">
+  <div class="form-container">
+    <div class="right-container">
+      <div class="right-inner-container">
+		<h2 class="lg-view" style="margin-top:0px; text-align:center;">{{ 'customer.register.title' | t }}</h2>
+		{% form 'create_customer', id: formId, novalidate: 'novalidate' %}
+            {% comment %}
+        	{% include 'form-status', form: form, form_id: formId %}
+			{% endcomment%}
+            {%- if form.posted_successfully? -%}
+        	<div class="form-message form-message--success">
+                {{"customer.register.success" | t}}
+            </div>
+            {%- endif -%}
+            <label for="{{ formId }}-FirstName">{{ 'customer.register.first_name' | t }}</label>
+            <input type="text" name="customer[first_name]" id="{{ formId }}-FirstName" {% if form.first_name %}value="{{ form.first_name }}"{% endif %} autocomplete="given-name">
+
+            <label for="{{ formId }}-LastName">{{ 'customer.register.last_name' | t }}</label>
+            <input type="text" name="customer[last_name]" id="{{ formId }}-LastName" {% if form.last_name %}value="{{ form.last_name }}"{% endif %} autocomplete="family-name">
+
+            <label for="{{ formId }}-email">{{ 'customer.register.email' | t }}</label>
+            <input
+              type="email"
+              name="customer[email]"
+              id="{{ formId }}-email"
+              class="{% if form.errors contains 'email' %} input--error{% endif %}"
+              {% if form.email %} value="{{ form.email }}"{% endif %}
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete="email"
+              aria-required="true"
+              {%- if form.errors contains 'email' -%}
+                class="input--error"
+                aria-invalid="true"
+                aria-describedby="{{ formId }}-email-error"
+              {%- endif -%}
+            >
+            {%- if form.errors contains 'email' -%}
+              <span id="{{ formId }}-email-error" class="form-message--error">
+                <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+                <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+              </span><br/>
+            {%- endif -%}
+			
+            <label for="{{ formId }}-password">{{ 'customer.register.password' | t }}</label>
+            <input
+              type="password"
+              name="customer[password]"
+              id="{{ formId }}-password"
+              class="{% if form.errors contains 'password' %} input--error{% endif %}"
+              aria-required="true"
+              {%- if form.errors contains 'password' -%}
+                class="input--error"
+                aria-invalid="true"
+                aria-describedby="{{ formId }}-password-error"
+              {%- endif -%}
+            >
+            {%- if form.errors contains 'password' -%}
+              <span id="{{ formId}}-password-error" class="form-message--error">
+                <span>{{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}.</span>
+              </span>
+            {%- endif -%}
+
+            <p class="text-center">
+              <input type="submit" value="{{ 'customer.register.submit' | t }}" class="btn btn-primary">
+            </p>
+
+          {% endform %}
+
+        </div>
+    </div>
+  </div>
+</div>
+
+ 
+
+
+
+

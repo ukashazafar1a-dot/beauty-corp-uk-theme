@@ -1,0 +1,270 @@
+<style>
+  .hero-section{
+    overflow:hidden;
+  }
+  .section-hura-video{
+  	width:65%;
+    margin: 0 auto;
+  }
+.hurabg-video{
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  max-height: 75vh;
+}
+  h2.section__title:after{
+    display:none;
+  }
+  .section{
+  	padding: 20px 0 !important;
+  }
+  @media (max-width: 767px){
+    .section-hura-video{
+      width: 85%;
+    }
+  }
+  @media screen and (min-width: 1140px){
+    .section {
+        padding: 40px 0 !important;
+    }
+  }
+</style>
+
+{% for block in section.blocks %}
+  {% if block.type == 'image' %}
+  <section class="hero-section">
+    <div class="hero-section__slide swiper-slide"> 
+      <div class="hero-section__image -mobile">
+          {%- capture supported_sizes_mobile -%}{%- render 'image-size', sizes: '200,300,400,600,800,1000,1200,1400,1600', image: block.settings.image_mobile -%}{%- endcapture -%}
+          {%- assign image_mobile_url = block.settings.image_mobile | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+          <img 
+              class="lazy fade-in" 
+              alt="{{ block.settings.image_mobile.alt | escape }}"
+              data-src="{{ image_mobile_url }}" 	
+              data-sizes="auto"
+              data-widths="[{{ supported_sizes_mobile }}]"
+              >
+    </div>
+      <div class="hero-section__image -desktop">
+          {%- capture supported_sizes_desktop -%}{%- render 'image-size', sizes: '200,300,400,600,800,1000,1200,1400,1600', image: block.settings.image_desktop -%}{%- endcapture -%}
+          {%- assign image_desktop_url = block.settings.image_desktop | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+          <img 
+              class="lazy fade-in" 
+              alt="{{ block.settings.image_desktop.alt | escape }}"
+              data-src="{{ image_desktop_url }}" 	
+              data-sizes="auto"
+              data-widths="[{{ supported_sizes_desktop }}]"
+              >
+    </div>
+    </div>
+  </section>
+  {% elsif block.type == 'text' %}
+  <section class="section" style="padding-bottom:0px;max-width: 750px;margin-left: auto;margin-right: auto;">
+
+    <div class="site-width">
+      <div class="section__header" style="margin-bottom:15px;">
+        {% if block.settings.subtitle != blank %}
+          <span class="section__subtitle">{{block.settings.subtitle}}</span>
+        {% endif %}
+        {% if block.settings.title != blank %}
+          <h2 class="section__title">{{block.settings.title}}</h2>
+        {% endif %}
+      </div>
+      <div class="content">
+        <div style="text-align:center;">
+          {{block.settings.description}}
+        </div>
+      </div>
+    </div>
+
+  </section>
+  {% elsif block.type == 'heading' %}
+	<section class="section" style="max-width: 750px;margin-left: auto;margin-right: auto;">
+      <div class="site-width">
+        <div class="section__header" style="margin-bottom:0px;">
+          {% if block.settings.subtitle != blank %}
+            <span class="section__subtitle">{{block.settings.subtitle}}</span>
+          {% endif %}
+          {% if block.settings.title != blank %}
+            <h2 class="section__title">{{block.settings.title}}</h2>
+          {% endif %}
+        </div>
+      </div>
+	</section>
+  {% elsif block.type == 'newsletter' %}
+  <section class="section section-newsletter" style="padding-top:0px !important;margin-top: -15px;">
+      <div class="site-width">
+        {% if block.settings.subtitle != blank or block.settings.title != blank %}
+          <div class="section__header">
+            {% if block.settings.subtitle != blank %}
+              <span class="section__subtitle">{{ block.settings.subtitle }}</span>
+            {% endif %}
+            {% if block.settings.title != blank %}
+              <h2 class="section__title">{{ block.settings.title }}</h2>
+            {% endif %}
+          </div>
+        {% endif %}
+
+          <div class="section-newsletter__container">
+            {% if block.settings.text != blank %}
+              <p class="section-newsletter__text">{{ block.settings.text | remove: '<p>' | remove: '</p>' | newline_to_br }}</p>
+            {% endif %}
+              <div class="klaviyo-form-{{ block.settings.klaviyo_id }}"></div>
+            <div class="klaviyo-form-Wvhrfr"></div>
+              <span class="section-newsletter__microcopy">{{ block.settings.microcopy | remove: '<p>' | remove: '</p>' }}</span>
+          </div>
+      </div>
+  </section>
+  {% elsif block.type == 'video' %}
+  <div class="section-hura-video">
+    <video {% if block.settings.autoplay %}autoplay{%endif%} {% if block.settings.mute %}muted{%endif%} {% if block.settings.loop %}loop{%endif%} playsinline {% if block.settings.controls %}controls{%endif%} class="hurabg-video">
+      <source src="{{ block.settings.link }}" type="video/mp4">
+    </video>
+  <!--   <iframe id="YouTubeVideo-16363097719b8d87f9" 
+            data-video-id="_9VUPq3SxOc" 
+            frameborder="0" 
+            allowfullscreen="1" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            title="YouTube video player" 
+            width="1280" height="720" 
+            src="https://www.youtube.com/embed/_9VUPq3SxOc?autohide=0&amp;branding=0&amp;cc_load_policy=0&amp;controls=0&amp;fs=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;quality=hd720&amp;rel=0&amp;showinfo=0&amp;wmode=opaque&amp;enablejsapi=1&amp;origin=https%3A%2F%2Frftechnologies-teams.myshopify.com&amp;widgetid=1" 
+            tabindex="-1"></iframe> -->
+  </div>
+  {% endif %}
+
+
+{% endfor %}
+
+{% schema %}
+{
+  "name": "Newsletter (Klaviyo)",
+  "settings": [],
+  "blocks": [
+	{
+	  "type": "newsletter",
+      "name": "Newsletter",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "type": "html",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "klaviyo_id",
+          "label": "Klaviyo ID"
+        },
+        {
+          "type": "richtext",
+          "id": "microcopy",
+          "label": "Info Text"
+        }
+      ]
+    },
+	{
+	  "type": "image",
+	  "name": "Image",
+	  "settings": [
+		{
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image (mobile)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Image (desktop)"
+        }
+	  ]
+	},
+	{
+	  "type": "heading",
+	  "name": "Heading",
+	  "settings": [
+		{
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+		{
+		  "type": "text",
+		  "id": "title",
+		  "label": "Title"
+		}
+	  ]
+	},
+	{
+	  "type": "text",
+	  "name": "Text",
+	  "settings": [
+		{
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+		{
+		  "type": "html",
+		  "id": "description",
+		  "label": "Description"
+		}
+	  ]
+	},
+	{
+	  "type": "video",
+	  "name": "Video",
+	  "settings": [
+		{
+		  "type": "text",
+		  "id": "link",
+		  "label": "Video Link",
+		  "default": "https://cdn.shopify.com/s/files/1/0382/4185/files/huraapps-intro.mp4?830",
+		  "info": "MP4 videos only"
+		},
+		{
+		  "type": "checkbox",
+		  "id": "mute",
+		  "label": "Mute",
+		  "default": true
+		},
+		{
+		  "type": "checkbox",
+		  "id": "autoplay",
+		  "label": "AutoPlay",
+		  "default": true
+		},
+		{
+		  "type": "checkbox",
+		  "id": "controls",
+		  "label": "Controls",
+		  "default": false,
+		  "info": "If you wanna show controls or hide them?"
+		},
+		{
+		  "type": "checkbox",
+		  "id": "loop",
+		  "label": "Loop",
+		  "default": true
+		}
+	  ]
+	}
+  ]
+}
+{% endschema %}

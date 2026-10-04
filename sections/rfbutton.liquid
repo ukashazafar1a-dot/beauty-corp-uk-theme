@@ -1,0 +1,50 @@
+
+<div class="rf-btn" style="    text-align: center;">
+  <a style="color:{{ section.settings.btnclr }};background-color:{{ section.settings.btnbgclr }}" class="btn btn-primary" href="{{ section.settings.btnurl }}">{{ section.settings.btntext }}</a>
+</div>
+
+{% schema %}
+  {
+    "name": "Button",
+    "settings": [
+{
+"type":"text",
+"id":"btntext",
+"label":"Button Title"
+
+},
+{
+"type":"url",
+"id":"btnurl",
+"label":"Button Link"
+
+},
+{
+"type":"color",
+"id":"btnclr",
+"label":"Text Color"
+
+},
+{
+"type":"color",
+"id":"btnbgclr",
+"label":"Background Color",
+"default":"#4472c4"
+
+}
+
+],
+"presets": [
+        {
+        "category": "button",
+        "name": "Button"
+        }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

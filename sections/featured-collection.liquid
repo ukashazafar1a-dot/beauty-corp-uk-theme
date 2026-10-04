@@ -1,0 +1,103 @@
+<section class="section featured-collection">
+	<div class="site-width">
+	
+      {% if section.settings.subtitle != blank or section.settings.title != blank %}
+      <div class="section__header">
+           {% if section.settings.subtitle != blank %}
+			<span class="section__subtitle">{{ section.settings.subtitle }}</span>
+          {% endif %}
+           {% if section.settings.title != blank %}
+			<h1 class="section__title">{{ section.settings.title }}</h1>
+          {% endif %}
+        {% if section.settings.description != blank %}
+         <div class="content">
+        <div style="text-align:center;">
+          {{section.settings.description}}
+        </div>
+      </div>
+        {% endif %}
+		</div>
+	
+      {% endif %}
+      
+		<div class="featured-collection__content u-clearfix">
+			{%- for product in collections[section.settings.collection].products limit: 4 -%}
+				{%- render 'product-card', product: product, aspect_ratio: section.settings.aspect_ratio -%}
+			{%- endfor -%}
+		</div>
+	</div>
+</section>
+ {% if section.settings.btntext != blank %}
+<div class="rf-btn" style="    text-align: center;">
+  <a style="color:{{ section.settings.btnclr }};background-color:{{ section.settings.btnbgclr }}" class="btn btn-primary" href="{{ section.settings.btnurl }}">{{ section.settings.btntext }}</a>
+</div>
+{% endif %}
+{% schema %}
+{
+	"name": "Featured Collection",
+	"settings": [
+		{
+			"type": "collection",
+			"id": "collection",
+			"label": "Collection"
+		},
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		},
+		{
+			"type": "text",
+			"id": "subtitle",
+			"label": "Sub title"
+		},
+	{
+			"type": "richtext",
+			"id": "description",
+			"label": "Description"
+		},
+		{
+			"type": "header",
+			"content": "Image settings"
+		},
+		{
+			"type": "text",
+			"id": "aspect_ratio",
+			"label": "Aspect ratio",
+			"default": "1.0"
+		},
+{
+"type":"text",
+"id":"btntext",
+"label":"Button Title"
+
+},
+{
+"type":"url",
+"id":"btnurl",
+"label":"Button Link"
+
+},
+{
+"type":"color",
+"id":"btnclr",
+"label":"Text Color",
+"default":"#fff"
+
+},
+{
+"type":"color",
+"id":"btnbgclr",
+"label":"Background Color",
+"default":"#4472c4"
+
+}
+	],
+    "presets": [
+        {
+        "category": "Collection",
+        "name": "Featured"
+        }
+    ]
+}
+{% endschema %}

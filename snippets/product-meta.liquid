@@ -1,0 +1,10 @@
+<div class="product-meta"> 
+  <div class="product-meta__inner">
+      <h1 class="product-meta__title">{{ product.title }}</h1>
+      <div class="product-meta__price-group">
+        <span class="product-meta__price">{{ product.price | money }}</span>
+        <span class="product-meta__vat text--small text--subdued">{{ 'product.meta.vat' | t }}</span>
+      </div>
+  </div>
+  {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: false %}
+</div>

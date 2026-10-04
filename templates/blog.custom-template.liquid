@@ -1,0 +1,200 @@
+{% comment %}
+{% paginate blog.articles by 5 %}
+
+<h1>{{ blog.title }}</h1>
+{% for article in blog.articles %}
+  <div>
+    <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+    {{ article.author }} @ {{ article.created_at }}
+    <div>
+      {% if article.excerpt.size > 0 %}
+        {{ article.excerpt }}
+      {% else %}
+        <p>{{ article.content | strip_html | truncatewords: 100 }}</p>
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}
+
+{% if paginate.pages > 1 %}
+  {{ paginate | default_pagination }}
+{% endif %}
+
+{% endpaginate %}
+{% endcomment %}
+<!--new template starts -->
+<link rel="stylesheet" id="konte-css" href="{{'sf-new-style.css' | asset_url}}" type="text/css" media="all">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link rel="stylesheet" id="font-awesome-css" href="https://carmushka.de/wp-content/plugins/js_composer/assets/lib/bower/font-awesome/css/font-awesome.min.css?ver=6.0.5" type="text/css" media="all">
+<style id='konte-inline-css' type='text/css'>
+		
+	.topbar {
+		height: 40px
+	}
+	
+	.header-main,
+	.header-v10 .site-branding {
+		height: 120px;
+	}
+	
+	.header-bottom {
+		height: 90px;
+	}
+	
+	.header-mobile {
+		height: 60px
+	}
+	
+	.featured-content-carousel,
+	.featured-content-carousel .featured-item {
+		height: 790px
+	}
+ 
+	
+	@media screen and (max-width: 1440px) {
+		.featured-content-carousel,
+		.featured-content-carousel .featured-item {
+			height: 592px
+		}
+	}
+	
+	@media screen and (max-width: 1280px) {
+		.featured-content-carousel,
+		.featured-content-carousel .featured-item {
+			height: 526px
+		}
+	}
+	
+	@media screen and (max-width: 1199px) {
+		.featured-content-carousel,
+		.featured-content-carousel .featured-item {
+			height: 493px
+		}
+	}
+	
+	@media screen and (max-width: 991px) {
+		.featured-content-carousel,
+		.featured-content-carousel .featured-item {
+			height: 407px
+		}
+	}
+	
+	@media screen and (max-width: 767px) {
+		.featured-content-carousel,
+		.featured-content-carousel .featured-item {
+			height: 315px
+		}
+	}
+	
+</style>
+<!--main div-->
+<div class="home blog  hfeed sidebar-right blog-classic vc_responsive">
+<!--Top Menu -->
+<div class="blog-header-menu">
+	<div class="container">
+		{% section 'blog-menus' %}		
+	</div>
+</div>
+<!-- slick slider-->
+{% if blog.handle == 'all' %}
+  <div id="featured-content" class="featured-content posts-carousel">
+      <div class="konte-container">
+          {% section  'blog-feature-articles'%}
+      </div>
+  </div>
+  {% else %}
+  <div class="blog-header-main">
+	<div class="konte-container">
+		<div class="blog-header-title text-light">
+			<h1 class="page-title">{{blog.title}}</h1>
+        </div>
+	</div>
+  </div>
+{%endif %}
+
+  
+<!--Main Content Area -->
+  <div class="konte-container">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+          	{% if blog.handle == 'all' %}
+          		{% assign all_blogs = "blog,news,handling-headband" | split:',' %}
+                {% for blog in all_blogs %}
+                    {% for articles in blogs[blog].articles %}
+                        <article id="post-{{forloop.index}}" class="post-{{forloop.index}} post type-post status-publish format-standard has-post-thumbnail hentry category-fashion">
+                            <a class="post-thumbnail" href="{{articles.url}}" aria-hidden="true"> <img width="500" height="750" src="{{articles.image.src | img_url:'500x'}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="image: {{articles.title}}"> </a>
+                            <div class="entry">
+                                <header class="entry-header">
+                                    <div class="cat-links"> <a href="{{articles.blog.url}}" rel="category tag">{{article.blog.title}}</a> </div>
+                                    <h2 class="entry-title"><a href="{{articles.url}}" rel="bookmark">{{articles.title}}</a></h2> </header>
+                                <!-- .entry-header -->
+                                <div class="entry-summary">
+                                    <p>{{articles.excerpt}}&hellip;</p>
+                                </div>
+                                <!-- .entry-content -->
+                                <footer class="entry-footer">
+                                    <div class="entry-meta"> <span class="posted-on">
+                                      <a href="{{articles.url}}" rel="bookmark">
+                                        <time class="entry-date published updated" datetime="{{articles.published_at |date: '%d.%m.%Y'}}">{{articles.published_at | date: '%d.%m.%Y' }}
+                                        </time>
+                                      </a>
+                                      </span><span class="total-shares " data-post_id="9832"><span class="svg-icon icon-share size-small "><svg role="img"> <use href="#share" xlink:href="#share"></use> </svg></span><span class="count">0 Share</span></span><span class="comments-link"><span class="svg-icon icon-comment size-small "><svg role="img"> <use href="#comment" xlink:href="#comment"></use> </svg></span><a href="https://carmushka.de/last-minute-weihnachtsgeschenke-von-amazon#respond">Keine Kommentare<span class="screen-reader-text"> zu Last-Minute-Weihnachtsgeschenke von Amazon</span></a></span>
+                                    </div>
+                                    <!-- .entry-meta -->
+                                </footer>
+                                <!-- .entry-footer -->
+                            </div>
+                        </article>
+                    {% endfor %}
+                {% endfor %}
+          	{% else %}
+          		{% for articles in blog.articles %}
+                        <article id="post-{{forloop.index}}" class="post-{{forloop.index}} post type-post status-publish format-standard has-post-thumbnail hentry category-fashion">
+                            <a class="post-thumbnail" href="{{articles.url}}" aria-hidden="true"> <img width="500" height="750" src="{{articles.image.src | img_url:'500x'}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="image: {{articles.title}}"> </a>
+                            <div class="entry">
+                                <header class="entry-header">
+                                    <div class="cat-links"> <a href="{{articles.blog.url}}" rel="category tag">{{article.blog.title}}</a> </div>
+                                    <h2 class="entry-title"><a href="{{articles.url}}" rel="bookmark">{{articles.title}}</a></h2> </header>
+                                <!-- .entry-header -->
+                                <div class="entry-summary">
+                                    <p>{{articles.excerpt}}&hellip;</p>
+                                </div>
+                                <!-- .entry-content -->
+                                <footer class="entry-footer">
+                                    <div class="entry-meta"> <span class="posted-on"><a href="{{articles.url}}" rel="bookmark"><time class="entry-date published updated" datetime="{{articles.published_at |date: formate:'%d.%m.%Y'}}">{{articles.published_at | date: '%d.%m.%Y' }}</time></a></span><span class="total-shares " data-post_id="9832"><span class="svg-icon icon-share size-small "><svg role="img"> <use href="#share" xlink:href="#share"></use> </svg></span><span class="count">0 Share</span></span><span class="comments-link"><span class="svg-icon icon-comment size-small "><svg role="img"> <use href="#comment" xlink:href="#comment"></use> </svg></span><a href="https://carmushka.de/last-minute-weihnachtsgeschenke-von-amazon#respond">Keine Kommentare<span class="screen-reader-text"> zu Last-Minute-Weihnachtsgeschenke von Amazon</span></a></span>
+                                    </div>
+                                    <!-- .entry-meta -->
+                                </footer>
+                                <!-- .entry-footer -->
+                            </div>
+                        </article>
+                    {% endfor %}
+          		
+          	{% endif %}
+			<nav class="navigation next-posts-navigation">
+				<h4 class="screen-reader-text">Next posts navigation</h4>
+				<div class="nav-links"><a href="2.html">Load More</a></div>
+			</nav>
+		</main>
+		<!-- #main -->
+	</div>
+	<!-- #primary -->
+	<aside id="secondary" class="widget-area blog-sidebar sticky-sidebar">
+	  {%- section 'blog-side-search' %}
+      {% section "latest-articles" %}
+      {% section "popular-articles" %}
+	</aside>
+	<!-- #secondary -->
+</div>
+<!-- .site-content-container -->
+
+
+</div><!-- #content -->
+<script type="text/javascript" src="{{'sf-imagesloaded.min.js'| asset_url}}"></script>
+<script type="text/javascript" src="{{'sf-slick.js'| asset_url}}"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var konteData = {"ajax_url":"","rtl":"","preloader":"1","sticky_header":"none","wishlist_count":"0","product_auto_background":"1","product_gallery_slider":"1","product_image_lightbox":null,"product_image_zoom":null,"product_ajax_addtocart":null,"cart_open_after_added":null,"product_quickview_auto_background":"","popup":"","popup_frequency":"1","popup_visible":"loaded","popup_visible_delay":"5","added_to_cart_notice":null,"added_to_cart_message":null,"added_to_wishlist_notice":null,"added_to_wishlist_message":null,"product_quickview_nonce":"9c14d8fe80","product_search_nonce":"62198555fb","share_nonce":"46e65d0656","add_to_cart_nonce":"b2b3ff6588"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="{{'sf-scripts.min.js'| asset_url}}"></script>

@@ -1,0 +1,47 @@
+<form class="search-form" action="{{ routes.search_url }}" method="get" role="search" accept-charset="utf-8">
+	<div class="search-form__container">
+		<div class="search-form__submit">
+			<input type="submit" value="Suchen" aria-label="Suchen"></input>
+			{%- render 'icon', type: 'search' -%}
+		</div>
+		<div class="search-form__field">
+			<input id="search" name="q" type="text" placeholder="{{'blog.search.title' | t}}" list="suggestions" autocomplete="off" aria-label="Suchschlüsselwörter eingeben">
+			{%- comment -%}<datalist id="suggestions">
+				<option value="Welches Band passt zu mir?">Awesome!</option>
+				<option value="Test">
+			</datalist>{%- endcomment -%}
+			<button type="reset" class="search-form__clear" aria-label="Suchschlüsselwörter zurücksetzen">
+				{%- render 'icon', type: 'close' -%}
+			</button>
+		</div>
+		<div class="search-form__suggestions">
+			<div class="search-suggestions-item placeholder">
+				<div class="search-suggestions-item__link">
+					<div class="search-suggestions-item__image skeleton"></div>
+					<div class="search-suggestions-item__details">
+						<span class="search-suggestions-item__title skeleton">Suchergebnis</span>
+						<span class="search-suggestions-item__price skeleton">Preis</span>
+					</div>
+				</div>
+			</div>
+			<div class="search-suggestions-item placeholder">
+				<div class="search-suggestions-item__link">
+					<div class="search-suggestions-item__image skeleton"></div>
+					<div class="search-suggestions-item__details">
+						<span class="search-suggestions-item__title skeleton">Suchergebnis</span>
+						<span class="search-suggestions-item__price skeleton">Preis</span>
+					</div>
+				</div>
+			</div>
+			<div class="search-suggestions-item placeholder">
+				<div class="search-suggestions-item__link">
+					<div class="search-suggestions-item__image skeleton"></div>
+					<div class="search-suggestions-item__details">
+						<span class="search-suggestions-item__title skeleton">Suchergebnis</span>
+						<span class="search-suggestions-item__price skeleton">Preis</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

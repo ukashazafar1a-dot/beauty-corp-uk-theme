@@ -1,0 +1,1465 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "favicon": "shopify://shop_images/Favicon.jpg",
+    "mega_menu_3": true,
+    "discounted_note": "",
+    "discounted_price_range": "",
+    "discounted_product": "",
+    "show-cart-btn": true,
+    "show-reviews": true,
+    "reviews-color": "#e2b60e",
+    "cart-btn-color": "#1c1c1c",
+    "cart-btn-bg-color": "#ffaa8f",
+    "tag_img01": "shopify://shop_images/bio-tag.png",
+    "tag_img02": "shopify://shop_images/zero-waste-tag.png",
+    "tag_img03": "shopify://shop_images/geringer-tag.png",
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify://shop_images/get-fabulous-logo.jpg",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#fcaa8f",
+    "checkout_button_color": "#fcaa8f",
+    "checkout_error_color": "#e32c2b",
+    "language_switcher_enabled": false,
+    "language_switcher_position": "bottom-left",
+    "language_switcher_flags": false,
+    "language_switcher_label": "language-code",
+    "language_switcher_background_color": "#fafafa",
+    "sections": {
+      "navigation": {
+        "type": "navigation",
+        "settings": {
+          "navigation_mobile": "092021_baumstruktur"
+        }
+      },
+      "header": {
+        "type": "header",
+        "blocks": {
+          "f931fe1e-9916-4324-8b36-1594afcc268b": {
+            "type": "mega-menu",
+            "settings": {
+              "menu_item": "Haarbänder",
+              "menu": "haarb-nder",
+              "url": "",
+              "image_caption": "",
+              "bg_color": "#f2ca3c",
+              "image_2": "shopify://shop_images/2EF62CC2-547D-4E7E-A0CA-3A5AAF98C369.jpg",
+              "url_2": "shopify://collections/boho-headbands",
+              "image_caption_2": "Boho Headbands",
+              "bg_color_2": "#fcaa8f",
+              "image_3": "shopify://shop_images/nav-strick.jpg",
+              "url_3": "shopify://collections/floral-headbands",
+              "image_caption_3": "Florale Haarbander",
+              "bg_color_3": "#fcaa8f",
+              "url_4": "",
+              "image_caption_4": "",
+              "bg_color_4": "#f2ca3c"
+            }
+          }
+        },
+        "block_order": [
+          "f931fe1e-9916-4324-8b36-1594afcc268b"
+        ],
+        "settings": {
+          "navigation_menu": "092021_baumstruktur",
+          "logo": "shopify://shop_images/get-fabulous-logo.jpg",
+          "header_language_switcher_enabled": false,
+          "carttext": "Warenkorb",
+          "searchtext": "Suche"
+        }
+      },
+      "1588937154251": {
+        "type": "hero-image",
+        "blocks": {
+          "8f3445d8-dc65-45e2-90a9-9f491e8fa535": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "image_mobile": "shopify://shop_images/Versandkostenfrei.png",
+              "image_desktop": "shopify://shop_images/Sweet_Poison_Pam_Stuhl.png",
+              "title": "",
+              "subtitle": "",
+              "btn_url": "shopify://collections/alle-produkte",
+              "btn_text": "FINDE DEIN HAARBAND"
+            }
+          },
+          "90ac2d15-b6a1-462b-bc71-8b44eb3498b3": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "image_mobile": "shopify://shop_images/Kuschel_58d573aa-14d7-414a-a2f0-74070d44cfe1.png",
+              "image_desktop": "shopify://shop_images/Kuschel_Kopie.png",
+              "title": "",
+              "subtitle": "",
+              "btn_url": "shopify://collections/strickhaarbander-1",
+              "btn_text": "SALE ENTDECKEN"
+            }
+          },
+          "034547f9-78c1-40ee-8bd2-1dc66b0a1de3": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "image_mobile": "shopify://shop_images/30_face6917-37f6-4792-8611-28f65c64eac5.png",
+              "image_desktop": "shopify://shop_images/Sweet_Poison_Pam_Stuhl_e3c7e68e-7ae9-44c6-9096-0a96e21d8cad.png",
+              "title": "",
+              "subtitle": "",
+              "btn_url": "shopify://collections/boho-headbands",
+              "btn_text": "JETZT ZUSCHLAGEN😍"
+            }
+          }
+        },
+        "block_order": [
+          "8f3445d8-dc65-45e2-90a9-9f491e8fa535",
+          "90ac2d15-b6a1-462b-bc71-8b44eb3498b3",
+          "034547f9-78c1-40ee-8bd2-1dc66b0a1de3"
+        ],
+        "settings": {
+          "delay": "4.5"
+        }
+      },
+      "1588940340807": {
+        "type": "featured-collection",
+        "settings": {
+          "collection": "unsere-lieblingshaarbander-2",
+          "title": "Bestseller Haarbänder",
+          "subtitle": "",
+          "description": "",
+          "aspect_ratio": "1.0",
+          "btntext": "",
+          "btnurl": "",
+          "btnclr": "#ffffff",
+          "btnbgclr": "#4472c4"
+        }
+      },
+      "1588951006091": {
+        "type": "product-finder",
+        "blocks": {
+          "1590693785233": {
+            "type": "step",
+            "settings": {
+              "title": "Haarfarbe",
+              "continue_button": "Weiter zu deiner Haarlänge",
+              "image_1": "shopify://shop_images/Blond_a01e8159-7bdd-4a89-9049-b6c78e29227a.jpg",
+              "title_1": "Blond",
+              "value_1": "Blond",
+              "image_2": "shopify://shop_images/Braun_988d12ca-f489-43fa-be78-e45293c3a31e.jpg",
+              "title_2": "Braun",
+              "value_2": "Braun",
+              "image_3": "shopify://shop_images/Schwarz_b9b6c47a-0143-4316-9ec6-b0caeab52961.jpg",
+              "title_3": "Schwarz",
+              "value_3": "Schwarz",
+              "image_4": "shopify://shop_images/Rot.jpg",
+              "title_4": "Rot",
+              "value_4": "Rot"
+            }
+          },
+          "1590693807143": {
+            "type": "step",
+            "settings": {
+              "title": "Haarlänge",
+              "continue_button": "Weiter zu deiner Haarstruktur",
+              "image_1": "shopify://shop_images/Kurzes_Haar_036a9e2d-055f-473d-a638-f73270a9b6d9.jpg",
+              "title_1": "Kurz",
+              "value_1": "Kurz",
+              "image_2": "shopify://shop_images/Kinnlanges_Haar_19aa43d2-a1f0-4629-9015-d261237fa645.jpg",
+              "title_2": "Kinn-Lang",
+              "value_2": "Kinn-Lang",
+              "image_3": "shopify://shop_images/Schulter_Haar.jpg",
+              "title_3": "Schulter-Lang",
+              "value_3": "Schulter-Lang",
+              "image_4": "shopify://shop_images/Schulterlanges_Haar.jpg",
+              "title_4": "Lang",
+              "value_4": "Lang"
+            }
+          },
+          "1590734187923": {
+            "type": "step",
+            "settings": {
+              "title": "Haarstruktur",
+              "continue_button": "Weiter zu deiner Augenfarbe",
+              "image_1": "shopify://shop_images/Glatt.jpg",
+              "title_1": "Glatt",
+              "value_1": "Glatt",
+              "image_2": "shopify://shop_images/Wellig.jpg",
+              "title_2": "Wellig",
+              "value_2": "Wellig",
+              "image_3": "shopify://shop_images/Lockig.jpg",
+              "title_3": "Lockig",
+              "value_3": "Lockig",
+              "image_4": "shopify://shop_images/Afro.jpg",
+              "title_4": "Afro",
+              "value_4": "Afro"
+            }
+          },
+          "1590734343497": {
+            "type": "step",
+            "settings": {
+              "title": "Augenfarbe",
+              "continue_button": "Weiter zu deiner Hautfarbe",
+              "image_1": "shopify://shop_images/Braune_Augen.jpg",
+              "title_1": "Braun",
+              "value_1": "Braun",
+              "image_2": "shopify://shop_images/Blaue_Augen.jpg",
+              "title_2": "Blau",
+              "value_2": "Blau",
+              "image_3": "shopify://shop_images/Grune_Augen.jpg",
+              "title_3": "Grün",
+              "value_3": "Grün",
+              "image_4": "shopify://shop_images/Graue_Augen.jpg",
+              "title_4": "Grau",
+              "value_4": "Grau"
+            }
+          },
+          "1590734486117": {
+            "type": "step",
+            "settings": {
+              "title": "Hautfarbe",
+              "continue_button": "Weiter zu deinem perfekten Haarband",
+              "image_1": "shopify://shop_images/Helle_Haut_b7920b13-f044-4272-8790-05370444b16e.jpg",
+              "title_1": "Hell",
+              "value_1": "Hell",
+              "image_2": "shopify://shop_images/Braune_Haut_45a908bb-648e-4013-bcac-3f3371e23a16.jpg",
+              "title_2": "Hellbraun",
+              "value_2": "Hellbraun",
+              "image_3": "shopify://shop_images/Braune_Haut.jpg",
+              "title_3": "Braun",
+              "value_3": "Braun",
+              "image_4": "shopify://shop_images/Sehr_dunkel.jpg",
+              "title_4": "Sehr Dunkel",
+              "value_4": "Sehr Dunkel"
+            }
+          }
+        },
+        "block_order": [
+          "1590693785233",
+          "1590693807143",
+          "1590734187923",
+          "1590734343497",
+          "1590734486117"
+        ],
+        "settings": {
+          "title": "Das Haarband, das zu dir passt",
+          "subtitle": ""
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "items_per_page": 12,
+          "items_per_row_mobile": "2",
+          "aspect_ratio": "1.0"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "1589717571263": {
+            "type": "menu",
+            "settings": {
+              "menu": "hilfe-kontakt"
+            }
+          },
+          "f33d8268-0056-4bb1-a204-9600f552247a": {
+            "type": "menu",
+            "settings": {
+              "menu": "legal-pages"
+            }
+          },
+          "1590782645418": {
+            "type": "shipping",
+            "settings": {
+              "title": "Versand",
+              "carrier": "deutsche-post, dhl, dpd"
+            }
+          },
+          "1590782809741": {
+            "type": "payment",
+            "settings": {
+              "title": "Zahlungsarten"
+            }
+          }
+        },
+        "block_order": [
+          "1589717571263",
+          "f33d8268-0056-4bb1-a204-9600f552247a",
+          "1590782645418",
+          "1590782809741"
+        ],
+        "settings": {}
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {}
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_recommendations": true,
+          "title": "Das könnte dir auch gefallen",
+          "subtitle": "",
+          "aspect_ratio": "1.0"
+        }
+      },
+      "1589828383943": {
+        "type": "card-slider",
+        "blocks": {
+          "1589828740584": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/Bezahlung.png",
+              "title": "Sichere & einfache Bezahlung",
+              "text": "<p>Bei uns kannst Du mit allen Zahlungsmöglichkeiten bezahlen. Egal ob Paypal, Amazon oder Rechnungskauf. Bei uns ist alles möglich.</p>",
+              "link": ""
+            }
+          },
+          "1589828475880": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/Versand.png",
+              "title": "Schneller Versand",
+              "text": "<p>Bei GetFabulous packt jeder fleißig an, damit Du Deine Lieblingshaarbänder in wenigen Werktagen nach dem Bezahlen mit Stolz ausführen kannst.</p>",
+              "link": ""
+            }
+          },
+          "1589828765302": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/Cashback.png",
+              "title": "Begeistert oder Geld zurück",
+              "text": "<p>Du musst keine Angst haben, dass etwas nicht passt. Wir sind gern für Dich da und helfen bei Umtausch oder Rückerstattung. Deine Zufriedenheit ist alles!</p>",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1589828740584",
+          "1589828475880",
+          "1589828765302"
+        ],
+        "settings": {
+          "fullimg": false,
+          "title": "Alle Vorteile auf einen Blick",
+          "subtitle": "",
+          "aspect_ratio": "1.0",
+          "use_accent_color": false
+        }
+      },
+      "1589831083449": {
+        "type": "image-with-text",
+        "settings": {
+          "title": "#Team Fabulous",
+          "subtitle": "Das sind wir",
+          "image": "shopify://shop_images/6BADB5E9-7F8B-44E2-84CC-AB344E73BF0B.jpg",
+          "button_link": "shopify://pages/uber-uns",
+          "button_text": "Mehr über das Team erfahren"
+        }
+      },
+      "cart": {
+        "type": "cart",
+        "settings": {
+          "button_link": "shopify://collections/alle-produkte"
+        }
+      },
+      "card-slider": {
+        "type": "card-slider",
+        "blocks": {
+          "1589891994002": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/Auch_fur_Brillentrager_geeignet.png",
+              "title": "Perfekt für Brillenträger",
+              "text": ""
+            }
+          },
+          "1589891972502": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/Wunderschoner_Look_in_Handumdrehen.png",
+              "title": "Perfekt für Bad Hair Days",
+              "text": ""
+            }
+          },
+          "1589892008456": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/Keine_Kopfschmerzen.png",
+              "title": "Drückt & rutscht nicht",
+              "text": ""
+            }
+          }
+        },
+        "block_order": [
+          "1589891994002",
+          "1589891972502",
+          "1589892008456"
+        ],
+        "settings": {
+          "title": "Einzigartige Haarbänder",
+          "subtitle": "",
+          "aspect_ratio": "1.0",
+          "use_accent_color": true
+        }
+      },
+      "1590755925800": {
+        "type": "review-slider",
+        "blocks": {
+          "1590756067228": {
+            "type": "review",
+            "settings": {
+              "initials": "Anna",
+              "title": "Ich bin verliebt!",
+              "text": "Ich habe mit einem Haarband angefangen und ich bin einfach verliebt. Weitere werden folgen. Die Qualität des Stoffes ist so toll und super...",
+              "link_url": "https://www.provenexpert.com/getfabulous/",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "1590756100134": {
+            "type": "review",
+            "settings": {
+              "initials": "Doris",
+              "title": "Ich habe schon 3 Bänder!",
+              "text": "Ich habe schon 3 Bänder und jetzt wieder 3 Bänder bestellt und warte sehnsüchtig darauf🙂.Das sind die ersten Haarbänder die nicht drücken oder rutschen .Vielen Dank dafür",
+              "link_url": "https://www.provenexpert.com/getfabulous/",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "1590756102846": {
+            "type": "review",
+            "settings": {
+              "initials": "Jennifer",
+              "title": "Super gute Qualität!",
+              "text": "Super gute Qualität. Hält was es verspricht! Es rutscht wirklich nicht und drückt kein bisschen!\nVersand ging sehr schnell!",
+              "link_url": "",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "1590756106999": {
+            "type": "review",
+            "settings": {
+              "initials": "Carolin",
+              "title": "Das Haarband ist mega!",
+              "text": "Das Haarband ist mega bequem und sieht toll aus! Keine Kopfschmerzen, perfekter Sitz. Bin sehr zufrieden mit der Qualität!",
+              "link_url": "https://www.provenexpert.com/getfabulous/#ratings",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "1590756109787": {
+            "type": "review",
+            "settings": {
+              "initials": "Christin",
+              "title": "Wunderschöne Haarbänder!",
+              "text": "Wunderschöne Haarbänder, die tatsächlich sehr gut ohne weitere Haarspangen halten. Ich werde sicher noch weitere bestellen 😍",
+              "link_url": "https://www.provenexpert.com/getfabulous/",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "1591552393986": {
+            "type": "review",
+            "settings": {
+              "initials": "Franzi",
+              "title": "Toller Shop!",
+              "text": "Die Qualität der Haarbänder ist großartig.\nDie Auswahl ist riesig, der Versand erfolgte zügig.\nToller Shop, immer wieder gerne👍🏻",
+              "link_url": "https://www.provenexpert.com/getfabulous/#ratings",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "1593279756978": {
+            "type": "review",
+            "settings": {
+              "initials": "Jessica",
+              "title": "Herzensprojekt",
+              "text": "Ich erkenne ganz klar, dass GetFabulous ein wahres 'Herzensprojekt' ist, denn in den Produkten sowie der Verpackung steckt sehr viel Liebe!\n+ Super schnelle Lieferung.\nDanke dafür - gern wieder!:)",
+              "link_url": "",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "1593280326785": {
+            "type": "review",
+            "settings": {
+              "initials": "Linda",
+              "title": "Sehr zufrieden",
+              "text": "Sehr zufrieden, Bestellung ging wunderbar schnell, ganz tolle Haarbänder und super Qualität!",
+              "link_url": "https://www.provenexpert.com/getfabulous/",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "1593280461129": {
+            "type": "review",
+            "settings": {
+              "initials": "Anonym",
+              "title": "Rundum zufrieden",
+              "text": "Tolle Produkte, netter Kontakt per Mail mit sehr schnellen Antworten und fixer Hilfestellung, schneller Versand. Bin Rundum zufrieden",
+              "link_url": "https://www.provenexpert.com/getfabulous/",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "93ffd637-7f58-44b7-894e-be9349d8e5af": {
+            "type": "review",
+            "settings": {
+              "initials": "Steffi",
+              "title": "Es ist ein Traum",
+              "text": "Die Haarbänder sind ein Traum. Sie rutschen nicht und drücken nicht und sehen dazu noch sehr hübsch aus, sehr angenehmes Material und tolle Verpackung. Habe mir Dank der super Aktion gleich 5 bestellt und alle behalten 🤗",
+              "link_url": "https://www.provenexpert.com/getfabulous/",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "8b91d4c5-b859-4da6-a66d-16356c9d37a0": {
+            "type": "review",
+            "settings": {
+              "initials": "Magdalena",
+              "title": "Love it!",
+              "text": "Kein verrutschen, tolle Designs, wertet jedes Outfit auf, auch perfekt für bad hair days, love it 💞",
+              "link_url": "https://www.provenexpert.com/de-de/getfabulous/",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "63afcd6d-130a-42cb-be83-f6c86691d0c9": {
+            "type": "review",
+            "settings": {
+              "initials": "Rebecca",
+              "title": "Bin begeistert!",
+              "text": "Die Haarbänder wurden sehr schnell geliefert und die Qualität ist sehr gut. Es drückt und rutscht nichts. Ich überlege schon, welches ich als nächstes bestelle. Bin sehr begeistert!😍",
+              "link_url": "https://www.provenexpert.com/de-de/getfabulous/#ratings",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "539a8c0c-5acd-43ff-965d-ce249a39909e": {
+            "type": "review",
+            "settings": {
+              "initials": "Hannelore",
+              "title": "Weitere werden folgen!",
+              "text": "Habe gestern das Band aus meiner ersten Bestellung erhalten und bin begeistert. Werde mit Sicherheit noch weitere bestellen. Ein super Service und schnelle Lieferung in sehr schöner Verpackung.",
+              "link_url": "https://www.provenexpert.com/de-de/getfabulous/#ratings",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "8d31f9bc-10b7-42cf-bbfa-3fe6229e8531": {
+            "type": "review",
+            "settings": {
+              "initials": "Marion",
+              "title": "Sehr zu empfehlen!",
+              "text": "Ich bin über Instagramm auf 'get fabulous 'gestoßen, da ich ein gutes Stirnband für den Outdoorsport gesucht hab.Nach Anfrage und sofortiger Rückmeldung hab ich gleich mehrere bestellt.\nDie Verpackung so liebevoll und schön, dass man gleich nochmal bestellen möchte. Absolut tolle Muster und die Qualität auch top. Immer wieder gerne und sehr zu empfehlen!",
+              "link_url": "https://www.provenexpert.com/de-de/getfabulous/#ratings",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "373dfded-75ba-49c8-97ca-70cdcee9a37d": {
+            "type": "review",
+            "settings": {
+              "initials": "Marion",
+              "title": "Schockverliebt!",
+              "text": "Ich habe get fabulous auf Instagram entdeckt und war gleich \"schockverliebt\" 😍. Inzwischen habe ich drei Haarbänder und es werden weitere folgen, denn Qualität und Design überzeugen mich. Darüber hinaus wird die Ware in einer sehr liebevollen Verpackung verschickt. \nMarion M.-S.",
+              "link_url": "https://www.provenexpert.com/de-de/getfabulous/#ratings",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "108a2571-e18e-43cf-a004-4e49601a9120": {
+            "type": "review",
+            "settings": {
+              "initials": "Yasmin",
+              "title": "Ich liebe sie!!!",
+              "text": "Ich liebe Sie!!!\nDie Haarbänder sind einfach super! Egal ob lange oder kurze, glatte oder lockige Haare, sie sitzen einfach immer und sehen super schön aus!\nIch war sofort schock verliebt! Kann ich nur jeden empfehlen, der zu faul ist seine Haare zu machen und trotzdem wunderschön aussehen will 🥰",
+              "link_url": "https://www.provenexpert.com/de-de/getfabulous/#ratings",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "e482be44-d6b9-47a0-a9f1-2b653bde933e": {
+            "type": "review",
+            "settings": {
+              "initials": "Jasmina",
+              "title": "Mega zufrieden",
+              "text": "Ich bin mega zufrieden, und habe mich sehr über den schneller Versand gefreut. Auch die Verpackung in dem das Band verpackt ist, finde ich super. .. bei anderen Online Shops, wird die Ware einfach in ein Plastiksack gesteckt. Bei GetFabulous nicht. Nachhaltigkeit wird bestimmt groß geschrieben. Denn in dem Briefkarton(mit Schleife) indem das Band drin war, kann man damit für den nächsten Geburtstag, das Geld oder ein Gutschein reinstecken, und somit auch weiter verwenden. So hab ich es gemacht 😇 \nAlles super 😉😎🥳",
+              "link_url": "https://www.provenexpert.com/de-de/getfabulous/#ratings",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "5632402e-db66-4c2d-a2c4-3ea085d46e49": {
+            "type": "review",
+            "settings": {
+              "initials": "Nicol",
+              "title": "Vorsicht Suchtgefahr!",
+              "text": "Ich habe mir zwei Haarbänder zum testen bestellt, da ich sonst eigentlich keine trage. Der Versand ging super flott und was soll ich sagen ? Die Qualität ist super, die Haarbänder sind super schön und ich bin zur absoluten Haarbandträgerin geworden :-) hab mir heute gleich drei weitere bestellt. Vorsicht Suchtgefahr ;-)",
+              "link_url": "https://www.provenexpert.com/de-de/getfabulous/#ratings",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "9fbe539a-fc13-42f5-83ef-7da8aa873255": {
+            "type": "review",
+            "settings": {
+              "initials": "Nathalie",
+              "title": "Die besten Haarbänder die je hatte!",
+              "text": "Es sind die besten Haarbänder die ich je hatte... einfach zauberhaft... bald benötige ich einen eigenen Schrank dafür... das Team ist super und ich kann es nur weiterempfehlen...werde auch sehr oft darauf angesprochen... macht weiter so !! Vielen Dank 🙏🏿",
+              "link_url": "https://www.provenexpert.com/de-de/getfabulous/#ratings",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "d3886c13-cf2b-4c29-8210-9da21bd3943d": {
+            "type": "review",
+            "settings": {
+              "initials": "Sarah",
+              "title": "Brillenträgerin",
+              "text": "Ich bin Brillenträgerin und habe mich bisher immer schwer getan mit Haartüchern, weil sie gerutscht sind, bzw. irgendwann hinter dem Ohr auf die Brille drückten! Bei euren Tüchern ist das anders...ich liebe die Muster und Stoffe und trage sie sehr gern! Eure Verpackungen sind so liebevoll und ich freue mich jedes Mal, wenn die Bestellung in der Post ist! :)",
+              "link_url": "https://www.provenexpert.com/de-de/getfabulous/#ratings",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "0fe3a079-4f8e-4628-8c53-3027e3321c29": {
+            "type": "review",
+            "settings": {
+              "initials": "Angelina",
+              "title": "Total begeistert!",
+              "text": "Habe zum ersten Mal bestellt und ich muss sagen wie es verpackt war, hat mich schon total begeistert.. mochte es garnicht auspacken 🙊 Im Allgemeinen bin ich total begeistert und kann euch nur weiter empfehlen 🙏",
+              "link_url": "https://www.provenexpert.com/de-de/getfabulous/#ratings",
+              "link_text": "1389 weitere Bestellungen lesen"
+            }
+          },
+          "ed232508-8481-4f5d-bc73-95079f597c8c": {
+            "type": "review",
+            "settings": {
+              "initials": "Helena",
+              "title": "Klare Weiterempfehlung",
+              "text": "Ich habe mir 2 Bänder bestellt und bin sehr begeistert. Die Haarbänder sind richtig schön, toll verarbeitet und halten was sie versprechen. Die Verpackung ist ebenfalls so toll gemacht, die Bänder waren nach nur 2 Tagen bei mir, Bestellung selbst ist ebenfalls easy. 5 Punkte und eine ganz klare Weiterempfehlung 🌞👍🏻",
+              "link_url": "https://www.provenexpert.com/de-de/getfabulous/#ratings",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          },
+          "181c6658-f990-46f2-bf30-10a30b6c2ef2": {
+            "type": "review",
+            "settings": {
+              "initials": "Stefanie",
+              "title": "Geschenk für mich selbst!",
+              "text": "Ich habe mich heute gefreut wie ein Schulkind, als ich heut die sehnlichst erwarteten Haarbänder im Briefkasten entdeckt habe. Sie sitzen perfekt und sehen einfach toll aus! Auch die Verarbeitung scheint sehr gut.\nDurch die liebevolle Verpackung wirkt es, wie ein Geschenk, welches ich mir selber gemacht habe. Danke für dieses Glücksgefühl 💕💕💕💕",
+              "link_url": "https://www.provenexpert.com/de-de/getfabulous/#ratings",
+              "link_text": "1389 weitere Bewertungen lesen"
+            }
+          }
+        },
+        "block_order": [
+          "1590756067228",
+          "1590756100134",
+          "1590756102846",
+          "1590756106999",
+          "1590756109787",
+          "1591552393986",
+          "1593279756978",
+          "1593280326785",
+          "1593280461129",
+          "93ffd637-7f58-44b7-894e-be9349d8e5af",
+          "8b91d4c5-b859-4da6-a66d-16356c9d37a0",
+          "63afcd6d-130a-42cb-be83-f6c86691d0c9",
+          "539a8c0c-5acd-43ff-965d-ce249a39909e",
+          "8d31f9bc-10b7-42cf-bbfa-3fe6229e8531",
+          "373dfded-75ba-49c8-97ca-70cdcee9a37d",
+          "108a2571-e18e-43cf-a004-4e49601a9120",
+          "e482be44-d6b9-47a0-a9f1-2b653bde933e",
+          "5632402e-db66-4c2d-a2c4-3ea085d46e49",
+          "9fbe539a-fc13-42f5-83ef-7da8aa873255",
+          "d3886c13-cf2b-4c29-8210-9da21bd3943d",
+          "0fe3a079-4f8e-4628-8c53-3027e3321c29",
+          "ed232508-8481-4f5d-bc73-95079f597c8c",
+          "181c6658-f990-46f2-bf30-10a30b6c2ef2"
+        ],
+        "settings": {
+          "zeropad": false,
+          "title": "Über 100.652 zufriedene Kunden",
+          "subtitle": "Du bist in bester Gesellschaft"
+        }
+      },
+      "1592134667520": {
+        "type": "mentions-badge",
+        "disabled": true,
+        "blocks": {
+          "1592134679098": {
+            "type": "mention",
+            "settings": {
+              "image": "shopify://shop_images/Keine_Kopfschmerzen.png",
+              "a11y_title": ""
+            }
+          },
+          "1592134685890": {
+            "type": "mention",
+            "settings": {
+              "image": "shopify://shop_images/Wunderschoner_Look_in_Handumdrehen.png",
+              "a11y_title": ""
+            }
+          },
+          "1592134690536": {
+            "type": "mention",
+            "settings": {
+              "image": "shopify://shop_images/Auch_fur_Brillentrager_geeignet.png",
+              "a11y_title": ""
+            }
+          }
+        },
+        "block_order": [
+          "1592134679098",
+          "1592134685890",
+          "1592134690536"
+        ],
+        "settings": {}
+      },
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "a5f73bab-742e-4692-8487-0b3a4e374c99": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "title": "-25 % Birthday SALE auf ALLES! Feiere mit uns den Geburtstag unserer Gründerin! Nur bis Sonntag den 19.09.2021"
+            }
+          },
+          "b7d12112-c4a8-42d6-a9e8-f42a1783f850": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "title": ""
+            }
+          },
+          "12ca0377-7be7-42fa-8127-ebc48abe2689": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "title": "Heute -20% Rabatt auf die gesamte Boho Kategorie!"
+            }
+          },
+          "9a3f0955-1f80-4cf7-b146-a83e73afd781": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "title": "-20% auf die gesamte Boho-Kategorie! Nur solange der Vorrat reicht."
+            }
+          },
+          "58b25190-7fe9-4d68-9df8-07c33d32410f": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "title": "Bis zu -70% auf den gesamten Shop! BLACK WEEK BEI GETFABULOUS: 22.11.21-29.11.21"
+            }
+          },
+          "a96ab5d1-4410-4aec-8537-ca0da867bd25": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "title": "-15% auf ALLES mit dem Code BOHO"
+            }
+          },
+          "deda59b5-4ccd-403d-b238-58d818c8e6e4": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "title": "Nur noch bis 10 Uhr: -25% RABATT AUF DIE GESAMTE WINTER-KOLLEKTION!😍"
+            }
+          },
+          "87ed8eb3-f8cc-4074-991b-abe39cffe88c": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "title": "-30% auf gesamte BOHO Kategorie! Viel Spaß beim Shoppen 😍 Geringer Bestand bei Boho Dream und Savannah!"
+            }
+          },
+          "7a269aed-59ca-4c66-966c-da288b4924fb": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "title": "Ein Basic Headband Deiner Wahl kostenlos ab einem Warenkorbwert von 49,98 Euro! 😍"
+            }
+          },
+          "a43a2346-4fc8-42cf-9b29-7be95b4478dd": {
+            "type": "slide",
+            "settings": {
+              "title": "Versandkostenfrei innerhalb 🇩🇪 ab 50 €\nund weltweit ab 75 € 😍\nRED BASIC kostenlos ab 100 €! (bitte in den Warenkorb legen)"
+            }
+          }
+        },
+        "block_order": [
+          "a5f73bab-742e-4692-8487-0b3a4e374c99",
+          "b7d12112-c4a8-42d6-a9e8-f42a1783f850",
+          "12ca0377-7be7-42fa-8127-ebc48abe2689",
+          "9a3f0955-1f80-4cf7-b146-a83e73afd781",
+          "58b25190-7fe9-4d68-9df8-07c33d32410f",
+          "a96ab5d1-4410-4aec-8537-ca0da867bd25",
+          "deda59b5-4ccd-403d-b238-58d818c8e6e4",
+          "87ed8eb3-f8cc-4074-991b-abe39cffe88c",
+          "7a269aed-59ca-4c66-966c-da288b4924fb",
+          "a43a2346-4fc8-42cf-9b29-7be95b4478dd"
+        ],
+        "settings": {
+          "bg-color": "#fcaa8f"
+        }
+      },
+      "product-reviews": {
+        "type": "product-reviews",
+        "settings": {}
+      },
+      "1592894926606": {
+        "type": "card-slider",
+        "blocks": {
+          "1592894966348": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/Keine_Kopfschmerzen.png",
+              "title": "Unsere Haarbänder drücken und rutschen nicht",
+              "text": "<p>Selbst bei stundenlangem Tragen</p>",
+              "link": ""
+            }
+          },
+          "1592895030665": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/Wunderschoner_Look_in_Handumdrehen.png",
+              "title": "Ideal für Bad Hair Days",
+              "text": "<p>Ein Segen für Tage, an denen es schnell gehen muss</p>",
+              "link": ""
+            }
+          },
+          "1592895038539": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/Auch_fur_Brillentrager_geeignet.png",
+              "title": "Perfekt auch für Brillenträgerinnen",
+              "text": "<p>Der Stoff schmiegt sich herrlich an!</p>",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1592894966348",
+          "1592895030665",
+          "1592895038539"
+        ],
+        "settings": {
+          "fullimg": false,
+          "title": "",
+          "subtitle": "",
+          "aspect_ratio": "1.0",
+          "use_accent_color": true
+        }
+      },
+      "1592982783970": {
+        "type": "newsletter",
+        "settings": {
+          "title": "Du möchtest 10% sparen?",
+          "subtitle": "",
+          "text": "<p>Abonniere jetzt unseren Newsletter und erhalte als Dankeschön Deinen persönlichen 10% Rabattgutschein von uns. Der Gutschein wird innerhalb von 30 Minuten in Deinem Postfach landen.</p>",
+          "klaviyo_id": "VDCUva",
+          "microcopy": "<p>Informationen zu unserer Datenschutzerklärung findest Du <a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">hier</a></p>"
+        }
+      },
+      "1595646426239": {
+        "type": "review-slider",
+        "disabled": true,
+        "settings": {
+          "zeropad": false,
+          "title": "",
+          "subtitle": ""
+        }
+      },
+      "custom-collection-template": {
+        "type": "custom-collection-template",
+        "settings": {
+          "items_per_page": 50,
+          "items_per_row_mobile": "2",
+          "aspect_ratio": "1.0",
+          "reset-text": "Zurücksetzen",
+          "results": "Ergebnisse anzeigen",
+          "show_top_banner": true,
+          "show_bottom_banner": true
+        }
+      },
+      "page-contact-template": {
+        "type": "page-contact-template",
+        "settings": {
+          "page_title_enable": true,
+          "page_content_enable": true,
+          "content_title": "",
+          "right_title": "Kontaktiere uns",
+          "content_body": "<p><strong>Fragen oder Feedback?</strong></p><p>Wir helfen Dir sehr gern weiter. Schreibe uns einfach eine </p><p>e-Mail an: <a href=\"mailto:hilfe@get-fabulous.com\" title=\"mailto:hilfe@get-fabulous.com\"><strong>hilfe@get-fabulous.com</strong></a></p><p>Bitte erlaube uns 1-2 Werktage Zeit, Deine Anfrage sorgfältig zu bearbeiten. Solltest Du eine konkrete Frage zu Deiner Bestellung haben, vergiss nicht, die Bestellnummer anzugeben. So können wir Dir schneller helfen!Alternativ kannst Du uns telefonisch unter</p><p>zu folgenden Uhrzeiten erreichen:</p><p><strong>Montag – Freitag, 8:00 bis 13:00 Uhr. </strong></p><p><strong>Wir freuen uns auf Dich!</strong></p>",
+          "note": "erforderlich",
+          "name_placeholder": "Name",
+          "email_placeholder": "Email",
+          "phone_placeholder": "Telefonnummer",
+          "news_placeholder": "Nachricht",
+          "send_button": "Senden"
+        }
+      },
+      "versand-section": {
+        "type": "versand-section",
+        "settings": {
+          "title": "Rich text block",
+          "text": "<p>Use this section for any descriptive text you need to fill out your pages or to add introductory headings between other blocks.</p>",
+          "align_text": "center",
+          "narrow_column": true,
+          "enlarge_text": false
+        }
+      },
+      "faq-section": {
+        "type": "faq-section",
+        "blocks": {
+          "61d0b1c9-e4a0-4d45-984d-dfa99f8efaa5": {
+            "type": "faq",
+            "settings": {
+              "faq_question": "Wofür steht GetFabulous?",
+              "faq_answer": "<p>GetFabulous steht für komfortable, rutschfeste Haarbänder, die sich an Deinen Kopf unglaublich toll anschmiegen. Gegründet wurde das Unternehmen im Jahr 2016 von Karolina Bobbé. Dank ihres Modedesign-Studiums in Berlin sowie zahlreichen Praktika in namhaften Unternehmen hat Karolina ein besonderes Gespür für Qualität und Design entwickelt. Ihre Leidenschaft für qualitativ hochwertige Haaraccessoires kannst Du in jedem Produkt von GetFabulous spüren!</p>"
+            }
+          },
+          "c4132298-afbf-4814-9e3c-3317606ede15": {
+            "type": "faq",
+            "settings": {
+              "faq_question": "Wie ist GetFabulous entstanden?",
+              "faq_answer": "<p>Karolina war bereits als Teenager ein großer Fan von Kopfaccessoires, da sie selbst nur feines, dünnes Haar hatte. Ziel war mit wenigen Mitteln ihren Look aufpeppen, ohne dabei das sensible Haar zu schädigen. Die meisten Accessoires waren leider alles andere als komfortabel. Die Haarbänder rutschten vom Kopf oder mussten mit vielen Klammern befestigt werden. Das Ergebnis war enttäuschend. Noch während des Modedesign-Studiums hat sie sich vorgenommen nach dem Abschluss das eigene Unternehmen zu gründen um dieses Problem endgültig zu lösen.</p>"
+            }
+          },
+          "fcebcdd4-7072-4911-b16b-2153a582fb7a": {
+            "type": "faq",
+            "settings": {
+              "faq_question": "Was ist die Signature Collection und warum kostet sie mehr?",
+              "faq_answer": "<p>Signature Collection umfasst die Haarbänder, die selbst im Haus entworfen wurden. Das heißt, hier wird der Stoff von Karolina und Melina eigenhändig designed. Diese Kollektion ist immer ein Ergebnis enger Zusammenarbeit mit der GetFabulous-Community. Hier sind immer auch eure Meinungen durch Instagram gefragt. Danach legen wir ein Thema fest und entwerfen das Muster. Das erfordert großen digitalen Aufwand und unzählige Probedrucke bis wir endlich genau das perfekte Ergebnis erzielen hinter dem wir stehen. Anschließend wird das fertige Design auf einen hochwertigen Stoff gedruckt und zum GetFabulous-Haarband genäht. Um die Einzigartigkeit dieser Kollektion zu unterstreichen lassen wir hier das GetFabulous-Logo exklusiv einfügen. Alle Signature Haarbänder sind nur in breiter Form erhältlich. Die genauen Maße sind jeweils in der Produktbeschreibung zu finden.</p>"
+            }
+          },
+          "d59530c2-d72a-4615-8193-d896c5ea19fa": {
+            "type": "faq",
+            "settings": {
+              "faq_question": "Wie muss ich mein Haarband pflegen/waschen?",
+              "faq_answer": "<p>Damit Du Dein Haarband viele Jahre lang mit stolz tragen kannst, ist eine Pflege notwendig. Diese ist aber sehr einfach! Wir empfehlen, die erste Wäsche mit der Hand zu machen, um eventuell überschüssige Farbe des Stoffes auszuspülen. Lege das Haarband einfach in ein Waschbecken und spüle es mit lauwarmen Wasser. Hinzu geben kannst Du eine kleine Menge Deines Lieblingswaschmittels. Bitte achte darauf, dass Du kein Bleichmittel nutzt. Drücke das Haarband nach einigen Minuten vorsichtig aus und lasse es liegend auf einem Handtuch trocknen. Bei allen weiteren Waschgängen befolgst Du einfach die Regeln auf der Waschinfo im Haarband.</p>"
+            }
+          },
+          "aafdaeb2-c3d4-4a4e-a562-0be477481697": {
+            "type": "faq",
+            "settings": {
+              "faq_question": "Warum soll ich mir ein Haarband von GetFabulous zulegen?",
+              "faq_answer": "<p>Ein GetFabulous Haarband ist das ideale Accessoire um Deinen einzigartigen Stil zu unterstreichen - auch wenn Du einen \"Bad Hair Day\" hast! Dein Haarband hilft Dir Deine Frisur komplett zu machen, Deine abstehenden Babyhaare zu kaschieren und ist selbst beim Sport unschlagbar. Bei uns kannst Du sicher sein- wir produzieren fair, möglichst regional und stecken all unsere Leidenschaft und Erfahrung rundum das Haarband in unser Produkt. Aus GetFabulous ist eine Haarband-Community geworden, in der auch Du herzlich willkommen bist!</p>"
+            }
+          },
+          "dfd74d09-5e62-4a4b-85fb-e4f14ecf8b5b": {
+            "type": "faq",
+            "settings": {
+              "faq_question": "Wie setzt sich der Preis eines Haarbandes zusammen?",
+              "faq_answer": "<p>Unsere Haarbänder sind kein Massenprodukt aus fernen Ländern. Das beginnt schon bei den Stoffen, denn wir suchen nur die besten Stoffe aus der Region aus. Über 80% der Haarbänder aus unserem Sortiment werden in Deutschland auf unseren Wunsch bedruckt. Wir achten darauf, dass die Stoffe auf ihre Qualität geprüft sind und dass dabei die Umwelt verschont bleibt. Die Haarbänder werden nur in kleineren Nähereien produziert. Seit der Gründung von GetFabulous haben wir somit viele neue Arbeitsplätze geschaffen und gesichert. Das ist uns sehr wichtig, da der Beruf Näherin in Europa kaum gefragt ist, es aber noch viele Frauen gibt, die eben diesen Beruf ausüben möchten. Der Vorteil davon ist, dass wir die Qualität der Verarbeitung stets vor Augen haben. GetFabulous bearbeitet die Bestellungen in eigener Regie - das kostet zwar mehr Geld, aber nur so können wir volle Kontrolle darüber haben, wie schnell und wie gut wir unsere Kunden beliefern. Anschließend werden die fertigen Bestellungen von unserem Versandpartner DHL übernommen. Solltest Du also Fragen oder besondere Wünsche zu Deiner Bestellung haben, sind wir für Dich da - immer serviceorientiert und flexibel. Qualität und Regionalität hat ihren Preis - und desto mehr sind wir darauf stolz, ein Bestseller Nummer 1 im Haarband-Segment in Deutschland zu sein und das schon seit vielen Jahren!</p>"
+            }
+          },
+          "8ff3d473-7204-461f-bbb2-fc20677ec299": {
+            "type": "faq",
+            "settings": {
+              "faq_question": "Welches Haarband passt zu mir?",
+              "faq_answer": "<p>Falls Du unsicher bist welches Haarband Dir besonders gut steht, nutze unseren Haarbandgenerator direkt auf der Titelseite. Mit wenigen Klicks verrät er Dir welches Haarband zu Deinem Gesicht passt. </p>"
+            }
+          }
+        },
+        "block_order": [
+          "61d0b1c9-e4a0-4d45-984d-dfa99f8efaa5",
+          "c4132298-afbf-4814-9e3c-3317606ede15",
+          "fcebcdd4-7072-4911-b16b-2153a582fb7a",
+          "d59530c2-d72a-4615-8193-d896c5ea19fa",
+          "aafdaeb2-c3d4-4a4e-a562-0be477481697",
+          "dfd74d09-5e62-4a4b-85fb-e4f14ecf8b5b",
+          "8ff3d473-7204-461f-bbb2-fc20677ec299"
+        ],
+        "settings": {
+          "heading": "Häufig gestellte Fragen"
+        }
+      },
+      "blog-menus": {
+        "type": "blog-menus",
+        "blocks": {
+          "6cba37ab-a7aa-45f1-ac13-9d33c51bf09a": {
+            "type": "menu",
+            "settings": {
+              "menu_title": "News",
+              "menu_url": "shopify://blogs/news"
+            }
+          },
+          "f66a5684-9161-439c-98c3-df88a165165a": {
+            "type": "menu",
+            "settings": {
+              "menu_title": "Handling Headband",
+              "menu_url": "shopify://blogs/handling-headband"
+            }
+          },
+          "e5a2d295-ad86-4701-b685-c4c895bd9bc4": {
+            "type": "menu",
+            "settings": {
+              "menu_title": "Blog",
+              "menu_url": "shopify://blogs/all"
+            }
+          }
+        },
+        "block_order": [
+          "6cba37ab-a7aa-45f1-ac13-9d33c51bf09a",
+          "f66a5684-9161-439c-98c3-df88a165165a",
+          "e5a2d295-ad86-4701-b685-c4c895bd9bc4"
+        ],
+        "settings": {}
+      },
+      "blog-feature-articles": {
+        "type": "blog-feature-articles",
+        "blocks": {
+          "773eb7ff-c812-4a77-9719-8d67b88ea25f": {
+            "type": "article",
+            "settings": {
+              "article": "news/das-herzstuck-von-getfabulous-unsere-signature-collection",
+              "blogs": ""
+            }
+          },
+          "1b4fc533-b48e-48b1-a7a0-8e468eb2a52c": {
+            "type": "article",
+            "settings": {
+              "article": "news/kann-ich-mein-headband-von-getfabulous-eigentlich-waschen",
+              "blogs": ""
+            }
+          }
+        },
+        "block_order": [
+          "773eb7ff-c812-4a77-9719-8d67b88ea25f",
+          "1b4fc533-b48e-48b1-a7a0-8e468eb2a52c"
+        ],
+        "settings": {}
+      },
+      "latest-articles": {
+        "type": "latest-articles",
+        "settings": {}
+      },
+      "popular-articles": {
+        "type": "popular-articles",
+        "settings": {}
+      },
+      "16319873754ce7f62a": {
+        "type": "card-slider",
+        "blocks": {
+          "bcc06993-277a-4135-b050-f36e428874d0": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/TOP.png",
+              "title": "",
+              "text": "",
+              "link": "https://www.provenexpert.com/de-de/getfabulous"
+            }
+          },
+          "001df24b-ed8f-482b-be3e-f580c278d127": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/Top-Dienstleister3.jpg",
+              "title": "",
+              "text": "",
+              "link": "https://www.provenexpert.com/de-de/getfabulous"
+            }
+          }
+        },
+        "block_order": [
+          "bcc06993-277a-4135-b050-f36e428874d0",
+          "001df24b-ed8f-482b-be3e-f580c278d127"
+        ],
+        "settings": {
+          "fullimg": true,
+          "title": "Auszeichnungen",
+          "subtitle": "",
+          "aspect_ratio": "1.0",
+          "use_accent_color": false
+        }
+      },
+      "newsletter-template": {
+        "type": "newsletter-template",
+        "blocks": {
+          "edd8947b-92b6-4a8e-8f2a-6afe68300984": {
+            "type": "heading",
+            "settings": {
+              "subtitle": "<strong>10% beim nächsten Einkauf sparen <br>  und immer mit den brandneuen Haarband-News versorgt sein</strong>",
+              "title": ""
+            }
+          },
+          "e31bcd5c-5a7c-4fff-bc26-333cbb433d4d": {
+            "type": "video",
+            "settings": {
+              "link": "https://cdn.shopify.com/s/files/1/0367/4233/2475/files/Du_brauchst_Hilfe.MOV?v=1641466934",
+              "mute": false,
+              "autoplay": true,
+              "controls": true,
+              "loop": false
+            }
+          },
+          "e7db7a21-81ff-4d57-9a29-5e0dfbecd484": {
+            "type": "text",
+            "settings": {
+              "subtitle": "",
+              "title": "Wie der GetFabulous Newsletter Deinen Tag rettet",
+              "description": "Du hast schon am Abend Panik vor dem Hairstyling am nächsten Morgen? Du hoffst einfach nur, dass Deine Haare sitzen werden, aber Du bist den Bad-Hair-Days schutzlos ausgeliefert? <br><br>\nMit dem GetFabulous Newsletter legst Du den Grundstein zur Lösung Deiner Haarprobleme, denn ab jetzt übernimmst Du wieder die Kontrolle! <br><br>Wir geben Dir mehrfach im Monat die Chance auf satte Rabatte. Du bekommst immer als Erste mit, wenn es etwas Neues gibt. Wir zeigen Dir spannende Details und Backgroundinfos alles rund ums Haarband. <br> <br> Und das völlig kostenfrei und ohne Risiko, Du kannst den Newsletter supereinfach abbestellen wenn Du es Dir anders überlegst."
+            }
+          },
+          "f5d19a0d-0bf3-4277-9fd2-0d37a4298e79": {
+            "type": "newsletter",
+            "settings": {
+              "title": "",
+              "subtitle": "",
+              "text": "",
+              "klaviyo_id": "VDCUva",
+              "microcopy": "<p>Informationen zu unserer Datenschutzerklärung findest Du <a href=\"https://get-fabulous.com/policies/privacy-policy\" title=\"Privacy Policy\">hier</a></p>"
+            }
+          },
+          "c28466aa-6134-43cf-a5d8-d83f5bd1c3cd": {
+            "type": "text",
+            "settings": {
+              "subtitle": "",
+              "title": "Deine Newsletter-Vorteile",
+              "description": "<p>✅ <strong>\t10% Rabatt direkt bei Anmeldung <br><br></strong>✅ <strong>\tDu verpasst niemals nie never ever Rabatte </strong>😍<strong> </strong> <br> </p><p>✅ <strong>Du siehst brandneue Headbands als Erste </strong>🤫</p> <p>✅ <strong>\tDu erfährst alle Tricks, Tipps und Insights rund um das Haarband <br><br></strong></p>"
+            }
+          },
+          "c8af9876-f683-4776-985b-549b950c8452": {
+            "type": "video",
+            "settings": {
+              "link": "https://cdn.shopify.com/s/files/1/0367/4233/2475/files/Newsletter.MOV?v=1641466934",
+              "mute": false,
+              "autoplay": false,
+              "controls": true,
+              "loop": false
+            }
+          },
+          "50fee486-0c25-49c1-a667-c3c3755244b1": {
+            "type": "heading",
+            "settings": {
+              "subtitle": "",
+              "title": "Wir freuen uns auf Dich und Dich in ein Leben ohne Frisurenstress zu begleiten!"
+            }
+          },
+          "97d0e35c-b760-46ba-b574-6392030b37d2": {
+            "type": "newsletter",
+            "settings": {
+              "title": "",
+              "subtitle": "",
+              "text": "",
+              "klaviyo_id": "VDCUva",
+              "microcopy": "<p>Informationen zu unserer Datenschutzerklärung findest Du <a href=\"https://get-fabulous.com/policies/privacy-policy\" title=\"Privacy Policy\">hier</a></p>"
+            }
+          },
+          "e78e0d9b-3b2a-454a-9e53-510330e799ed": {
+            "type": "newsletter",
+            "disabled": true,
+            "settings": {
+              "title": "Abonniere jetzt den Newsletter <br> und profitiere von diesen Highlights:",
+              "subtitle": "",
+              "text": "<br><p>✅ <strong>10% auf Deine erste Bestellung <br></strong>✅ <strong>Erfahre immer als Erste wann die neuste Kollektion online geht </strong>😍<strong> </strong> <br> </p><p>✅ <strong>Wöchentliche Inspirationen und spannende Blicke hinter die Kulissen von GetFabulous </strong>🤫</p>",
+              "klaviyo_id": "VDCUva",
+              "microcopy": "<p>Informationen zu unserer Datenschutzerklärung findest Du <a href=\"https://get-fabulous.com/policies/privacy-policy\" title=\"Privacy Policy\">hier</a></p>"
+            }
+          },
+          "ef431b9b-e6a2-495e-aa0f-6ed1f46c7eb9": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "image_mobile": "shopify://shop_images/nav-basic-haarbander.png",
+              "image_desktop": "shopify://shop_images/Design_ohne_Titel-2.png"
+            }
+          }
+        },
+        "block_order": [
+          "edd8947b-92b6-4a8e-8f2a-6afe68300984",
+          "e31bcd5c-5a7c-4fff-bc26-333cbb433d4d",
+          "e7db7a21-81ff-4d57-9a29-5e0dfbecd484",
+          "f5d19a0d-0bf3-4277-9fd2-0d37a4298e79",
+          "c28466aa-6134-43cf-a5d8-d83f5bd1c3cd",
+          "c8af9876-f683-4776-985b-549b950c8452",
+          "50fee486-0c25-49c1-a667-c3c3755244b1",
+          "97d0e35c-b760-46ba-b574-6392030b37d2",
+          "e78e0d9b-3b2a-454a-9e53-510330e799ed",
+          "ef431b9b-e6a2-495e-aa0f-6ed1f46c7eb9"
+        ],
+        "settings": {}
+      },
+      "cart-bag": {
+        "type": "cart-bag",
+        "settings": {
+          "button_link": ""
+        }
+      },
+      "jobs-template": {
+        "type": "jobs-template",
+        "blocks": {
+          "2dee72cc-dad8-4f52-a604-20ea7dfdccb9": {
+            "type": "job",
+            "settings": {
+              "title": "Junior Content Creator (m/w/d)",
+              "content": "<p>Du bist auf Insta, Facebook und Tiktok zu Hause und kannst gar nicht genug von Content Creation bekommen? Wir brauchen Deinen kreativen Kopf zur Unterstützung im Social Media- und E-Commerce-Bereich! Bewirb Dich jetzt! <br><br>\n\n<strong>Deine Aufgaben</strong><br>\n • Planen und Erstellen von spannenden Content und Werbematerial, der für die Community von hoher Relevanz ist <br>\n • Produktbilder und Videos erstellen und bearbeiten <br>\n • Planen und begleiten von Fotoshootings<br>\n • Blogbeiträge planen und verfassen\n<br><br>\n\n<strong>Qualifikationen:</strong><br>\n • Du zeigst große Begeisterung für Social Media und hast bereits erste Erfahrungen in diesem Bereich<br>\n • Du kennst dich mit dem Handling von Kamera, Ton und Licht aus <br>\n • Du beherrschst fehlerfreies Deutsch in Wort und Schrift <br>\n • Du bist kreativ und denkst über den Tellerrand hinaus <br>\n • Du hast erste Erfahrungen mit Photoshop, Illustrator oder Lightroom <br>\n • Du hast richtig Lust dieses Jahr durchzustarten und Deine Karriere auf das nächste Level zu bringen? Dann komm in unser Haarband-Imperium!<br><br>\n\n<strong>Benefits:</strong><br>\n • Spannender und abwechslungsreicher Job <br>\n • Motiviertes und leistungsstarkes Team <br>\n • Kurze Kommunikationswege durch flache Hierarchie <br>\n • Aktive Mitgestaltung im Unternehmen <br>\n • Angenehmes und offenes Arbeitsumfeld <br>\n • Weiterbildungsmöglichkeiten <br>\n • Liebevoll eingerichtetes Büro mit modernster Ausstattung <br>\n • Frisches Obst und Snacks<br>\n<br>\n\nArt der Stelle: Vollzeit / Teilzeit\n<br><br>\n    \n</p>"
+            }
+          },
+          "e28533fa-06c5-45a8-9448-37848b80afdc": {
+            "type": "job",
+            "settings": {
+              "title": "Lagerist (m/w/d)",
+              "content": "<p>Für unseren Onlineshop suchen wir eine/n Mitarbeiter/in im Lager/Versand in Teilzeit.<br><br>\n\n<strong>Deine Aufgaben</strong><br>\nDeine Aufgaben sind der Versand der Produkte und alle dazugehörenden Lagertätigkeiten. \n<br><br>\n\nDeine Arbeitszeit ist von Montag bis Freitag ab 07:00 Uhr.<br><br>\n\nWichtige Werte, die wir voraussetzen:<br> Motivation, proaktives Handeln, Genauigkeit und ein hohes Verantwortungsbewusstsein.<br><br>\n\n<strong>Benefits:</strong><br>\n • Spannender und abwechslungsreicher Job <br>\n • Motiviertes und leistungsstarkes Team <br>\n • Kurze Kommunikationswege durch flache Hierarchie <br>\n • Aktive Mitgestaltung im Unternehmen <br>\n • Angenehmes und offenes Arbeitsumfeld <br>\n • Weiterbildungsmöglichkeiten <br>\n • Liebevoll eingerichtetes Büro mit modernster Ausstattung <br>\n • Frisches Obst und Snacks<br>\n<br>\n\n\nArt der Stelle: Teilzeit (20 bis 30 Stunden je Woche) \n<br><br>    \n</p>"
+            }
+          },
+          "6bce994e-8ff3-414b-bfee-5f0dbfd8ba0a": {
+            "type": "job",
+            "settings": {
+              "title": "Online Marketing Manager (m/w/d)",
+              "content": "<p> Du kennst Dich im online Marketingdschungel bestens aus? Es ist Deine Passion Marketingstrategien zu entwickeln und diese umzusetzen? Analysieren von Kennzahlen und Ableiten von Handlungsmaßnahmen ist das, was Dein Herz höher schlagen lässt? Dann haben wir genau die richtige Stelle für Dich! Bewirb Dich jetzt! <br><br>\n\n<strong>Deine Aufgaben</strong><br>\n • Erarbeitung von Marketingstrategien inkl. Budgetplanung <br>\n • Planen, schalten und verwalten von Paid Advertising <br>\n • Du verantwortest SEO, SEA, E-Mail-Marketing, Produktmarketing und Affiliate Marketing <br>\n • Du erstellst optisch ansprechende und rechtssichere Landing Pages <br>\n • Du führst A/B-Testings durch<br>\n • Du wertest Kennzahlen aus, analysierst diese und leitest Verbesserungspotentiale ab <br>\n<br>\n\n<strong>Qualifikationen:</strong><br>\n • Die oben genannten Aufgaben sind für Dich keine Fremdwörter <br>\n • Du kennst Performance Marketing nicht nur aus Seminaren, sondern hast das Erlernte in der Praxis anwenden und nachweisbare Erfolge erzielen können <br>\n • Du hast gute Kenntnisse im Paid Advertising<br>\n • Texten von Anzeigen und Berichten macht Dir Spaß <br>\n • Du beherrschst fehlerfreies Deutsch in Wort und Schrift <br>\n • Du hast richtig Lust dieses Jahr durchzustarten und das Unternehmen weiter zu bringen! Dann komm ins Haarband-Imperium!<br><br>\n\n<strong>Benefits:</strong><br>\n • Spannender und abwechslungsreicher Job <br>\n • Motiviertes und leistungsstarkes Team <br>\n • Kurze Kommunikationswege durch flache Hierarchie <br>\n • Aktive Mitgestaltung im Unternehmen <br>\n • Angenehmes und offenes Arbeitsumfeld <br>\n • Weiterbildungsmöglichkeiten <br>\n • Liebevoll eingerichtetes Büro mit modernster Ausstattung <br>\n • Frisches Obst und Snacks<br>\n<br>\nArt der Stelle: Vollzeit\n<br><br>\n    \n</p>"
+            }
+          },
+          "388122af-afe0-49cf-9e45-ba3aade7cc35": {
+            "type": "job",
+            "settings": {
+              "title": "Werksstudent (m/w/d) Content Creator",
+              "content": "<p>Du bist auf Insta, Facebook und Tiktok zu Hause und kannst gar nicht genug von Content Creation bekommen? Wir brauchen Deinen kreativen Kopf zur Unterstützung im Social Media- und E-Commerce-Bereich! Bewirb Dich jetzt! <br><br>\n\n<strong>Deine Aufgaben</strong><br>\n • Planen und Erstellen von spannenden Content und Werbematerial, der für die Community von hoher Relevanz ist <br>\n • Produktbilder und Videos erstellen und bearbeiten <br>\n • Planen und begleiten von Fotoshootings<br>\n • Blogbeiträge planen und verfassen\n<br><br>\n\n<strong>Qualifikationen:</strong><br>\n • Du zeigst große Begeisterung für Social Media und hast bereits erste Erfahrungen in diesem Bereich<br>\n • Du kennst dich mit dem Handling von Kamera, Ton und Licht aus <br>\n • Du beherrschst fehlerfreies Deutsch in Wort und Schrift <br>\n • Du bist kreativ und denkst über den Tellerrand hinaus <br>\n • Du hast erste Erfahrungen mit Photoshop, Illustrator oder Lightroom <br>\n • Du hast richtig Lust dieses Jahr durchzustarten und Deine Karriere auf das nächste Level zu bringen? Dann komm in unser Haarband-Imperium!<br><br>\n\n<strong>Benefits:</strong><br>\n • Spannender und abwechslungsreicher Job <br>\n • Motiviertes und leistungsstarkes Team <br>\n • Kurze Kommunikationswege durch flache Hierarchie <br>\n • Aktive Mitgestaltung im Unternehmen <br>\n • Angenehmes und offenes Arbeitsumfeld <br>\n • Weiterbildungsmöglichkeiten <br>\n • Liebevoll eingerichtetes Büro mit modernster Ausstattung <br>\n • Frisches Obst und Snacks<br>\n<br>\n\nArt der Stelle: Vollzeit / Teilzeit\n<br><br>\n    \n</p>"
+            }
+          },
+          "bc2f2d88-bc7a-4e20-bd5d-46f811e77933": {
+            "type": "job",
+            "disabled": true,
+            "settings": {
+              "title": "Werkstudent (m/w/d) E-Commerce & Digital Marketing",
+              "content": ""
+            }
+          },
+          "7978270c-b8d3-437d-842a-4ba43ea5c123": {
+            "type": "job",
+            "disabled": true,
+            "settings": {
+              "title": "Vorlage",
+              "content": "<p> ... Bewirb Dich jetzt! <br><br>\n\n<strong>Deine Aufgaben</strong><br>\n • . <br>\n • . <br>\n • . <br>\n • . <br>\n • .<br>\n • .\n<br><br>\n\n<strong>Qualifikationen:</strong><br>\n • Du <br>\n • Du <br>\n • Du hast richtig Lust dieses Jahr durchzustarten und das Unternehmen weiter zu bringen! Dann komm ins Haarband-Imperium!<br><br>\n\n<strong>Benefits:</strong><br>\n • Modernes Büro <br>\n • Spannender und abwechslungsreicher Job <br>\n • Motiviertes und leistungsstarkes Team <br>\n • Kurze Kommunikationswege durch flache Hierarchie <br>\n • Aktive Mitgestaltung im Unternehmen <br>\n • Angenehmes und offenes Arbeitsumfeld <br>\n • Weiterbildungsmöglichkeiten <br>\n • Frisches Obst<br>\n<br>\n\nArt der Stelle: Vollzeit\n<br><br>\n    \n</p>"
+            }
+          }
+        },
+        "block_order": [
+          "2dee72cc-dad8-4f52-a604-20ea7dfdccb9",
+          "e28533fa-06c5-45a8-9448-37848b80afdc",
+          "6bce994e-8ff3-414b-bfee-5f0dbfd8ba0a",
+          "388122af-afe0-49cf-9e45-ba3aade7cc35",
+          "bc2f2d88-bc7a-4e20-bd5d-46f811e77933",
+          "7978270c-b8d3-437d-842a-4ba43ea5c123"
+        ],
+        "settings": {
+          "image": "shopify://shop_images/Sweet_Poison_Pam_Stuhl.png",
+          "text": "<strong>GetFabulous</strong><br><br>\nWenn es um hochwertige Haar-Accessoires geht ist das Unternehmen GetFabulous eine etablierte Größe auf dem deutschen und europäischen Markt.\nGetFabulous zeichnet sich durch professionelle Leidenschaft zum Produkt aus, wurde doch das Hauptprodukt „Haarband“ von Karolina Bobbé (Gründerin von GetFabulous) selbst entwickelt und stetig perfektioniert. <br><br>\n\nDas Unternehmen hat durch die sozialen Medien einen starken Rückhalt und Austausch mit den Kundinnen. So sind auch die Trägerinnen der Headbands oft am Design- und  Entwicklungsprozess involviert. \nMittlerweile gibt es eine Vielzahl an Produkten, etwa das anpassungsfähige Flexie, die nachhaltigen Haarreifen und auch Turbane.<br><br>\n\nIm Firmensitz in Rommerskirchen findet man im Erdgeschoss das Lager und die Versandabteilung. Neben dem Onlineshop gibt es auch eine liebevoll eingerichtete Ladenecke, in der die Kundschaft herzlich willkommen ist die Haaraccessoires vor Ort zu erwerben.\nDirekt in der Etage darüber wird designt, entwickelt, getüftelt und das Marketing voran getrieben.<br><br>\n\nDu möchtest gern ein Teil davon sein? Gute Idee! Wir freuen uns mit Dir in Kontakt zu kommen!\n<br><br>",
+          "show_video": false,
+          "link": "",
+          "mute": true,
+          "autoplay": true,
+          "controls": false,
+          "loop": true
+        }
+      },
+      "164227308001ed0c19": {
+        "type": "scheduling-banner",
+        "blocks": {
+          "8e17a9de-47f5-42dc-908d-274bc4fd3ccc": {
+            "type": "slide",
+            "settings": {
+              "title": "",
+              "subtitle": "",
+              "btn_enable": true,
+              "btn_url": "https://get-fabulous.com/collections/alle-produkte",
+              "btn_text": "Jetzt shoppen 😍",
+              "slide-start-date-time": "2022-02-03 09:47:01",
+              "slide-end-date-time": "2022-02-14 23:59:00",
+              "image_mobile": "shopify://shop_images/Love_Yourself_Sale_Instagram_Post_84c26bd8-ff39-462a-8557-12d41ed86b04.png",
+              "image_desktop": "shopify://shop_images/Kopie_von_Love_Yourself_Sale_Instagram_Post_Arbeitsblatt_Querformat_ba8c0598-543d-4b3c-b31b-4e2783cd421d.png",
+              "content-position": "bottom-center",
+              "start-date-time": "",
+              "end-date-time": ""
+            }
+          },
+          "04685b19-096b-4e0c-bd3b-1ba0dbd768ff": {
+            "type": "slide",
+            "settings": {
+              "title": "",
+              "subtitle": "",
+              "btn_enable": true,
+              "btn_url": "https://get-fabulous.com/collections/alle-produkte",
+              "btn_text": "FINDE DEIN HAARBAND  😍",
+              "slide-start-date-time": "2022-01-31 10:00:00",
+              "slide-end-date-time": "2030-01-31 10:00:00",
+              "image_mobile": "shopify://shop_images/Strick_Instagram_Post.png",
+              "image_desktop": "shopify://shop_images/Sweet_Poison_Pam_Stuhl_e3c7e68e-7ae9-44c6-9096-0a96e21d8cad.png",
+              "content-position": "bottom-center",
+              "start-date-time": "",
+              "end-date-time": ""
+            }
+          },
+          "b41dac41-73cf-420f-a428-e2cba9da0984": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "title": "",
+              "subtitle": "",
+              "btn_enable": false,
+              "btn_url": "https://get-fabulous.com/collections/alle-produkte",
+              "btn_text": "Jetzt zuschlagen  😍",
+              "slide-start-date-time": "2022-01-27 09:42:05",
+              "slide-end-date-time": "2022-01-27 11:38:05",
+              "image_mobile": "shopify://shop_images/Versandkostenfrei_3e4fd630-f96a-44ff-b6a3-b8d17a191750.png",
+              "image_desktop": "shopify://shop_images/Sweet_Poison_Pam_Stuhl_e3c7e68e-7ae9-44c6-9096-0a96e21d8cad.png",
+              "content-position": "bottom-center",
+              "start-date-time": "2022-01-27 09:43:05",
+              "end-date-time": "2022-01-27 09:44:05"
+            }
+          },
+          "b879ba00-e7e3-4753-a818-c964267a5807": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "title": "",
+              "subtitle": "",
+              "btn_enable": true,
+              "btn_url": "https://get-fabulous.com/collections/alle-produkte",
+              "btn_text": "DEAL SICHERN 😍",
+              "slide-start-date-time": "",
+              "slide-end-date-time": "",
+              "image_mobile": "shopify://shop_images/ab_Warenwert_49_89_ein_Basic_1_76e175e4-1863-4200-ade5-8f9b527cba0f.png",
+              "image_desktop": "shopify://shop_images/Sweet_Poison_Pam_Stuhl_e3c7e68e-7ae9-44c6-9096-0a96e21d8cad.png",
+              "content-position": "bottom-center",
+              "start-date-time": "2022-01-20 09:31:05",
+              "end-date-time": "2022-01-24 10:00:00"
+            }
+          },
+          "18a9d7c3-4ad1-4c1e-8e93-976ce9b5c61a": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "title": "",
+              "subtitle": "",
+              "btn_enable": true,
+              "btn_url": "shopify://collections/all",
+              "btn_text": "Jetzt zuschlagen!",
+              "slide-start-date-time": "",
+              "slide-end-date-time": "",
+              "image_mobile": "shopify://shop_images/b230f59911b8d228791f36d23900d5ce.png",
+              "image_desktop": "shopify://shop_images/b230f59911b8d228791f36d23900d5ce_b0aee207-2ef1-48e7-880c-96040077c075.png",
+              "content-position": "bottom-center",
+              "start-date-time": "",
+              "end-date-time": ""
+            }
+          },
+          "be749e9f-1689-4c35-b84a-0ab44d50ce5e": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "title": "Title",
+              "subtitle": "<p>Subtitle</p>",
+              "btn_enable": true,
+              "btn_url": "",
+              "btn_text": "Shop Now",
+              "slide-start-date-time": "",
+              "slide-end-date-time": "",
+              "image_mobile": "shopify://shop_images/fettiger_ansatz.png",
+              "image_desktop": "shopify://shop_images/fettiger_ansatz.png",
+              "content-position": "center",
+              "start-date-time": "",
+              "end-date-time": ""
+            }
+          },
+          "f5208233-acda-42a3-856a-1ed5b05e49b7": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "title": "Something",
+              "subtitle": "",
+              "btn_enable": true,
+              "btn_url": "shopify://products/geschenkgutschein",
+              "btn_text": "Shop Now",
+              "slide-start-date-time": "2022-01-28 00:00:00",
+              "slide-end-date-time": "2022-01-21 00:00:00",
+              "image_mobile": "shopify://shop_images/ab_Warenwert_49_89_ein_Basic_1_755ae724-6428-4c62-b778-10a0caea1bbd.png",
+              "content-position": "center",
+              "start-date-time": "2022-01-19 00:00:00",
+              "end-date-time": "2022-01-20 00:00:00"
+            }
+          }
+        },
+        "block_order": [
+          "8e17a9de-47f5-42dc-908d-274bc4fd3ccc",
+          "04685b19-096b-4e0c-bd3b-1ba0dbd768ff",
+          "b41dac41-73cf-420f-a428-e2cba9da0984",
+          "b879ba00-e7e3-4753-a818-c964267a5807",
+          "18a9d7c3-4ad1-4c1e-8e93-976ce9b5c61a",
+          "be749e9f-1689-4c35-b84a-0ab44d50ce5e",
+          "f5208233-acda-42a3-856a-1ed5b05e49b7"
+        ],
+        "settings": {
+          "delay": "7",
+          "timer_color": "#000000",
+          "timer_bg-color": "#fdeae6",
+          "timer_slot-bg-color": "#fcaa8f"
+        }
+      },
+      "announcement-slider": {
+        "type": "announcement-slider",
+        "blocks": {
+          "c69a41f5-f35e-40ed-b584-d1f9349c82d2": {
+            "type": "slide",
+            "settings": {
+              "text": "bereits über 100.652 zufriedene Kundinnen",
+              "link": ""
+            }
+          },
+          "b78e72aa-30fb-4e2c-904f-f24621a54e55": {
+            "type": "slide",
+            "settings": {
+              "text": "Schnelle Lieferung",
+              "link": ""
+            }
+          },
+          "1669c8ba-3465-4237-a2ab-489e6c5b658c": {
+            "type": "slide",
+            "settings": {
+              "img": "shopify://shop_images/Sterne_Rating.jpg",
+              "text": "4,9 / 5,0 Sterne",
+              "link": ""
+            }
+          },
+          "44cace04-3e95-4d4d-900e-7540e9eeb9d2": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "img": "shopify://shop_images/freeshipping.png",
+              "text": "Free shipping",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "c69a41f5-f35e-40ed-b584-d1f9349c82d2",
+          "b78e72aa-30fb-4e2c-904f-f24621a54e55",
+          "1669c8ba-3465-4237-a2ab-489e6c5b658c",
+          "44cace04-3e95-4d4d-900e-7540e9eeb9d2"
+        ],
+        "settings": {
+          "enabled": true,
+          "delay": "3",
+          "color": "#000000",
+          "bg-color": "#fdeae6"
+        }
+      }
+    },
+    "content_for_index": [
+      "164227308001ed0c19",
+      "1588937154251",
+      "1592894926606",
+      "1592134667520",
+      "1588940340807",
+      "1588951006091",
+      "1590755925800",
+      "1589828383943",
+      "16319873754ce7f62a",
+      "1589831083449",
+      "1592982783970",
+      "1595646426239"
+    ]
+  },
+  "presets": {
+    "Default": {}
+  }
+}

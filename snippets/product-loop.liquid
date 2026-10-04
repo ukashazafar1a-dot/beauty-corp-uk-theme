@@ -1,0 +1,61 @@
+{%- assign color_label = 'farbe,color,colour,couleur,colore' | split: ',' -%}
+
+<div class="product-card" data-product-id="{{ product.id }}">
+		<div class="product-card__container">
+         <a class="product-card__link" href="{{ product.url }}">
+          <div class="swiper-container" id="sf_product_image_slider">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                {% for img in product.media %}
+                    {%- assign image_url = img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                    {%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,300,400,600,800,1000,1200', image: product.featured_image -%}{%- endcapture -%}
+                         <div class="product-card__image skeleton lazy u-aspect-ratio swiper-slide" style="--aspect-ratio: {{ aspect_ratio }};">
+                           <img 
+                                    class="lazy" 
+                                    alt="{{ img.alt | escape }}"
+                                    data-src="{{ image_url }}" 	
+                                    data-sizes="auto"
+                                    data-widths="[{{ supported_sizes }}]"
+                                    >
+                            </div>
+                      
+                
+                {% endfor %}
+             </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            </div>
+			  <div class="product-card__details">
+				<span class="product-card__title u-nobreak">{{ product.title }}</span>
+				<span class="product-card__price">
+              		{% if product.compare_at_price %}
+                  		<del style="color:gray;margin-right:5%;">{{product.compare_at_price | money_with_currency }}</del><spam style="color:red;font-weight:bold;">{{product.price | money_with_currency}}</spam>
+                  	{% else %}
+                  		{{ product.price | money_with_currency }}
+                  	{% endif %}
+              
+              	</span>
+				{%- for option in product.options_with_values -%}
+					{%- assign downcased_option = option.name | downcase -%}
+
+					{%- if color_label contains downcased_option -%}
+						<ul class="product-card__variants u-nolist">
+							{%- for value in option.values limit: 4 -%}
+								<li class="swatch-{{ value | handle }}">
+									<span class="u-visually-hidden">{{ value }}</span>
+								</li>
+							{%- endfor -%}
+							{%- if option.values.size > 4 -%}
+								<li class="tooltip">
+									+ {{ option.values.size | minus: 4 }}
+									<span class="u-visually-hidden"> weitere Farben</span>
+								</li>
+							{%- endif -%}
+						</ul>
+					{%- endif -%}
+				{%- endfor -%}
+			</div>
+            </a>
+		</div>
+</div>

@@ -1,0 +1,638 @@
+<style>
+  .counter-section{
+    overflow:hidden;
+  }
+
+  .counter-section .swiper-pagination {
+    position: relative;
+    bottom: 25px;
+  }
+  
+  .counter-section .swiper-pagination-bullet {
+    width: 64px;
+    height: 4px;
+    margin: 0 8px;
+    border-radius: 2px;
+    background-color: #9c9c9c;
+  }
+  
+  .counter-section .swiper-pagination-bullet-active {
+    background-color: #ffaa8f;
+  }
+  
+  @media (max-width:1008px){
+    width:35px;
+  }
+  
+/*   Counter */
+  
+  .flip-clock {
+  text-align: center;
+  perspective: 600px;
+  flex-grow:1;
+}
+.flip-clock *,
+.flip-clock *:before,
+.flip-clock *:after {
+  box-sizing: border-box;
+}
+.flip-clock__piece {
+  display: inline-block;
+  margin: 0 0.2vw;
+}
+@media (min-width: 1000px) {
+  .flip-clock__piece {
+    margin: 0 5px;
+  }
+}
+.flip-clock__slot {
+  font-size: 1rem;
+  line-height: 1.5;
+  display: block;
+  background: {{section.settings.timer_slot-bg-color}};
+  /*
+  //position: relative;
+  //top: -1.6em;
+  z-index: 10;
+  //color: #FFF;
+*/
+}
+.flip-card {
+  display: block;
+  position: relative;
+  padding-bottom: 0.72em;
+  font-size: 2.25rem;
+  line-height: 0.95;
+  background-color: {{section.settings.timer_bg-color}};
+}
+@media (min-width: 1000px) {
+  .flip-clock__slot {
+    font-size: 1.2rem;
+  }
+  .flip-card {
+    font-size: 3rem;
+  }
+}
+/*////////////////////////////////////////*/
+.flip-card__top,
+.flip-card__bottom,
+.flip-card__back-bottom,
+.flip-card__back::before,
+.flip-card__back::after {
+  display: block;
+  height: 0.72em;
+  color: {{section.settings.timer_color}};
+  background: {{section.settings.timer_bg-color}};
+  padding: 0.23em 0.25em 0.4em;
+  border-radius: 0.15em 0.15em 0 0;
+  backface-visiblity: hidden;
+  transform-style: preserve-3d;
+  width: 1.8em;
+}
+.flip-card__bottom,
+.flip-card__back-bottom {
+  color: {{section.settings.timer_color}};
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-top: solid 1px {{section.settings.timer_bg-color}};
+  background: {{section.settings.timer_bg-color}};
+  border-radius: 0 0 0.15em 0.15em;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2;
+}
+.flip-card__back-bottom {
+  z-index: 1;
+}
+.flip-card__bottom::after,
+.flip-card__back-bottom::after {
+  display: block;
+  margin-top: -0.72em;
+}
+.flip-card__back::before,
+.flip-card__bottom::after,
+.flip-card__back-bottom::after {
+  content: attr(data-value);
+}
+.flip-card__back {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0%;
+  pointer-events: none;
+}
+.flip-card__back::before {
+  position: relative;
+  overflow: hidden;
+  z-index: -1;
+}
+.flip .flip-card__back::before {
+  z-index: 1;
+  -webkit-animation: flipTop 0.3s cubic-bezier(0.37, 0.01, 0.94, 0.35);
+          animation: flipTop 0.3s cubic-bezier(0.37, 0.01, 0.94, 0.35);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  transform-origin: center bottom;
+}
+.flip .flip-card__bottom {
+  transform-origin: center top;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation: flipBottom 0.6s cubic-bezier(0.15, 0.45, 0.28, 1);
+          animation: flipBottom 0.6s cubic-bezier(0.15, 0.45, 0.28, 1);
+}
+@-webkit-keyframes flipTop {
+  0% {
+    transform: rotateX(0deg);
+    z-index: 2;
+  }
+  0%,
+  99% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+}
+@keyframes flipTop {
+  0% {
+    transform: rotateX(0deg);
+    z-index: 2;
+  }
+  0%,
+  99% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes flipBottom {
+  0%,
+  50% {
+    z-index: -1;
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  51% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+    z-index: 5;
+  }
+}
+@keyframes flipBottom {
+  0%,
+  50% {
+    z-index: -1;
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  51% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+    z-index: 5;
+  }
+}
+</style>
+
+<section class="counter-section">
+  <div class="swiper-wrapper">
+  {% for block in section.blocks %}
+  <div class="hero-section__slide swiper-slide" 
+       data-start="{{block.settings.slide-start-date-time}}"
+       data-end="{{block.settings.slide-end-date-time}}">
+	<div class="counter-section__content position__{{block.settings.content-position}}">
+		<div class="site-width">
+          <div class="counter-section__content-box">
+            <div class="counter-root" 
+                 data-start-date="{{block.settings.start-date-time}}" 
+                 data-end-date="{{block.settings.end-date-time}}"
+                 data-enable-btn="{% if block.settings.btn_enable %}enabled{% else %}disabled{% endif %}"></div>
+            {% if block.settings.title %}
+            <h2 class="hero__title">{{ block.settings.title }}</h2>
+            {% endif %}
+            {% if block.settings.subtitle %}
+			<h2 class="hero__subtitle">{{ block.settings.subtitle | remove: '<p>' | remove: '</p>' | newline_to_br }}</h2>
+            {% endif %}
+            {% if block.settings.btn_text != blank%}
+			<a class="btn btn-primary cta-btn" style="margin-top:15px;"
+               {% unless block.settings.btn_enable %}type="button"{% endunless %}
+               href="{{ block.settings.btn_url }}" 
+               {% unless block.settings.btn_enable %}disabled{% endunless %}>{{ block.settings.btn_text }}</a>
+            {% endif %}
+          </div>
+		</div>
+	</div>
+ 
+	<div class="hero-section__image -mobile">
+		{%- capture supported_sizes_mobile -%}{%- render 'image-size', sizes: '200,300,400,600,800,1000,1200,1400,1600', image: block.settings.image_mobile -%}{%- endcapture -%}
+		{%- assign image_mobile_url = block.settings.image_mobile | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+		<img 
+			class="lazy fade-in" 
+			alt="{{ block.settings.image_mobile.alt | escape }}"
+			data-src="{{ image_mobile_url }}" 	
+			data-sizes="auto"
+			data-widths="[{{ supported_sizes_mobile }}]"
+			>
+  </div>
+  
+    <div class="hero-section__image -desktop">
+		{%- capture supported_sizes_desktop -%}{%- render 'image-size', sizes: '200,300,400,600,800,1000,1200,1400,1600', image: block.settings.image_desktop -%}{%- endcapture -%}
+		{%- assign image_desktop_url = block.settings.image_desktop | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+		<img 
+			class="lazy fade-in" 
+			alt="{{ block.settings.image_desktop.alt | escape }}"
+			data-src="{{ image_desktop_url }}" 	
+			data-sizes="auto"
+			data-widths="[{{ supported_sizes_desktop }}]"
+			>
+  </div>
+  </div>
+  {% endfor %}
+  </div>
+  <div class="swiper-pagination"></div>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+{% raw %}
+<script>
+Vue.config.devtools = true;
+  Vue.filter('zerofill', function (value) {
+  //value = ( value < 0 ? 0 : value );
+  return ( value < 10 && value > -1 ? '0' : '' ) + value;
+});
+
+function initEvent(el,start,end,btnStatus,btn){
+    let Tracker = {
+        template: `
+        <span v-show="show" class="flip-clock__piece">
+          <span class="flip-clock__card flip-card">
+            <b class="flip-card__top" :data-time="time.Seconds">{{current | zerofill}}</b>
+            <b class="flip-card__bottom" :data-value="current | zerofill"></b>
+            <b class="flip-card__back" :data-value="previous | zerofill"></b>
+            <b class="flip-card__back-bottom" :data-value="previous | zerofill"></b>
+          </span>
+          <span class="flip-clock__slot">{{property}}</span>
+        </span>`, 
+        props: ['property','time'],
+        data(){
+          return {
+            current: 0,
+            previous: 0,
+            show: false
+          }
+        },
+        created(){
+          let that = this;
+          // in component B's created hook
+          bus.$on('changeTime', function (newValue) {
+              if ( newValue[that.property] === undefined ) { 
+                that.show = false; 
+                return;
+              }
+              var val = newValue[that.property];
+              that.show = true;
+              val = ( val < 0 ? 0 : val );
+
+              if ( val !== that.current ) {
+                that.previous = that.current;
+                that.current = val;
+
+                that.$el.classList.remove('flip');
+                void that.$el.offsetWidth;
+                that.$el.classList.add('flip');
+              }
+          });
+        }
+      };
+	let bus = new Vue();
+    new Vue({
+      el: el,
+      template: ` 
+      <div class="flip-clock" @click="update" >
+        <tracker 
+          v-for="(tracker,index) in trackers"
+          :key="index"
+          :property="tracker"
+          :time="time"
+        ></tracker>
+      </div>
+      `,
+      props: ['date'],
+      data: function(){
+        return {
+          time: {},
+          i: 0,
+          trackers: ['Days', 'Hours','Minutes','Seconds'] //'Random',       
+        };
+      },
+      components: {
+        'tracker': Tracker
+      },
+
+      beforeDestroy(){
+        if ( window['cancelAnimationFrame'] ) {
+          cancelAnimationFrame(this.frame);
+        }
+      },
+
+      watch: {
+        date(newVal){
+          this.setCountdown(newVal);
+        }
+      },
+
+      mounted() {
+        if ( window['requestAnimationFrame'] ) {
+          console.log('date>>>',this.date,moment);
+          this.setCountdown(this.date);
+          this.update();
+        }
+      },
+
+      methods: {
+        setCountdown(date){
+          if ( date ) {
+            this.countdown = moment(date, 'YYYY-MM-DD HH:mm:ss');
+          } else {
+            this.countdown = end;
+          }
+        },
+        update() {
+          this.frame = requestAnimationFrame(this.update.bind(this));
+          if ( this.i++ % 10 ) { return; }
+          var t = moment(new Date());
+          // Calculation adapted from https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/
+          if ( this.countdown ) { 
+
+
+            t = this.countdown.diff(t);
+            //t = this.countdown.diff(t);//.getTime();
+        
+            if(t <= 0){
+              if(btnStatus == 'enabled'){
+              	$(btn).attr('disabled','disabled');
+              }else{
+                $(btn).removeAttr('disabled');
+              }
+            }
+            this.time.Days = Math.floor(t / (1000 * 60 * 60 * 24));
+            this.time.Hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+            this.time.Minutes = Math.floor((t / 1000 / 60) % 60);
+            this.time.Seconds = Math.floor((t / 1000) % 60);
+          } else {
+            this.time.Days = undefined;
+            this.time.Hours = t.hours() % 13;
+            this.time.Minutes = t.minutes();
+            this.time.Seconds = t.seconds();
+          }
+          this.time.Total = t;
+          bus.$emit('changeTime', this.time);
+          return this.time;
+        }
+      }
+    });
+}
+  
+//   First Check slides time
+  $('.hero-section__slide').each((i,el)=>{
+  	let startDate = moment(el.getAttribute('data-start'));
+    let endDate = moment(el.getAttribute('data-end'));
+    
+    let currentTime = moment(new Date());
+    if(startDate.isValid() && endDate.isValid()){
+      console.log('startDate.diff(currentTime)>>',startDate.diff(currentTime));
+      if(startDate.diff(currentTime) >= 0){
+      	$(el).remove();
+      }
+      if(endDate.diff(currentTime) <= 0){
+      	$(el).remove();
+      }
+    }
+  });
+  
+  var els = document.querySelectorAll('.counter-root');
+  $('.counter-root').each((i,el)=>{
+	//By Default Hide all Slides
+    let slide = $(el).closest('.hero-section__slide');
+    
+    let startDate = moment(el.getAttribute('data-start-date'));
+    let endDate = moment(el.getAttribute('data-end-date'));
+    let currentTime = moment(new Date());
+    let btn = $(slide).find('.cta-btn');
+    let btnStatus = el.getAttribute('data-enable-btn');
+    console.log('Enabled>>>',btnStatus);
+    if(startDate.isValid() && endDate.isValid()){
+      if(startDate.diff(currentTime) <= 0){
+      	$(slide).show();
+        initEvent(el,startDate,endDate,btnStatus,btn);
+      }else{
+      	$(slide).remove();
+      }
+    }
+  });
+  
+</script>
+{% endraw %}
+
+<script>
+  
+  (function(){
+      let options = {
+        slidesPerView: 1,
+        loop: false,
+        autoplay: {
+          delay: parseInt({{section.settings.delay | times: 1000 }}),
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          type: 'bullets',
+        },
+      };
+      const swiper = new Swiper('.counter-section', options);
+  })();
+</script>
+
+{% schema %}
+{
+	"name": "Scheduling Banner",
+	"settings": [
+	  {
+		"type": "text",
+		"id": "delay",
+		"label": "Delay",
+		"default": "3",
+		"info": "Please use numeric vlaues e.g 2,3,2.5 etc"
+	  },
+      {
+      "type": "header",
+      "content": "Timer Settings"
+      },
+      {
+      "type": "color",
+      "id": "timer_color",
+      "label": "Color"
+      },
+      {
+      "type": "color",
+      "id": "timer_bg-color",
+      "label": "Background Color"
+      },
+      {
+      "type": "color",
+      "id": "timer_slot-bg-color",
+      "label": "Slot Background Color"
+      }
+	],
+	"blocks": [
+	  {
+		"name": "Slide",
+		"type": "slide",
+		"settings": [
+          {
+              "type": "header",
+              "content": "Text Settings"
+          },
+          {
+              "type": "text",
+              "id": "title",
+              "label": "Title"
+          },
+          {
+              "type": "richtext",
+              "id": "subtitle",
+              "label": "Subtitle"
+          },
+          {
+              "type": "header",
+              "content": "Button Settings"
+          },
+		  {
+			"type": "checkbox",
+			"id": "btn_enable",
+			"label": "Enable CTA",
+			"default": true
+		  },
+          {
+              "type": "url",
+              "id": "btn_url",
+              "label": "Link"
+          },
+          {
+              "type": "text",
+              "id": "btn_text",
+              "label": "Text"
+          },
+		  {
+			"type": "header",
+			"content": "Schedule Slide",
+			"info": "Enter start and end date/time. Both fields are neccessory, if you miss one slide will not be scheduled and will be visible by default. Correct format is neccessory to work."
+		  },
+		  {
+			"type": "text",
+			"id": "slide-start-date-time",
+			"label": "Slide Start Date/Time",
+			"info": "Date/time must be in a specific format(YYYY-MM-DD HH:mm:ss) i.e '2022-02-21 11:13:00'"
+		  },
+		  {
+			"type": "text",
+			"id": "slide-end-date-time",
+			"label": "Slide End Date/Time",
+			"info": "Date/time must be in a specific format(YYYY-MM-DD HH:mm:ss) i.e '2022-02-21 11:13:00'"
+		  },
+		  {
+              "type": "image_picker",
+              "id": "image_mobile",
+              "label": "Image (mobile)"
+          },
+          {
+              "type": "image_picker",
+              "id": "image_desktop",
+              "label": "Image (desktop)"
+          },
+		  {
+			"type": "select",
+			"id": "content-position",
+			"label": "Content Position",
+            "options": [
+              {
+                "value": "center",
+                "label": "Center"
+              },
+              {
+                "value": "top-left",
+                "label": "Top-Left"
+              },
+              {
+                "value": "top-center",
+                "label": "Top-Center"
+              },
+              {
+                "value": "top-right",
+                "label": "Top-Right"
+              },
+              {
+                "value": "center-left",
+                "label": "Center-Left"
+              },
+              {
+                "value": "center-right",
+                "label": "Center-Right"
+              },
+              {
+                "value": "bottom-left",
+                "label": "Bottom-Left"
+              },
+              {
+                "value": "bottom-center",
+                "label": "Bottom-Center"
+              },
+              {
+                "value": "bottom-right",
+                "label": "Bottom-Right"
+              }
+            ],
+            "default": "center"
+		  },
+		  {
+			"type": "header",
+			"content": "Event",
+			"info": "Enter start and end date/time. Both fields are neccessory, if you miss one counter will not show up. Correct format is neccessory to work counter."
+		  },
+		  {
+			"type": "text",
+			"id": "start-date-time",
+			"label": "Event Start Date/Time",
+			"info": "Date/time must be in a specific format(YYYY-MM-DD HH:mm:ss) i.e '2022-02-21 11:13:00'"
+		  },
+		  {
+			"type": "text",
+			"id": "end-date-time",
+			"label": "Event End Date/Time",
+			"info": "Date/time must be in a specific format(YYYY-MM-DD HH:mm:ss) i.e '2022-02-21 11:13:00'"
+		  }
+		]
+	  }
+	],
+    "presets": [
+        {
+        "category": "Hero",
+        "name": "Scheduling Banner"
+        }
+    ]
+}
+{% endschema %}

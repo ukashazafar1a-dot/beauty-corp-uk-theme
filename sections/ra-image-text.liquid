@@ -1,0 +1,58 @@
+{%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,300,400,600,800,1000,1200', image: section.settings.image -%}{%- endcapture -%}
+{%- assign image_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+
+<section class="section section-image">
+	<div class="site-width">
+		<div class="section__header">
+			<span class="section__subtitle">{{ section.settings.subtitle }}</span>
+			<h2 class="section__title">{{ section.settings.title }}</h2>
+		</div>
+
+		<div class="section__content section-image__content">
+			<div class="section__image">
+				<img
+					class="lazy fade-in" 
+					alt="{{ section.settings.image.alt | escape }}"
+					data-src="{{ image_url }}" 	
+					data-sizes="auto"
+					data-widths="[{{ supported_sizes }}]"
+					>
+			</div>
+			<a class="btn btn-secondary" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
+		</div>
+	</div>
+</section>
+
+{% schema %}
+{
+	"name": "New-Image-with-text",
+	"settings": [
+			{
+				"type": "text",
+				"id": "title",
+				"label": "Title"
+			},
+			{
+				"type": "text",
+				"id": "subtitle",
+				"label": "Sub title"
+			},
+			{
+				"type": "image_picker",
+				"id": "image",
+				"label": "Image"
+			},
+			{
+				"type": "url",
+				"id": "button_link",
+				"label": "Button link"
+			},
+			{
+				"type": "text",
+				"id": "button_text",
+				"label": "Button text"
+			}
+	]
+}
+{% endschema %}

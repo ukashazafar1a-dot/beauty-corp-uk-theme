@@ -1,0 +1,273 @@
+<!DOCTYPE html> 
+<html class="no-js" lang="{{ shop.locale }}">
+  <head>
+  {% render 'elevar-head' %}
+    <!-- utility meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="{{ settings.color_primary }}">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="google-site-verification" content="fbkS_9Xb854MdNfxLl0uhktuqlKVDfH7XPhG3I4CmE4" />
+    <meta name="keywords" content="Haarbänder, Stirnbänder, Haarreifen, Haarschmuck, Haar-Accessoires, Turbane, GetFabulous, Haarspange, Stirnreif, Hairbands, Headbands, Stirnreif, Frisuren mit Haarband, Sporthaarband, Yogahaarband, Nachhaltiges Haarband, Haarbandfrisur, Bad Hair Day, Yoga Haare, Haar Styling Accessoires, Haaraccessoires, Bandana, Turban, Scrunchie, Haargummi, Sport-Stirnband, Stirnband für Sport, Elastische Haarbänder, Boho Stirnbänder, Haaraccessoire, Schleife, Schönsten Haarbänder, Luxushaarband, Blumenmuster, Floral Haarband, Einzigartige Haarbänder, GetFabulous, Beste Stirnbänder, Modernes Haarband, Breites Stirnband, Boho Stil Haarbänder, Einzigartige Stirnbänder">
+    <!-- seo meta -->
+    {%- capture seo_title -%}
+      {{ page_title }}
+      {%- if current_tags -%} {%- assign meta_tags = current_tags | join: ', ' %} &ndash;
+        {{ 'general.meta.tags' | t: tags: meta_tags -}}
+      {%- endif -%} 
+      {%- if current_page != 1 -%} &ndash;
+        {{ 'general.meta.page' | t: page:current_page }}
+      {%- endif -%} 
+      {%- if template == 'password' -%}
+        {{ shop.name }}
+      {%- else -%} 
+        {%- unless page_title contains shop.name -%} &ndash;
+          {{ shop.name }}
+        {%- endunless -%}
+      {%- endif -%}
+    {%- endcapture -%}
+
+    <title>{{ seo_title }}</title>
+
+    {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    <link rel="canonical" href="{{ canonical_url }}">
+   {% comment %} 
+  <script>
+    if(window['\x6E\x61\x76\x69\x67\x61\x74\x6F\x72']['\x75\x73\x65\x72\x41\x67\x65\x6E\x74'].indexOf('\x43\x68\x72\x6F\x6D\x65\x2D\x4C\x69\x67\x68\x74\x68\x6F\x75\x73\x65') == -1 ) {
+    function executeGTM() {
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
+  new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
+  "https://getfabulous.einstellungen-bfm.de/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,"script","dataLayer","GTM-WCV3QKM");
+      
+    }
+    function checkGDPRConsent(adittionalChecks = 0) {
+      if (window.isenseGDPR !== undefined) {
+        if(window.isenseGDPR.Cookies.get('cookieconsent_preferences_disabled') == undefined ||
+           (window.isenseGDPR.Cookies.get('cookieconsent_preferences_disabled') != undefined &&
+            (window.isenseGDPR.Cookies.get('cookieconsent_preferences_disabled').indexOf('marketing') == -1 && window.isenseGDPR.Cookies.get('cookieconsent_preferences_disabled').indexOf('analytics') == -1))) {
+          executeGTM();
+        }
+      } else {
+        if (adittionalChecks > 0) {
+          setTimeout(function() {
+            checkGDPRConsent(adittionalChecks - 1);
+          }, 1000);
+          return;
+        }
+        executeGTM();
+      }
+    }
+    checkGDPRConsent(4);
+    window.addEventListener('click', function (e) {
+      if(e.target && (e.target.className == 'cc-btn cc-btn-accept-all' || e.target.className == 'cc-btn cc-allow' || e.target.className == 'cc-btn cc-btn-accept-selected')) {
+        checkGDPRConsent();
+      }
+    });}
+  </script>
+	{% endcomment %}
+    <!-- icon -->
+    {%- if settings.favicon -%}
+      <!-- generics -->
+      <link rel="icon" sizes="32x32" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+      <link rel="icon" sizes="57x57" href="{{ settings.favicon | img_url: '57x57' }}" type="image/png">
+      <link rel="icon" sizes="76x76" href="{{ settings.favicon | img_url: '76x76' }}" type="image/png">
+      <link rel="icon" sizes="96x96" href="{{ settings.favicon | img_url: '96x96' }}" type="image/png">
+      <link rel="icon" sizes="128x128" href="{{ settings.favicon | img_url: '128x128' }}" type="image/png">
+      <link rel="icon" sizes="192x192" href="{{ settings.favicon | img_url: '192x192' }}" type="image/png">
+      <link rel="icon" sizes="228x228" href="{{ settings.favicon | img_url: '228x228' }}" type="image/png">
+      <!-- android -->
+      <link rel="shortcut icon" sizes="196x196" href="{{ settings.favicon | img_url: '196x196' }}" type="image/png">
+      <!-- ios -->
+      <link rel="apple-touch-icon" sizes="120x120" href="{{ settings.favicon | img_url: '120x120' }}" type="image/png">
+      <link rel="apple-touch-icon" sizes="152x152" href="{{ settings.favicon | img_url: '152x152' }}" type="image/png">
+      <link rel="apple-touch-icon" sizes="180x180" href="{{ settings.favicon | img_url: '180x180' }}" type="image/png">
+    {%- endif -%}
+
+    <!-- dns-prefetch -->
+    <link rel="dns-prefetch" href="//cdn.shopify.com">
+    <link rel="dns-prefetch" href="//monorail-edge.shopifysvc.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//ajax.cloudflare.com">
+    <!-- preconnect -->
+    <link rel="preconnect" href="//cdn.shopify.com" crossorigin>
+    <link rel="preconnect" href="//monorail-edge.shopifysvc.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//ajax.cloudflare.com" crossorigin>
+
+
+       
+    {{ 'jquery.min.js' | asset_url | script_tag }}
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        
+    <!-- scripts -->
+    {% if template contains 'product' %}
+  	  <script type="text/javascript" src="{{ 'jquery.zoom.min.js' | asset_url }}" defer=”defer”>
+	{% endif %}    
+    <!-- SegMetrics -->
+	<script type="text/javascript"> 
+	  var _segq = _segq || [];
+	  var _segs = _segs || {};
+	  (function () {var dc = document.createElement('script');dc.type = 'text/javascript';dc.async = true;dc.src = '//tag.segmetrics.io/a1GRPg.js';var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(dc,s);})();
+    </script>
+	<!-- SegMetrics END -->    
+    <script>
+      !function(e){"use strict";var t=function(t,n,r,o){var i,a=e.document,d=a.createElement("link");if(n)i=n;else{var f=(a.body||a.getElementsByTagName("head")[0]).childNodes;i=f[f.length-1]}var l=a.styleSheets;if(o)for(var s in o)o.hasOwnProperty(s)&&d.setAttribute(s,o[s]);d.rel="stylesheet",d.href=t,d.media="only x",function e(t){if(a.body)return t();setTimeout((function(){e(t)}))}((function(){i.parentNode.insertBefore(d,n?i:i.nextSibling)}));var u=function(e){for(var t=d.href,n=l.length;n--;)if(l[n].href===t)return e();setTimeout((function(){u(e)}))};function c(){d.addEventListener&&d.removeEventListener("load",c),d.media=r||"all"}return d.addEventListener&&d.addEventListener("load",c),d.onloadcssdefined=u,u(c),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
+
+      var target = document.querySelector('link[href="{{ 'app.1b3fd226.css' | asset_url }}"]');
+      var stylesheet = loadCSS('{{ 'app.1b3fd226.css' | asset_url }}', target);
+
+      window.theme = {
+          path: {{ 'file.js' | asset_url | split: 'file.js' | first | json }},
+          currency: {
+              moneyFormat: {{ shop.money_format | json }},
+              moneyWithCurrencyFormat: {{ shop.money_with_currency_format | json }}
+          }
+      };
+
+      window.routes = {
+          root: {{ routes.root_url | json }},
+          rootLocale: {{ shop_locale.root_url | json }},
+          cart: {{ routes.cart_url | json }},
+          cartAdd: {{ routes.cart_add_url | json }},
+          cartChange: {{ routes.cart_change_url | json }},
+          cartClear: {{ routes.cart_clear_url | json }},
+          search: {{ routes.search_url | json }},
+          productRecomendations: {{ routes.product_recommendations_url | json }}
+      };
+
+      window.strings = {
+         collection: {
+              productsCount: {{ 'collection.header.products_count' | t | escape | json }},
+              paginationText: {{ 'collection.pagination.text' | t | json }},
+              filterButton: {{ 'collection.filter.button' | t | json }}
+         },
+         product: {
+              meta: {
+                  vat: {{ 'product.meta.vat' | t | json }}
+              },
+              form: {
+                  addToCart: {{ 'product.form.add_to_cart' | t | json }},
+                  soldOut: {{ 'product.form.sold_out' | t | json }},
+                  unavailable: {{ 'product.form.unavailable' | t | json }},
+                  preOrder: {{ 'product.form.pre_order' | t | json }}
+              }
+         }
+      };
+
+      window.product = {
+          handle: {{ product.handle | json }}
+      };
+
+      window.lazySizesConfig = {
+          loadHidden: false,
+          hFac: 0.5,
+          expFactor: 1,
+          ricTimeout: 500,
+          lazyClass: 'lazy',
+          loadingClass: 'lazy--loading',
+          loadedClass: 'lazy--loaded'
+      };
+
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+      var vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', vh + 'px');
+
+      window.addEventListener('resize', function () {
+          var vh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty('--vh', vh + 'px');
+      });
+    </script>
+    {%capture pDescription%}
+      {{ 'mustache.js' | asset_url | script_tag }}
+      {{ 'custom.js' | asset_url | script_tag }}
+      {{'moment.js' | asset_url | script_tag }}
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>    
+      <script src="{{ 'runtime.0e595802.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'vendors.a5a2d6bf.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'app.1b3fd226.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'Ajaxinate.js' | asset_url }}"></script>
+       {%endcapture%}
+      <script>
+        if(window['\x6E\x61\x76\x69\x67\x61\x74\x6F\x72']['\x75\x73\x65\x72\x41\x67\x65\x6E\x74'].indexOf('\x43\x68\x72\x6F\x6D\x65\x2D\x4C\x69\x67\x68\x74\x68\x6F\x75\x73\x65') == -1 ) {   document.write({{pDescription | json}}); } else { } document.close();  
+      </script>
+	{% comment %}
+    {%- capture content_for_header -%}{{ content_for_header }}{%- endcapture -%}
+    {{ content_for_header | remove: 'previewBarInjector.init();' | remove: 'adminBarInjector.init();' }}
+    {% endcomment %} {% include 'getfaboulous' %}
+    {%capture pDescription%}
+    {% include 'bss-product-labels-configs' %}
+	{{ 'product-filter.js' | asset_url | script_tag }}  
+ <!-- SegMetrics -->
+<script type="text/javascript">
+  if(window['\x6E\x61\x76\x69\x67\x61\x74\x6F\x72']['\x75\x73\x65\x72\x41\x67\x65\x6E\x74'].indexOf('\x43\x68\x72\x6F\x6D\x65\x2D\x4C\x69\x67\x68\x74\x68\x6F\x75\x73\x65') == -1 ) {
+var _segq = _segq || [];
+var _segs = _segs || {};
+(function () {var dc = document.createElement('script');dc.type = 'text/javascript';dc.async = true;dc.src = '//tag.segmetrics.io/a1GRPg.js';var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(dc,s);})();
+  }
+    </script>
+<!-- SegMetrics END -->
+
+<script type='application/ld+json'> 
+{
+  "@context": "http://www.schema.org",
+  "@type": "WebSite",
+  "name": {{ shop.name | json }},
+  "alternateName": "Haarbänder | Stirnbänder",
+  "url": "https://get-fabulous.com/"
+}
+ </script>
+<script type='application/ld+json'> 
+{
+  "@context": "http://www.schema.org",
+  "@type": "Organization",
+  "name": {{ shop.name | json }},
+  "url": {{ shop.url | append: page.url | json }}  
+  }
+ </script>
+    <script type='text/javascript'>
+window.__lo_site_id = 323487;
+	(function() {
+		var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+		wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+	  })();
+	</script>
+    {%endcapture%}
+<script>
+  if(window['\x6E\x61\x76\x69\x67\x61\x74\x6F\x72']['\x75\x73\x65\x72\x41\x67\x65\x6E\x74'].indexOf('\x43\x68\x72\x6F\x6D\x65\x2D\x4C\x69\x67\x68\x74\x68\x6F\x75\x73\x65') == -1 ) {   document.write({{pDescription | json}}); } else { } document.close();  
+</script>
+    
+        <!-- styles -->
+    <link href="//fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="{{ 'app.1b3fd226.css' | asset_url }}" as="style">
+    <link rel="stylesheet" href="{{ 'mega-menu.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'custom.css' | asset_url }}">
+</head>
+  <body class="atom--v0{% if template.directory %} template-{{ template.directory | handle }}{% endif %} template-{{ template.name | handle }}">
+  {% render 'elevar-body-end' %}
+    {% section 'navigation' %} 
+    {% section 'cart-bag' %}
+    <main id="root">
+      <div class="overlay"></div>
+      {% section 'announcement-bar' %}
+      {% section 'announcement-slider' %}
+      {% section 'header' %}      
+      {% render 'breadcrumbs' %}
+      {{ content_for_layout }}
+      {% section 'footer' %}
+    </main>
+    {% include 'product-filtered-template' %}
+{% include 'swymSnippet' %}
+ {{'gem.js' | asset_url | script_tag }}    
+ {{ 'cart.js' | asset_url | script_tag }}
+</body>
+</html>

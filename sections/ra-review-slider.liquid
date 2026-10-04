@@ -1,0 +1,97 @@
+<style>
+  .rf-padding{
+  padding-bottom:0;
+  }
+</style>
+<section class="section {% if section.settings.zeropad %}rf-padding{% endif %}">
+	<div class="section__header">
+		<span class="section__subtitle">{{ section.settings.subtitle }}</span>
+		<h2 class="section__title">{{ section.settings.title }}</h2>
+	</div>
+
+	<div class="review-slider swiper-container">
+		<div class="swiper-wrapper">
+			{%- for block in section.blocks -%}
+				<div class="review-slider__slide review-slide swiper-slide">
+					<div class="review-slide__image">
+						<span>{{ block.settings.initials }}</span>
+					</div>
+					<div class="review-slide__header">
+						<span class="jdgm-rev__rating" data-score="5" tabindex="0" aria-label="5 star review">
+							<span class="jdgm-star jdgm--on"></span>
+							<span class="jdgm-star jdgm--on"></span>
+							<span class="jdgm-star jdgm--on"></span>
+							<span class="jdgm-star jdgm--on"></span>
+							<span class="jdgm-star jdgm--on"></span>
+						</span>
+						<span>Verifizierte Bewertung</span>
+					</div>
+					<span class="review-slide__title">{{ block.settings.title }}</span>
+					<p class="review-slide__text">{{ block.settings.text }}</p>
+					<a class="review-slide__link" href="{{ block.settings.link_url }}">{{ block.settings.link_text }}</a>
+				</div>
+			{%- endfor -%}
+		</div>
+
+		<div class="swiper-pagination"></div>
+	</div>
+</section>
+
+
+{% schema %}
+{
+	"name": "New-Review-Slider",
+	"settings": [
+		
+		{
+			"type": "checkbox",
+			"id": "zeropad",
+			"label": "Space Bottom?",
+			"default":false
+		},
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		},
+		{
+			"type": "text",
+			"id": "subtitle",
+			"label": "Sub title"
+		}
+	],
+	"blocks": [
+		{
+			"type": "review",
+			"name": "Review",
+			"settings": [
+				{
+					"type": "text",
+					"id": "initials",
+					"label": "Initials"
+				},
+				{
+					"type": "text",
+					"id": "title",
+					"label": "Title"
+				},
+				{
+					"type": "textarea",
+					"id": "text",
+					"label": "Text"
+				},
+				{
+					"type": "url",
+					"id": "link_url",
+					"label": "Link"
+				},
+				{
+					"type": "text",
+					"id": "link_text",
+					"label": "Link Text"
+				}
+			]
+		}
+	]
+}
+{% endschema %}

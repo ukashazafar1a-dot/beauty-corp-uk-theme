@@ -1,0 +1,49 @@
+<div id="featured-content-carousel" class="featured-content-carousel carousel" data-effect="fade">
+	{% if section.blocks.size > 0 %}
+  		{% for block in section.blocks %}
+  			<div class="featured-item loading" data-lazy="{{block.settings.article.image.src | img_url:'500x'}}">
+                <div class="entry-header">
+                    <div class="cat-links">
+                        <a href="{{block.settings.article.blog.url}}" rel="category tag">{{block.settings.article.blog.title}}</a>						
+                    </div>
+                    <h2 class="entry-title">
+                         <a href="{{block.settings.article.url}}">{{block.settings.article.title}}</a>
+                    </h2>
+                    <a href="{{block.settings.article.url}}" class="read-more">Continue reading</a>
+                </div>
+            </div>
+  		{% endfor %}
+  	{% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "Feature Articles",
+    "settings": [],
+	"blocks":[
+		{
+			"name":"article",
+			"type":"article",
+			"settings":[
+				{
+					"type":"article",
+					"id":"article",
+					"label":"Article"
+				},
+				{
+					"type":"blog",
+					"id":"blogs",
+					"label":"Blogs"
+				}
+			]
+
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

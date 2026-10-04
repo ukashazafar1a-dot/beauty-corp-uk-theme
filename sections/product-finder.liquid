@@ -1,0 +1,207 @@
+<section class="section section-product-finder">
+	<div class="section__header">
+		<span class="section__subtitle">{{ section.settings.subtitle }}</span>
+		<h2 class="section__title">{{ section.settings.title }}</h2>
+	</div>
+
+	<div class="product-finder-navigation">
+		{%- for block in section.blocks -%}
+			<div class="step">
+				<div class="step-number">
+					<span>{{ forloop.index }}</span>
+				</div>
+				<span class="step-name">{{ block.settings.title }}</span>
+			</div>
+		{%- endfor -%}
+	</div>
+
+	<form class="product-finder">
+		{%- for block in section.blocks -%}
+			{%- assign image_1 = block.settings.image_1 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+			{%- assign image_2 = block.settings.image_2 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+			{%- assign image_3 = block.settings.image_3 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+			{%- assign image_4 = block.settings.image_4 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+			<fieldset class="product-finder__step u-clearfix">
+				<div class="product-finder__field">
+					<input id="{{ forloop.index }}-1" class="u-hidden" type="radio" name="1" value="{{ block.settings.value_1 }}">
+					<label for="{{ forloop.index }}-1">
+						<img 
+							class="lazy fade-in" 
+							alt="{{ block.settings.image_1.alt | escape }}"
+							data-src="{{ image_1 }}" 
+							data-sizes="auto"
+              data-widths="[50,100,200,300,400]"
+							>
+						<span>{{ block.settings.title_1 }}</span>
+					</label>
+				</div>				
+				<div class="product-finder__field">
+					<input id="{{ forloop.index }}-2" class="u-hidden" type="radio" name="1" value="{{ block.settings.value_2 }}">
+					<label for="{{ forloop.index }}-2">
+						<img 
+							class="lazy fade-in" 
+							alt="{{ block.settings.image_2.alt | escape }}"
+							data-src="{{ image_2 }}" 
+							data-sizes="auto"
+							data-widths="[50,100,200,300,400]"
+							>
+						<span>{{ block.settings.title_2 }}</span>
+					</label>
+				</div>
+				<div class="product-finder__field">
+					<input id="{{ forloop.index }}-3" class="u-hidden" type="radio" name="1" value="{{ block.settings.value_3 }}">
+					<label for="{{ forloop.index }}-3">
+						<img 
+							class="lazy fade-in" 
+							alt="{{ block.settings.image_3.alt | escape }}"
+							data-src="{{ image_3 }}" 
+							data-sizes="auto"
+							data-widths="[50,100,200,300,400]"
+							>
+						<span>{{ block.settings.title_3 }}</span>
+					</label>
+				</div>
+				<div class="product-finder__field">
+					<input id="{{ forloop.index }}-4" class="u-hidden" type="radio" name="1" value="{{ block.settings.value_4 }}">
+					<label for="{{ forloop.index }}-4">
+						<img 
+							class="lazy fade-in" 
+							alt="{{ block.settings.image_4.alt | escape }}"
+							data-src="{{ image_4 }}" 
+							data-sizes="auto"
+              data-widths="[50,100,200,300,400]"
+							>
+						<span>{{ block.settings.title_4 }}</span>
+					</label>
+				</div>
+				<button class="product-finder__next btn btn-primary">{{ block.settings.continue_button }}</button>
+			</fieldset>
+		{%- endfor -%}
+	</form>
+
+	<div class="product-finder-results">
+		<div class="site-width">
+			<p class="product-finder-results__title"></p>
+			<div class="product-finder-results__list"></div>
+		</div>
+	</div>
+</section>
+
+{% schema %}
+{
+	"name": "Product Finder",
+	"settings": [
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		},
+		{
+			"type": "text",
+			"id": "subtitle",
+			"label": "Sub title"
+		}
+	],
+	"blocks": [
+	{
+		"type": "step",
+		"name": "Step",
+		"settings": [
+			{
+				"type": "text",
+				"id": "title",
+				"label": "Title"
+			},
+			{
+				"type": "text",
+				"id": "continue_button",
+				"label": "Button"
+			},
+			{
+				"type": "header",
+				"content": "Answer #1"
+			},
+			{
+				"type": "image_picker",
+				"id": "image_1",
+				"label": "Image"
+			},
+			{
+				"type": "text",
+				"id": "title_1",
+				"label": "Title"
+			},
+			{
+				"type": "text",
+				"id": "value_1",
+				"label": "Value"
+			},
+			{
+				"type": "header",
+				"content": "Answer #2"
+			},
+			{
+				"type": "image_picker",
+				"id": "image_2",
+				"label": "Image"
+			},
+			{
+				"type": "text",
+				"id": "title_2",
+				"label": "Title"
+			},
+			{
+				"type": "text",
+				"id": "value_2",
+				"label": "Value"
+			},
+			{
+				"type": "header",
+				"content": "Answer #3"
+			},
+			{
+				"type": "image_picker",
+				"id": "image_3",
+				"label": "Image"
+			},
+			{
+				"type": "text",
+				"id": "title_3",
+				"label": "Title"
+			},
+			{
+				"type": "text",
+				"id": "value_3",
+				"label": "Value"
+			},
+			{
+				"type": "header",
+				"content": "Answer #4"
+			},
+			{
+				"type": "image_picker",
+				"id": "image_4",
+				"label": "Image"
+			},
+			{
+				"type": "text",
+				"id": "title_4",
+				"label": "Title"
+			},
+			{
+				"type": "text",
+				"id": "value_4",
+				"label": "Value"
+			}
+		]
+	}
+	],
+    "presets": [
+        {
+        "category": "Guided Selling",
+        "name": "Product Finder"
+        }
+    ]
+}
+{% endschema %}

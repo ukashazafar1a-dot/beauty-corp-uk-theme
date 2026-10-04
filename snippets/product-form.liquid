@@ -1,0 +1,62 @@
+{%- assign color_label = 'farbe,color' | split: ',' -%}
+{%- assign size_label = 'größe,size' | split: ',' -%}
+
+{%- assign selected_variant = product.selected_or_first_available_variant -%}
+
+{%- form 'product', product, class: 'product-form' -%}
+  <div class="product-form__variants">
+    {%- unless product.has_only_default_variant -%}
+      {%- for option in product.options_with_values -%}
+        {%- assign downcase_option_name = option.name | downcase -%}
+
+        <div class="product-option">
+          <legend class="product-option__legend" data-option="{{ forloop.index }}">
+            {{- option.name -}}: <span>{{ option.selected_value }}</span>
+          </legend>
+
+          {%- if color_label contains downcase_option_name -%}
+            <div class="product-option__container">
+              <ul class="product-option__list">
+                {%- for value in option.values -%}
+                  <li class="product-option-item">
+                    <input 
+                      id="option-{{ forloop.parentloop.index }}-{{ forloop.index }}" 
+                      class="u-hidden"
+                      name="option-{{ forloop.parentloop.index }}"
+                      value="{{ value | escape }}" 
+                      type="radio"
+                      {% if value == option.selected_value %}checked="checked"{% endif %}
+                      data-option="{{ forloop.parentloop.index }}"
+                      >
+                    <label for="option-{{ forloop.parentloop.index }}-{{ forloop.index }}">
+                      <span class="u-visually-hidden">{{ value }}</span>
+                      <div class="swatch-{{ value | handle }}" data-swatch></div>
+                    </label>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    {% else %}
+      <input type="hidden" name="id" value="{{ selected_variant.id }}">
+    {%- endunless -%}
+  </div>
+
+  <input type="hidden" name="quantity" value="1">
+
+  <button 
+    type="submit" 
+    class="btn btn-primary btn-fullwidth"
+    {% if selected_variant.available == false %}disabled="disabled"{% endif %}
+    >
+    <p>
+      {%- if selected_variant.available == true -%}
+        {{ 'product.form.add_to_cart' | t }}
+      {%- else -%}
+        {{ 'product.form.sold_out' | t }}
+      {%- endif -%}
+    </p>
+  </button>
+{%- endform -%}

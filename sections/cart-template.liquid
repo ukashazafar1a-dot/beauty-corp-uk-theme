@@ -1,0 +1,172 @@
+{%- assign bag_note = 'bag.header.note' | t -%}
+{%- assign shipping_cost = 0 -%}
+{%- assign savings = 0 -%}
+
+<div class="bag">
+	<div class="bag__container">
+		<form action="{{ routes.cart_url }}" method="post" novalidate>
+
+			<div class="bag-main">
+				<header class="bag-header">
+					<h2 class="bag-header__title">
+						{{ section.settings.bagheadertext }}
+                      <span>({{ cart.item_count }} <spna style="font-size:18px;">{{- 'bag.header.article' | t -}}</spna>)</span>
+					</h2>
+					{%- comment -%}{%- unless bag_note contains 'translation missing' or bag_note == empty -%}
+						<span class="bag-header__note">{{ bag_note }}</span>
+					{%- endunless -%}{%- endcomment -%}
+				</header>
+				<div class="bag-main__content">
+					<ul class="bag-main__list u-nolist">
+						{%- if cart.item_count > 0 -%}
+							{%- for item in cart.items -%}
+								{%- assign image_url = item.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                {%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,300,400,600,800', image: item.image -%}{%- endcapture -%}
+                
+                <li class="cart-item" data-item-id="{{ item.id }}">
+                  <div class="cart-item__image u-aspect-ratio" style="--aspect-ratio: 1.0">
+                    <a href="{{ item.url }}">
+                      <img
+                        class="lazy"
+                        alt="{{ item.image.alt | escape }}"
+                        data-src="{{ image_url }}" 	
+                        data-sizes="auto"
+                        data-widths="[{{ supported_sizes }}]"
+                        >
+                    </a>
+                  </div>
+                  <div class="cart-item__details">
+                    <span class="cart-item__title">{{ item.product.title }}</span>
+                    {%- unless item.product.has_only_default_variant -%}
+                      <ul class="cart-item__options u-nolist">
+                        {%- for option in item.options_with_values -%}
+                          <li>{{ option.name }}: {{ option.value }}</li>
+                        {%- endfor- %}
+                      </ul>
+                    {%- endunless -%}
+                    <div class="cart-item__quantity">
+                      <select name="update">
+                        {%- for i in (1..item.variant.inventory_quantity) -%}
+                          <option value="{{ i }}"{% if i == item.quantity %} selected{% endif %}>{{ i }}</option>
+                        {%- endfor -%}
+                      </select>
+                      <i class="icon icon-dropdown"></i>
+                    </div>
+                  </div>
+                  <div class="cart-item__price">
+                    {%- if item.variant.compare_at_price > item.final_price -%}
+                      {%- assign savings = savings | plus: item.variant.compare_at_price | minus: item.final_price | times: item.quantity -%}
+
+                      <span class="price price--striked">{{ item.variant.compare_at_price | money_with_currency }}</span>
+                      <span class="price price--sale">{{ item.final_price | money_with_currency }}</span>
+                    {%- else -%}
+                      <span class="price">{{ item.final_price | money_with_currency }}</span>
+                    {%- endif -%}
+                  </div>
+                  <button class="cart-item__remove" name="remove">
+                    <span></span>
+                    <span></span>
+                  </button>
+                </li>
+
+								{%- comment -%}<li class="bag-item" data-item-id="{{ item.id }}">
+									<div class="bag-item__details">
+										<div class="bag-item__image u-aspect-ratio" style="--aspect-ratio: 1.0">
+											<a href="{{ item.url }}">
+												<img
+													alt="{{ item.image.alt | escape }}" class="lazy fade-in"
+													data-src="{{ image_url }}" 	
+													data-sizes="auto"
+													data-widths="[{{ supported_sizes }}]"
+													>
+											</a>
+										</div>
+										<div class="bag-item__info">
+											<div class="bag-item__title-group">
+												<span class="bag-item__title">{{ item.product.title }}</span>
+												{%- unless item.product.has_only_default_variant -%}
+													<span class="bag-item__variant">{{ item.variant.title }}</span>
+												{%- endunless -%}
+											</div>
+											<div class="bag-item__price-group">
+                        {%- if item.variant.compare_at_price > item.final_price -%}
+                          {%- assign savings = savings | plus: item.variant.compare_at_price | minus: item.final_price | times: item.quantity -%}
+
+                          <span class="bag-item__striked-price">{{ item.variant.compare_at_price | money_with_currency }}</span>
+                          <span class="bag-item__default-price -sale">{{ item.final_price | money_with_currency }}</span>
+                        {%- else -%}
+                          <span class="bag-item__default-price">{{ item.final_price | money_with_currency }}</span>
+                        {%- endif -%}
+											</div>
+											<div class="bag-item__actions">
+												<button class="bag-action__remove" name="remove">
+													<span></span>
+													<span></span>
+												</button>
+												<div class="bag-action__quantity">
+													<select id="update-quantity" name="update-quantity">
+														{%- for i in (1..9) -%}
+															{%- unless i > item.variant.inventory_quantity -%}
+																<option value="{{ i }}"{% if i == item.quantity %} selected{% endif %}>{{ i }}</option>
+															{%- endunless -%}
+														{%- endfor -%}
+													</select>
+													<i></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>{%- endcomment -%}
+							{%- endfor -%}
+						{%- endif -%}
+					</ul>
+				</div>
+			</div>
+			
+			<div class="bag-footer">
+				<h2 class="bag-footer__title">{{ 'bag.footer.title' | t }}</h2>
+				<div class="bag-shipping">
+          <span>{{ 'bag.footer.shipping' | t }}</span>
+          <span>Wird im Checkout berechnet</span>
+					{%- comment -%}<span>{{ shipping_cost | money_with_currency }}</span>{%- endcomment -%}
+        </div>
+        {%- if savings > 0 -%}
+          <div class="bag-savings">
+            <span>{{ 'bag.footer.savings' | t }}</span>
+            <span>{{ savings | money_with_currency }}</span>
+          </div>
+        {%- endif -%}
+				<div class="bag-total">
+					<p>
+						{{- 'bag.footer.total' | t -}}
+						<span class="bag-total__vat">{{ 'bag.footer.vat' | t }}</span>
+					</p>
+					<span data-bag-total><span class='ak-upsell-original-price'>{{ cart.total_price | money_with_currency }}</span><span class='ak-upsell-cart-total'></span></span>
+				</div>
+				<button class="btn btn-primary rf-check" type="submit" name="checkout">{{ 'bag.footer.checkout_button' | t }}</button>
+			</div>
+
+		</form>
+	</div>
+</div>
+ <!-- Add recommendation widget -->
+
+<div id="ur-custom-widget"></div>
+
+<!-- End recommendation widget --> 
+{% schema %}
+{
+  "name": "Cartrf",
+  "class": "cartrf",
+	"settings": [
+	     
+{
+            "type": "text",
+            "id": "bagheadertext",
+            "label": "Cart Title",
+            "default": "Dein Warenkorb"
+          }
+
+	]
+}
+{% endschema %}

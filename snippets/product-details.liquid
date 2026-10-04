@@ -1,0 +1,28 @@
+{%- assign product_details = product.metafields.product_details -%}
+
+<div class="product-details">
+	<div class="product-details-item" data-accordion-item>
+		<div class="product-details-item__header" data-accordion-trigger>
+			<h2>Beschreibung</h2>
+			{%- render 'icon', type: 'caret-down' -%}
+		</div>
+		<div class="product-details-item__content">
+			{{ product.description }}
+		</div>
+	</div>
+
+	{%- if product_details != blank -%}
+		{%- for item in product_details -%}
+			<div class="product-details-item" data-accordion-item>
+				<div class="product-details-item__header" data-accordion-trigger>
+					<h2>{{ item.first }}</h2>
+					{%- render 'icon', type: 'caret-down' -%}
+				</div>
+				<div class="product-details-item__content">
+					{{ item.last }}
+				</div>
+			</div>
+		{%- endfor -%}
+	{%- endif -%}
+
+</div>

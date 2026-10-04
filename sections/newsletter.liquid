@@ -1,0 +1,54 @@
+<section class="section section-newsletter">
+	<div class="site-width">
+		<div class="section__header">
+			<span class="section__subtitle">{{ section.settings.subtitle }}</span>
+			<h2 class="section__title">{{ section.settings.title }}</h2>
+		</div>
+
+		<div class="section-newsletter__container">
+			<p class="section-newsletter__text">{{ section.settings.text | remove: '<p>' | remove: '</p>' | newline_to_br }}</p>
+			<div class="klaviyo-form-{{ section.settings.klaviyo_id }}"></div>
+          <div class="klaviyo-form-Wvhrfr"></div>
+			<span class="section-newsletter__microcopy">{{ section.settings.microcopy | remove: '<p>' | remove: '</p>' }}</span>
+		</div>
+	</div>
+</section>
+
+{% schema %}
+{
+	"name": "Newsletter (Klaviyo)",
+	"settings": [
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		},
+		{
+			"type": "text",
+			"id": "subtitle",
+			"label": "Subtitle"
+		},
+		{
+			"type": "html",
+			"id": "text",
+			"label": "Text"
+		},
+		{
+			"type": "text",
+			"id": "klaviyo_id",
+			"label": "Klaviyo ID"
+		},
+		{
+			"type": "richtext",
+			"id": "microcopy",
+			"label": "Info Text"
+		}
+	],
+    "presets": [
+        {
+        "category": "Forms",
+        "name": "Newsletter (Klaviyo)"
+        }
+    ]
+}
+{% endschema %}

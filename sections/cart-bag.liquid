@@ -1,0 +1,138 @@
+<style>
+  .cart__discounted{
+  	margin: 0 0px 8px;
+    padding: 8px;
+    background: #fdeae6;
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .range-slider-container {
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 15px;
+  }
+
+  .box-minmax {
+        margin-top: 3px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #000;
+  }
+
+  .range-slider {
+       margin-top: 5px;
+    width: 100%;
+  }
+
+  .rs-range {
+    margin-top: 7px;
+    width: 100%;
+    -webkit-appearance: none;
+  }
+  .rs-range:focus {
+    outline: none;
+  }
+  .rs-range::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    box-shadow: none;
+    background: #ffffff;
+  }
+  .rs-range::-moz-range-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    box-shadow: none;
+    background: #ffffff;
+  }
+  .rs-range::-ms-fill-lower { 
+    background: #ffaa8f;
+  }
+  .rs-range::-webkit-slider-thumb {
+    height: 10px;
+    width: 20px;
+    background: #ffaa8f;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
+  .rs-range::-moz-range-thumb {
+    height: 10px;
+    width: 20px;
+    background: #ffaa8f;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
+  .rs-range::-moz-focus-outer {
+    border: 0;
+  }
+</style>
+
+<div id="cart-bag" class="cart-bag">
+  <div class="cart__header">
+    <i class="icon icon-cart"></i>
+    <p>{{title}} <span>({{item_count}})</span></p>
+    <i class="icon icon-close" @click="toggleCart()"></i>
+  </div>
+  <div class="cart__discounted" v-if="discounted.note">
+    <span>{{discounted.note}}</span>
+    <div class="range-slider-container">
+      <div class="range-slider">
+        <input id="rs-range-line" class="rs-range" type="range" 
+               :value="cart_original_total" min="0" 
+               :max="discounted.price_range" disabled>
+      </div>
+      <div class="box-minmax">
+        <span>0€</span><span v-if="discounted">{{discounted.price_range}}€</span>
+      </div>
+    </div>
+  </div>
+  <form class="cart__form cart-form" action="/cart" method="post" novalidate="true">
+    <ul class="cart-form__list u-scrollable">
+      <cart-item
+                 v-for="item in items"
+                 :key="item.id"
+                 v-bind:id="item.id"
+                 v-bind:title="item.title"
+                 v-bind:url="item.url"
+                 v-bind:stock="item.stock"
+                 v-bind:quantity="item.quantity"
+                 v-bind:image="item.image"
+                 v-bind:price="item.price"
+                 v-on:update-item="updateItem"
+                 >
+      </cart-item>
+    </ul>
+    <cart-summary
+                v-bind:savings="summary.savings"
+                v-bind:total="summary.total"
+                v-bind:translations="translations">
+    </cart-summary>
+  </form>
+</div>
+{% schema %}
+{
+	"name": "Cart",
+	"settings": [
+		{
+			"type": "header",
+			"content": "Empty Cart"
+		},
+		{
+			"type": "paragraph",
+			"content": "Customize your cart texts via actions/edit languages: [Bring me there](\/admin\/themes\/)."
+		},
+		{
+			"type": "url",
+			"id": "button_link",
+			"label": "Button"
+		}
+	]
+}
+{% endschema %}

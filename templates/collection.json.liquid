@@ -1,0 +1,83 @@
+{%- layout none -%}
+
+{%- assign filter_keys = '' -%}
+
+{%- for tag in collection.all_tags -%}
+  {%- assign parts = tag | split: '_' -%}
+
+  {%- if parts.size == 2 -%}
+    {%- assign filter_keys = filter_keys | append: parts.first | append: ',' -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- assign filter_keys = filter_keys | split: ',' | compact | uniq -%}
+
+{%- capture data -%}
+  {
+    {%- comment -%}"id": {{ collection.id }},{%- endcomment -%}
+    "handle": {{ collection.handle | json }},
+    "title": {{ collection.title | json }},
+    "url": {{ collection.url | json }},
+    "productsCount": {{ collection.products_count }},
+    "products": [  
+      {%- paginate collection.products by 1000 -%}
+        {%- for product in collection.products -%}
+            {
+              "id": {{ product.id }},
+              "handle": {{ product.handle | json }},
+              "available": {{ product.available }},
+              "title": {{ product.title | json }},
+              {%- unless product.has_only_default_variant -%}
+                "options": {{ product.options_with_values | json }},
+              {%- else -%}
+                "options": [],
+              {%- endunless -%}
+              "url": {{ product.url | json }},
+              {%- unless product.featured_image == blank -%}
+                "image": {
+                  "alt": {{ product.featured_image.alt | json }},
+                  "aspectRatio": {{ product.featured_image.aspect_ratio }},
+                  "src": {{ product.featured_image.src | json }}
+                },
+              {%- else -%}
+                "image": {
+                  "alt": null,
+                  "aspectRatio": null,
+                  "src": null
+                },
+              {%- endunless -%}
+              "price": {
+                "min": {{ product.price_min | default: product.price | money_without_currency | replace: ',', '.' }},
+                "max": {{ product.price_max | default: product.price | money_without_currency | replace: ',', '.' }}
+              },
+              "tags": {{ product.tags | json }}
+            }
+          {%- unless forloop.index == collection.products.size -%},{%- endunless -%}      
+        {%- endfor -%}
+      {%- endpaginate -%}
+    ],
+    "filter": [
+      {%- for key in filter_keys -%}
+        {%- assign matched = false -%}
+        {
+          "key": {{ key | json }},
+          "values": [
+            {%- for tag in collection.all_tags -%}
+              {%- assign parts = tag | split: '_' -%}
+            
+              {%- if parts.size == 2 and parts.first == key -%}
+                {%- unless forloop.first or matched == false -%},{%- endunless -%}
+                {{ parts.last | json }}
+
+                {%- assign matched = true -%}
+              {%- endif -%}
+            {%- endfor -%}
+          ]
+        }
+        {%- unless forloop.index == filter_keys.size -%},{%- endunless -%}
+      {%- endfor -%}
+    ]
+  }
+{%- endcapture -%}
+
+{{- data | strip | strip_newlines -}}

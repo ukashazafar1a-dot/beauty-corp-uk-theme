@@ -1,0 +1,329 @@
+<style>
+  #RecoverPasswordForm{
+  	display:none;
+  }
+  .container {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 400px;
+    min-width: 370px;
+    margin: 3% auto;
+    padding: 5%;
+   
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-container {
+    /*display: flex;*/
+  }
+
+  .left-container {
+    flex: 1;
+    height: 480px;
+    background-color: #FDEAE6;
+  }
+
+  .right-container {
+    display: flex;
+    flex: 1;
+    /*height: 460px;*/
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .left-container {
+    display: flex;
+    flex: 1;
+    height: 480px;
+    justify-content: center;
+    color: gray;
+    padding-top:1%;
+  }
+
+  .left-container p {
+    font-size: 0.9rem;
+    margin-top:opx;
+  }
+  .left-container p strong {
+    font-size: medium;
+    color:gray;
+  }
+
+  .right-inner-container {
+    width: 70%;
+    height: 80%;
+    text-align: center;
+  }
+
+  .left-inner-container {
+    height: 50%;
+    width: 80%;
+    text-align: left;
+    line-height: 22px;
+  }
+
+  input, textarea {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  input:focus, textarea:focus {
+    outline: 1px solid #00b4cf;
+  }
+
+  button {
+    border-radius: 20px;
+    border: 1px solid #00b4cf;
+    background-color: #00b4cf;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    cursor: pointer;
+  }
+
+  button:hover {
+    opacity: 0.7;
+  }
+  .forget-password__btn,
+  .forget-password__cancel-btn{
+  	text-align:center;
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .container {
+        box-shadow: none;
+        width: 98%;
+        margin: 3% auto;
+      
+      	min-width: 300px;
+    }
+    .form-container{
+    	flex-wrap:wrap;
+      	flex-direction:column;
+      	
+    }
+    
+
+    .lg-view {
+      display: block;
+      margin-top: 5% !important;
+    }
+    .right-container {
+		flex:none;
+      	width:98%;
+      	margin:0 auto;
+      	padding:1%;
+      	display:block;
+    }
+    .left-container {
+        display: block;
+        flex: none;
+        padding: 3%;
+      	width:100%;
+    }
+    .left-inner-container {
+        height: 50%;
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 22px;
+    }
+    .right-inner-container {
+      width: 100%;
+    }
+    .sf-col-50{
+      width:90%;
+      margin:auto;
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    .sm-view {
+      display: none;
+    }
+  }
+  form p {
+    text-align: left;
+  }
+  .form-message--error{
+  	color:red;
+  }
+  .form-message--success{
+  	color:green;
+  }
+  .email{
+  	text-align:left;
+  }
+  .password{
+  	text-align:left;
+  }
+  .sf-row{
+  	display:flex;
+  }
+  .sf-col-50{
+  	width:49%;
+    margin:auto;
+  }
+  .btn-block{
+  	width:100%;
+    text-transform:uppercase;
+  }
+  .input--error {
+    border:1px solid;
+    border-color: #d20000;
+    background-color: #fff8f8;
+    color: #d20000;
+    margin-bottom: 11.66667px; 
+  }
+</style>
+
+
+<div class="container">
+  <div id="CustomerLoginForm">
+    <div class="form-container">
+    <div class="right-container">
+      <div class="right-inner-container">
+		<h2 class="lg-view" style="margin-top:0px;">{{ 'customer.login.title' | t }}</h2>
+		{% form 'customer_login' %}
+          {%- if form.errors -%}
+            <div class="form-message form-message--error">
+              {{ form.errors | default_errors }}
+            </div>
+          {%- endif -%}
+
+          <div class="email">
+            <label for="CustomerEmail">{{ 'customer.login.email' | t }}</label>
+            <input
+              type="email"
+              name="customer[email]"
+              id="CustomerEmail"
+              autocomplete="email"
+              autocorrect="off"
+              autocapitalize="off"
+              {%- if form.errors contains 'form' -%}
+                class="input--error"
+                aria-invalid="true"
+              {%- endif -%}
+              >
+          </div>
+
+          <div class="password">
+            <label for="password">{{ 'customer.login.password' | t }}</label>
+            <input
+              type="password"
+              value=""
+              name="customer[password]"
+              id="CustomerPassword"
+              {%- if form.errors contains 'form' -%}
+                class="input--error"
+                aria-invalid="true"
+              {%- endif -%}
+            >
+          </div>
+
+          <div class="sf-row">
+            <div class="sf-col-50">
+              <button type="submit" class="btn btn-primary btn-block">
+                  {{'customer.login.signin' | t}}
+              </button>
+            </div>
+            <div class="sf-col-50">
+              <a href="/account/register" type="submit" class="btn btn-secondary btn-block">
+                  {{'customer.login.register' | t}}
+              </a>
+            </div>
+          </div>
+          <p class="forget-password__btn">Forget Password?</p>
+        {% endform %}
+
+        </div>
+    </div>
+  </div>
+  </div>
+  <div id="RecoverPasswordForm">
+    <div class="form-container">
+      <div class="right-container">
+        <div class="right-inner-container">
+          <h2 class="lg-view" style="margin-top:0px;">{{"customer.recover-password.title" | t}}</h2>
+          <p style="text-align:center;">{{"customer.recover-password.subtitle" | t}}</p>
+          {% form 'recover_customer_password' %}
+            {%- if form.errors -%}
+              <div class="form-message form-message--error">
+                {{ form.errors | default_errors }}
+              </div>
+              <script>
+          		$('#CustomerLoginForm').hide();
+			    $('#RecoverPasswordForm').show();
+              </script>
+            {%- endif -%}
+            {% if form.posted_successfully? %}
+              <div class="form-message form-message--success">
+                {{"customer.recover-password.success" | t}}
+              </div>
+              <script>
+          		$('#CustomerLoginForm').hide();
+			    $('#RecoverPasswordForm').show();
+              </script>
+            {% endif %}
+
+            <div class="email">
+              <label for="CustomerEmail">{{ 'customer.login.email' | t }}</label>
+              <input
+                type="email"
+                name="customer[email]"
+                id="CustomerEmail"
+                autocomplete="email"
+                autocorrect="off"
+                autocapitalize="off"
+                {%- if form.errors contains 'form' -%}
+                  class="input--error"
+                  aria-invalid="true"
+                {%- endif -%}
+                >
+            </div>
+          
+            <div class="sf-row">
+              <div class="sf-col-50">
+                <button type="submit" class="btn btn-primary">
+                   	{{"customer.recover-password.submit" | t}}
+                </button>
+              </div>
+            </div>
+            <p class="forget-password__cancel-btn">{{"customer.recover-password.cancel" | t}}</p>
+          {% endform %}
+
+          </div>
+      </div>
+    </div>	
+  </div>
+</div>
+
+<script>
+  $(document).on('click','.forget-password__btn',function(){
+  	$('#CustomerLoginForm').hide();
+    $('#RecoverPasswordForm').show();
+  });
+  $(document).on('click','.forget-password__cancel-btn',function(){
+  	$('#CustomerLoginForm').show();
+    $('#RecoverPasswordForm').hide();
+  });
+</script>
+ 

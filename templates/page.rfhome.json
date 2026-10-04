@@ -1,0 +1,513 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "16426328904542e1c5": {
+      "type": "video",
+      "settings": {
+        "subtitle": "",
+        "title": "Schön, dass Du da bist!",
+        "description": "",
+        "btntext": "",
+        "btnurl": "",
+        "btnclr": "#fff",
+        "btnbgclr": "#4472c4",
+        "mtop": 0,
+        "mbot": 0,
+        "show_video": true,
+        "link": "https://cdn.shopify.com/s/files/1/0382/4185/files/huraapps-intro.mp4?830",
+        "mute": true,
+        "autoplay": true,
+        "controls": false,
+        "loop": true
+      }
+    },
+    "1642633153ebb2ee34": {
+      "type": "rfhome-text",
+      "settings": {
+        "subtitle": "",
+        "title": "Unsere Mission",
+        "description": "<p>Wir stehen …….<br/>....</p><p>.....</p>",
+        "mtop": 0,
+        "mbot": 0
+      }
+    },
+    "1642633226138ce4c4": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "unsere-lieblingshaarbander-2",
+        "title": "Unsere Bestseller",
+        "subtitle": "",
+        "description": "",
+        "aspect_ratio": "1.0",
+        "btntext": "JETZT zum SHOP",
+        "btnurl": "#",
+        "btnclr": "#ffffff",
+        "btnbgclr": "#4472c4"
+      }
+    },
+    "1642634345450339d0": {
+      "type": "video",
+      "settings": {
+        "subtitle": "",
+        "title": "Das sagen unsere Kundinnen",
+        "description": "",
+        "btntext": "",
+        "btnurl": "",
+        "btnclr": "#fff",
+        "btnbgclr": "#4472c4",
+        "mtop": 0,
+        "mbot": 0,
+        "show_video": true,
+        "link": "https://cdn.shopify.com/s/files/1/0382/4185/files/huraapps-intro.mp4?830",
+        "mute": true,
+        "autoplay": true,
+        "controls": false,
+        "loop": true
+      }
+    },
+    "16426345944738c2cc": {
+      "type": "review-slider",
+      "blocks": {
+        "6f49db96-d665-4f3d-9e37-20bb6e04bb41": {
+          "type": "review",
+          "settings": {
+            "initials": "Anna",
+            "title": "Ich bin verliebt!",
+            "text": "Ich habe mit einem Haarband angefangen und ich bin einfach verliebt. Weitere werden folgen. Die Qualität des Stoffes ist so toll und super...",
+            "link_url": "https://www.provenexpert.com/getfabulous/",
+            "link_text": "1389 weitere Bewertungen lesen"
+          }
+        },
+        "a5ba88cb-97fe-4044-b440-6aca5207675d": {
+          "type": "review",
+          "settings": {
+            "initials": "Doris",
+            "title": "Ich habe schon 3 Bänder!",
+            "text": "Ich habe schon 3 Bänder und jetzt wieder 3 Bänder bestellt und warte sehnsüchtig darauf🙂.Das sind die ersten Haarbänder die nicht drücken oder rutschen .Vielen Dank dafür",
+            "link_url": "https://www.provenexpert.com/getfabulous/",
+            "link_text": "1389 weitere Bewertungen lesen"
+          }
+        },
+        "94088a0a-ab72-41bc-8eb3-a156830de0d5": {
+          "type": "review",
+          "settings": {
+            "initials": "",
+            "title": "",
+            "text": "",
+            "link_url": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "6f49db96-d665-4f3d-9e37-20bb6e04bb41",
+        "a5ba88cb-97fe-4044-b440-6aca5207675d",
+        "94088a0a-ab72-41bc-8eb3-a156830de0d5"
+      ],
+      "settings": {
+        "zeropad": false,
+        "title": "Über 100.652 zufriedene Kunden",
+        "subtitle": "Du bist in bester Gesellschaft"
+      }
+    },
+    "1642635379fbef34d2": {
+      "type": "card-slider",
+      "blocks": {
+        "27887fb3-e786-4cce-b595-4cbf4663f907": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Keine_Kopfschmerzen.png",
+            "title": "Unsere Haarbänder drücken und rutschen nicht",
+            "text": "<p>Selbst bei stundenlangem Tragen</p>",
+            "link": ""
+          }
+        },
+        "9f7703e7-fed9-428e-8c05-219183889c7d": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Wunderschoner_Look_in_Handumdrehen.png",
+            "title": "Ideal für Bad Hair Days",
+            "text": "<p>Ein Segen für Tage, an denen es schnell gehen muss</p>",
+            "link": ""
+          }
+        },
+        "3cf28399-39b6-441e-a3e9-7189e1f8b2e0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Auch_fur_Brillentrager_geeignet.png",
+            "title": "Perfekt auch für Brillenträgerinnen",
+            "text": "<p>Der Stoff schmiegt sich herrlich an!</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "27887fb3-e786-4cce-b595-4cbf4663f907",
+        "9f7703e7-fed9-428e-8c05-219183889c7d",
+        "3cf28399-39b6-441e-a3e9-7189e1f8b2e0"
+      ],
+      "settings": {
+        "fullimg": false,
+        "title": "",
+        "subtitle": "",
+        "aspect_ratio": "1.0",
+        "use_accent_color": true
+      }
+    },
+    "1642635016b3dd35b5": {
+      "type": "card-slider",
+      "blocks": {
+        "43b90704-4375-46e9-b8ad-02d4981ce5c9": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Bezahlung.png",
+            "title": "Sichere & einfache Bezahlung",
+            "text": "<p>Bei uns kannst Du mit allen Zahlungsmöglichkeiten bezahlen. Egal ob Paypal, Amazon oder Rechnungskauf. Bei uns ist alles möglich.</p>",
+            "link": ""
+          }
+        },
+        "13ac94c9-2d57-4453-aa06-ab0ea847be05": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Versand.png",
+            "title": "Schneller Versand",
+            "text": "<p>Bei GetFabulous packt jeder fleißig an, damit Du Deine Lieblingshaarbänder in wenigen Werktagen nach dem Bezahlen mit Stolz ausführen kannst.</p>",
+            "link": ""
+          }
+        },
+        "4a1c47be-9f09-4d4d-afcd-b44c8a0e38b6": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Cashback.png",
+            "title": "Begeistert oder Geld zurück",
+            "text": "<p>Du musst keine Angst haben, dass etwas nicht passt. Wir sind gern für Dich da und helfen bei Umtausch oder Rückerstattung. Deine Zufriedenheit ist alles!</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "43b90704-4375-46e9-b8ad-02d4981ce5c9",
+        "13ac94c9-2d57-4453-aa06-ab0ea847be05",
+        "4a1c47be-9f09-4d4d-afcd-b44c8a0e38b6"
+      ],
+      "settings": {
+        "fullimg": false,
+        "title": "",
+        "subtitle": "",
+        "aspect_ratio": "1.0",
+        "use_accent_color": false
+      }
+    },
+    "1642635882e2ec369c": {
+      "type": "rfhome-text",
+      "settings": {
+        "subtitle": "",
+        "title": "Unser Sortiment",
+        "description": "<p>Es begann alles mit dem Haarband. Da diese so gut in unserer Cummunity angekommen sind und es den Wunsch nach weiteren Haar-Accessoires gab haben wir in den letzten Jahren alles daran gegeben, dass Produkt Sortiment weiter auszubauen.</p>",
+        "mtop": 0,
+        "mbot": 0
+      }
+    },
+    "16426360091bb9ab7f": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "alle-haarbander",
+        "title": "Haarbänder",
+        "subtitle": "",
+        "description": "<p><strong>Die ….</strong></p><p><strong>….</strong></p><p><strong>….</strong></p>",
+        "aspect_ratio": "1.0",
+        "btntext": "",
+        "btnurl": "",
+        "btnclr": "#ffffff",
+        "btnbgclr": "#4472c4"
+      }
+    },
+    "1642637249cf6cc6db": {
+      "type": "video",
+      "settings": {
+        "subtitle": "",
+        "title": "",
+        "description": "",
+        "btntext": "Weitere XXXX entdecken",
+        "btnurl": "#",
+        "btnclr": "#fff",
+        "btnbgclr": "#4472c4",
+        "mtop": 0,
+        "mbot": 0,
+        "show_video": true,
+        "link": "https://cdn.shopify.com/s/files/1/0382/4185/files/huraapps-intro.mp4?830",
+        "mute": true,
+        "autoplay": true,
+        "controls": false,
+        "loop": true
+      }
+    },
+    "16426373094894e4ed": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "flexie-drahthaarbander",
+        "title": "Flexies",
+        "subtitle": "",
+        "description": "<p><strong>Die ….<br/>….<br/>….</strong></p>",
+        "aspect_ratio": "1.0",
+        "btntext": "",
+        "btnurl": "",
+        "btnclr": "#ffffff",
+        "btnbgclr": "#4472c4"
+      }
+    },
+    "16426373900ff51771": {
+      "type": "video",
+      "settings": {
+        "subtitle": "",
+        "title": "",
+        "description": "",
+        "btntext": "Weitere XXXX entdecken",
+        "btnurl": "#",
+        "btnclr": "#fff",
+        "btnbgclr": "#4472c4",
+        "mtop": 0,
+        "mbot": 0,
+        "show_video": true,
+        "link": "https://cdn.shopify.com/s/files/1/0382/4185/files/huraapps-intro.mp4?830",
+        "mute": true,
+        "autoplay": true,
+        "controls": false,
+        "loop": true
+      }
+    },
+    "1642638720e6100654": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "haarreifen",
+        "title": "Haarreifen",
+        "subtitle": "",
+        "description": "<p><strong>Die ….<br/>….<br/>….</strong></p>",
+        "aspect_ratio": "1.0",
+        "btntext": "",
+        "btnurl": "",
+        "btnclr": "#fff",
+        "btnbgclr": "#4472c4"
+      }
+    },
+    "164263896289ff50c8": {
+      "type": "video",
+      "settings": {
+        "subtitle": "",
+        "title": "",
+        "description": "",
+        "btntext": "Weitere XXXX entdecken",
+        "btnurl": "#",
+        "btnclr": "#fff",
+        "btnbgclr": "#4472c4",
+        "mtop": 0,
+        "mbot": 0,
+        "show_video": true,
+        "link": "https://cdn.shopify.com/s/files/1/0382/4185/files/huraapps-intro.mp4?830",
+        "mute": true,
+        "autoplay": true,
+        "controls": false,
+        "loop": true
+      }
+    },
+    "16426389650fbf5aea": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "turbane",
+        "title": "Turbane",
+        "subtitle": "",
+        "description": "<p><strong>Die ….<br/>….<br/>….</strong></p>",
+        "aspect_ratio": "1.0",
+        "btntext": "",
+        "btnurl": "",
+        "btnclr": "#fff",
+        "btnbgclr": "#4472c4"
+      }
+    },
+    "1642639069bb544742": {
+      "type": "video",
+      "settings": {
+        "subtitle": "",
+        "title": "",
+        "description": "",
+        "btntext": "Weitere XXXX entdecken",
+        "btnurl": "#",
+        "btnclr": "#fff",
+        "btnbgclr": "#4472c4",
+        "mtop": 0,
+        "mbot": 0,
+        "show_video": true,
+        "link": "https://cdn.shopify.com/s/files/1/0382/4185/files/huraapps-intro.mp4?830",
+        "mute": true,
+        "autoplay": true,
+        "controls": false,
+        "loop": true
+      }
+    },
+    "164263907330ef3ae7": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "haarband-sets",
+        "title": "Sparsets",
+        "subtitle": "",
+        "description": "<p><strong>Die ….<br/>….<br/>….</strong></p>",
+        "aspect_ratio": "1.0",
+        "btntext": "",
+        "btnurl": "",
+        "btnclr": "#fff",
+        "btnbgclr": "#4472c4"
+      }
+    },
+    "16426391829b640ae9": {
+      "type": "video",
+      "settings": {
+        "subtitle": "",
+        "title": "",
+        "description": "",
+        "btntext": "Weitere XXXX entdecken",
+        "btnurl": "#",
+        "btnclr": "#fff",
+        "btnbgclr": "#4472c4",
+        "mtop": 0,
+        "mbot": 0,
+        "show_video": true,
+        "link": "https://cdn.shopify.com/s/files/1/0382/4185/files/huraapps-intro.mp4?830",
+        "mute": true,
+        "autoplay": true,
+        "controls": false,
+        "loop": true
+      }
+    },
+    "164263926689ff721f": {
+      "type": "product-finder",
+      "blocks": {
+        "6b560376-17e5-47aa-b5d8-1005c1f27e81": {
+          "type": "step",
+          "settings": {
+            "title": "Haarfarbe",
+            "continue_button": "",
+            "title_1": "",
+            "value_1": "",
+            "title_2": "",
+            "value_2": "",
+            "title_3": "",
+            "value_3": "",
+            "title_4": "",
+            "value_4": ""
+          }
+        },
+        "bc3e071c-0c27-4632-92fa-9d35c6573883": {
+          "type": "step",
+          "settings": {
+            "title": "",
+            "continue_button": "",
+            "title_1": "",
+            "value_1": "",
+            "title_2": "",
+            "value_2": "",
+            "title_3": "",
+            "value_3": "",
+            "title_4": "",
+            "value_4": ""
+          }
+        },
+        "9d74c9dc-8f21-4904-9c9f-0439ba20829a": {
+          "type": "step",
+          "settings": {
+            "title": "",
+            "continue_button": "",
+            "title_1": "",
+            "value_1": "",
+            "title_2": "",
+            "value_2": "",
+            "title_3": "",
+            "value_3": "",
+            "title_4": "",
+            "value_4": ""
+          }
+        },
+        "225712c3-699a-4675-8d37-d924f0a624da": {
+          "type": "step",
+          "settings": {
+            "title": "",
+            "continue_button": "",
+            "title_1": "",
+            "value_1": "",
+            "title_2": "",
+            "value_2": "",
+            "title_3": "",
+            "value_3": "",
+            "title_4": "",
+            "value_4": ""
+          }
+        },
+        "fc298553-1112-48ca-922d-dceea19753a4": {
+          "type": "step",
+          "settings": {
+            "title": "",
+            "continue_button": "",
+            "title_1": "",
+            "value_1": "",
+            "title_2": "",
+            "value_2": "",
+            "title_3": "",
+            "value_3": "",
+            "title_4": "",
+            "value_4": ""
+          }
+        }
+      },
+      "block_order": [
+        "6b560376-17e5-47aa-b5d8-1005c1f27e81",
+        "bc3e071c-0c27-4632-92fa-9d35c6573883",
+        "9d74c9dc-8f21-4904-9c9f-0439ba20829a",
+        "225712c3-699a-4675-8d37-d924f0a624da",
+        "fc298553-1112-48ca-922d-dceea19753a4"
+      ],
+      "settings": {
+        "title": "Das Haarband, das zu dir passt",
+        "subtitle": ""
+      }
+    },
+    "16426392756e1cb8ea": {
+      "type": "newsletter",
+      "settings": {
+        "title": "Du möchtest 10% sparen?",
+        "subtitle": "",
+        "text": "Abonniere jetzt unseren Newsletter und erhalte als Dankeschön Deinen persönlichen 10% Rabattgutschein von uns. Der Gutschein wird innerhalb von 30 Minuten in Deinem Postfach landen.",
+        "klaviyo_id": "VDCUva",
+        "microcopy": "<p>Informationen zu unserer Datenschutzerklärung findest Du <a href=\"https://get-fabulous.com/policies/privacy-policy\" title=\"Privacy Policy\">hier</a></p>"
+      }
+    }
+  },
+  "order": [
+    "16426328904542e1c5",
+    "1642633153ebb2ee34",
+    "1642633226138ce4c4",
+    "1642634345450339d0",
+    "16426345944738c2cc",
+    "1642635379fbef34d2",
+    "1642635016b3dd35b5",
+    "1642635882e2ec369c",
+    "16426360091bb9ab7f",
+    "1642637249cf6cc6db",
+    "16426373094894e4ed",
+    "16426373900ff51771",
+    "1642638720e6100654",
+    "164263896289ff50c8",
+    "16426389650fbf5aea",
+    "1642639069bb544742",
+    "164263907330ef3ae7",
+    "16426391829b640ae9",
+    "164263926689ff721f",
+    "16426392756e1cb8ea"
+  ]
+}

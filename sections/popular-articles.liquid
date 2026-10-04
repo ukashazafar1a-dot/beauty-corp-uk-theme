@@ -1,0 +1,87 @@
+{% assign article_handles = '' %}
+
+{% if blog.handle == 'blog' %}
+  {% assign all_blogs = "blog,news,handling-headband" | split:',' %}
+  {% for blog in all_blogs %}
+    {% for article in blogs[blog].articles %}
+		{% assign articleTags = article.tags | join: ', ' %}
+        {% if articleTags contains "popular_article" %}
+		  {% assign article_handles = article_handles | append: article.handle | append: "," %}
+		{% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endif %}
+
+{% assign article_handles = article_handles | split: ',' %}
+
+{% if blog.handle == 'blog' %}
+  {% unless article_handles == blank %}
+<section id="konte-popular-posts-widget-1" class="widget konte-popular-posts-widget">
+  	<h2 class="widget-title">Beliebteste Beitr&auml;ge</h2>
+	  <ul>
+        {% for article_handle in article_handles %}
+        {% assign article = articles[article_handle] %}
+		  <li> <span class="no">{{forloop.index}}</span>
+		    <div class="post-summary"> 
+              <span class="post-cats">
+                <a href="{{article.url}}" rel="category tag">{{article.tags | join: ', '}}</a>
+              </span> 
+              <span class="post-title">
+                <a href="{{article.url}}" 
+                   title="{{article.title}}">
+                  {{article.title}}
+                </a>
+              </span> 
+            </div>
+		  </li>
+        {% endfor %}
+	  </ul>
+  </section>
+  {% endunless %}
+{% else %}
+  {% assign article_handles = '' %}
+  {% for article in blog.articles %}
+	{% assign articleTags = article.tags | join: ', ' %}
+    {% if articleTags contains "popular_article" %}
+	  {% assign article_handles = article_handles | append: article.handle | append: "," %}
+	{% endif %}
+  {% endfor %}
+  {% assign article_handles = article_handles | split: ',' %}
+  {% unless article_handles == blank %}
+  <section id="konte-popular-posts-widget-1" class="widget konte-popular-posts-widget">
+  	<h2 class="widget-title">Beliebteste Beitr&auml;ge</h2>
+	  <ul>
+        {% for article_handle in article_handles %}
+        {% assign article = articles[article_handle] %}
+		  <li> <span class="no">{{forloop.index}}</span>
+		    <div class="post-summary"> 
+              <span class="post-cats">
+                <a href="{{article.url}}" rel="category tag">{{article.tags | split: ','}}</a>
+              </span> 
+              <span class="post-title">
+                <a href="{{article.url}}" 
+                   title="{{article.title}}">
+                  {{article.title}}
+                </a>
+              </span> 
+            </div>
+		  </li>
+        {% endfor %}
+	  </ul>
+  </section>
+  {% endunless %}
+{% endif %}
+
+
+{% schema %}
+  {
+    "name": "Popular Articles",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

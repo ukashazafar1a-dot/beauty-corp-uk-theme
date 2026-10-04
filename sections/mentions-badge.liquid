@@ -1,0 +1,43 @@
+<div class="mentions-badge">
+  <span class="mentions-badge__title">Bekannt aus:</span>
+  <ul class="mentions-badge__list u-nolist">
+    {%- for block in section.blocks -%}
+      <li class="mentions-badge__item">
+        <img src="{{ block.settings.image | img_url: 'x200' }}" alt="{{ block.settings.image.alt | escape }}">
+        <span class="u-visually-hidden">{{ block.settings.a11y_title }}</span>
+      </li>
+    {%- endfor -%}
+  </ul>
+</div>
+
+{% schema %}
+{
+	"name": "Mentions Badge",
+	"settings": [],
+	"blocks": [
+		{
+			"type": "mention",
+			"name": "Mention",
+			"settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "a11y_title",
+          "label": "Title (a11y)",
+          "info": "This will only be visible to users who use the screenreader feature"
+        }
+			]
+		}
+	], 
+  "presets": [
+        {
+        "category": "Social Proof",
+        "name": "Mentions Badge"
+        }
+    ]
+}
+{% endschema %}

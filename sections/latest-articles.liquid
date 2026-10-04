@@ -1,0 +1,65 @@
+{% assign article_handles = '' %}
+
+{% if blog.handle == 'blog' %}
+  {% assign all_blogs = "blog,news,handling-headband" | split:',' %}
+  {% for blog in all_blogs %}
+    {% for article in blogs[blog].articles %}
+		{% assign articleTags = article.tags | join: ', ' %}
+        {% if articleTags contains "latest_article" %}
+		  {% assign article_handles = article_handles | append: article.handle | append: "," %}
+		{% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endif %}
+
+{% assign article_handles = article_handles | split: ',' %}
+
+{% if blog.handle == 'blog' %}
+  {% unless article_handles == blank %}
+  <section id="recent-posts-2" class="widget widget_recent_entries">
+    <h2 class="widget-title">Neueste Beitr&auml;ge</h2>
+      <ul>
+        {% for article_handle in article_handles %}
+        {% assign article = articles[article_handle] %}
+          <li> 
+            <a href="{{article.url}}">{{article.title}}</a> 
+          </li>
+        {% endfor %}
+      </ul>
+  </section>
+  {% endunless %}
+{% else %}
+  {% assign article_handles = '' %}
+  {% for article in blog.articles %}
+	{% assign articleTags = article.tags | join: ', ' %}
+    {% if articleTags contains "latest_article" %}
+	  {% assign article_handles = article_handles | append: article.handle | append: "," %}
+	{% endif %}
+  {% endfor %}
+  {% assign article_handles = article_handles | split: ',' %}
+  {% unless article_handles == blank %}
+  <section id="recent-posts-2" class="widget widget_recent_entries">
+    <h2 class="widget-title">Neueste Beitr&auml;ge</h2>
+      <ul>
+        {% for article_handle in article_handles %}
+        {% assign article = articles[article_handle] %}
+          <li> 
+            <a href="{{article.url}}">{{article.title}}</a> 
+          </li>
+        {% endfor %}
+      </ul>
+  </section>
+  {% endunless %}
+{% endif %}
+{% schema %}
+  {
+    "name": "Latest Articles",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

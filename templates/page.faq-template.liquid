@@ -1,0 +1,108 @@
+<link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+<style>
+  .rf .container {
+  margin: 0 auto;
+  padding: 4rem;
+  width: 48rem;
+}
+  @media(max-width:767px){
+  	.rf .container {
+        margin: 0 auto;
+        padding: 5px;
+        width: 100%;
+      }
+  }
+.rf h2 {
+  font-size: 1.8rem;
+  color: #373d51;
+  padding: 1.3rem;
+  margin: 0;
+}
+
+.rf .accordion a {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem 3rem 1rem 1rem;
+  color: #7288a2;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.rf .accordion a:hover,
+.rf .accordion a:hover::after {
+  cursor: pointer;
+  color: #03b5d2;
+}
+
+.rf .accordion a:hover::after {
+  border: 1px solid #03b5d2;
+}
+
+.rf .accordion a.active {
+  color: #03b5d2;
+  border-bottom: 1px solid #03b5d2;
+}
+
+.rf .accordion a::after {
+  font-family: 'Ionicons';
+  content: '\f218';
+  position: absolute;
+  float: right;
+  right: 1rem;
+  font-size: 1rem;
+  color: #7288a2;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid #7288a2;
+  text-align: center;
+}
+
+.rf .accordion a.active::after {
+  font-family: 'Ionicons';
+  content: '\f209';
+  color: #03b5d2;
+  border: 1px solid #03b5d2;
+}
+
+.rf .accordion .content {
+  display: none;
+  padding: 1rem;
+  border-bottom: 1px solid #FDEAE6;
+  background:#f9efed;
+  overflow: hidden;
+}
+
+.rf .accordion .content p {
+  font-size: 1rem;
+  font-weight: 300;
+  text-align:justify;
+  line-height:25px;
+  padding:0 2%;
+}
+</style>
+
+<div id="faq_div" class="rf">
+	{% section 'faq-section' %}
+</div>
+  <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script><script  src="./script.js"></script>
+
+<script>
+	$(document).ready(function() {
+      $('.accordion a').click(function(){
+        $(this).toggleClass('active');
+        $(this).next('.content').slideToggle("slow");
+       });
+    });
+</script>

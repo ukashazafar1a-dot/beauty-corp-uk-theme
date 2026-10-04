@@ -1,0 +1,58 @@
+{%- assign product_recommendations = product.metafields.recommendations.products | newline_to_br | split: '<br />' -%}
+
+{%- if section.settings.show_recommendations and product_recommendations != blank-%}
+	<section class="section">
+		<div class="site-width">
+			<div class="section__header">
+				<span class="section__subtitle">{{ section.settings.subtitle }}</span>
+				<h2 class="section__title">{{ section.settings.title }}</h2>
+			</div>
+
+
+			<div class="product-recommendations u-clearfix">
+				{%- for item in product_recommendations limit: 4 -%}
+					{%- assign handle = item | strip -%}
+					{%- render 'product-card', product: all_products[handle], aspect_ratio: section.settings.aspect_ratio -%}
+				{%- endfor -%}
+			</div>
+		</div>
+	</section>
+{%- endif -%}
+
+{% schema %}
+{
+	"name": "Product Recommendations",
+	"settings": [
+		{
+			"type": "checkbox",
+			"id": "show_recommendations",
+			"label": "Show recommendations",
+			"default": true
+		},
+		{
+			"type": "header",
+			"content": "Section Header"
+		},
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		},
+		{
+			"type": "text",
+			"id": "subtitle",
+			"label": "Sub title"
+		},
+		{
+			"type": "header",
+			"content": "Image settings"
+		},
+		{
+			"type": "text",
+			"id": "aspect_ratio",
+			"label": "Aspect ratio",
+			"default": "1.0"
+		}
+	]
+}
+{% endschema %}

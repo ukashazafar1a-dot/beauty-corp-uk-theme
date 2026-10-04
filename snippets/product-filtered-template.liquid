@@ -1,0 +1,39 @@
+<script id="ProductTemplate" type="text/mustache">
+{% raw %}
+  {{#product}}
+  <div class="product-card" data-product-id="{{ id }}">
+    <div class="product-card__container">
+    <a class="product-card__link" href="/products/{{ handle }}">
+      <div class="swiper-container" id="sf_product_image_slider">
+        <div class="swiper-wrapper">
+        {{#media}}
+          <div class="product-card__image skeleton lazy u-aspect-ratio swiper-slide" style="--aspect-ratio: 1.0;">
+            <img class="lazy fade-in"
+				 alt="{{ alt }}"
+				 data-src="{{ src }}_{width}x" 	
+				 data-sizes="auto"
+				 data-widths="[200,300,400,600,800,1000,1200]">
+          </div>
+        {{/media}}
+  		</div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      
+        <div class="product-card__details">
+          <span class="product-card__title u-nobreak">{{ title }}</span>
+          <span class="product-card__price">
+            {{#compare_price}}
+              <del style="color:gray;margin-right:5%;">{{compare_price}}</del><spam style="color:red;font-weight:bold;">{{price}}</spam>
+            {{/compare_price}}
+            {{^compare_price}}
+              {{ price}}
+            {{/compare_price}}
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+  {{/product}}
+{% endraw %}
+</script>

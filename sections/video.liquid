@@ -1,0 +1,196 @@
+<style>
+  .section-hura-video{
+    width:65%;
+    margin: 0 auto;
+    padding: 40px 0;
+  }
+  .hurabg-video{
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    max-height: 75vh;
+  }
+   .rf-btn a{
+  border:2px solid #2f528f;
+    border-radius:0;
+    margin-bottom:4%;
+  }
+  .card-slide--accent {
+    background: #fdeae6;
+}
+  @media screen and (min-width: 1140px){
+.section {
+    padding: 30px 0;
+}
+  }
+  
+  @media screen and (max-width: 767px){
+    .section-hura-video{
+      width: 85%;
+      padding: 20px 0;
+    }
+  }
+</style>
+
+{% if section.settings.show_video %}
+  <section class="section" style="padding-bottom:0px;max-width: 750px;margin-left: auto;margin-right: auto;margin-top:{{ section.settings.mtop }}%;margin-bottom:{{ section.settings.mbot }}%">
+
+    <div class="site-width">
+      <div class="section__header" style="margin-bottom:15px;">
+        {% if section.settings.subtitle != blank %}
+          <span class="section__subtitle">{{section.settings.subtitle}}</span>
+        {% endif %}
+        {% if section.settings.title != blank %}
+          <h2 class="section__title">{{section.settings.title}}</h2>
+        {% endif %}
+      </div>
+      <div class="content">
+        <div style="text-align:center;">
+          {{section.settings.description}}
+        </div>
+      </div>
+    </div>
+
+  </section>
+<div class="section-hura-video">
+  <video {% if section.settings.autoplay %}autoplay{%endif%} {% if section.settings.mute %}muted{%endif%} {% if section.settings.loop %}loop{%endif%} playsinline {% if section.settings.controls %}controls{%endif%} class="hurabg-video">
+    <source src="{{ section.settings.link }}" type="video/mp4">
+  </video>
+</div>
+
+ {% if section.settings.btntext != blank %}
+<div class="rf-btn" style="    text-align: center;">
+  <a style="color:{{ section.settings.btnclr }};background-color:{{ section.settings.btnbgclr }}" class="btn btn-primary" href="{{ section.settings.btnurl }}">{{ section.settings.btntext }}</a>
+</div>
+{% endif %}
+{% endif %}
+
+
+
+{% schema %}
+  {
+    "name": "Video",
+    "settings": [
+        
+
+
+		{
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+		{
+		  "type": "text",
+		  "id": "title",
+		  "label": "Title"
+		},
+{
+		  "type": "richtext",
+		  "id": "description",
+		  "label": "Description"
+		},
+{
+"type":"text",
+"id":"btntext",
+"label":"Button Title"
+
+},
+{
+"type":"url",
+"id":"btnurl",
+"label":"Button Link"
+
+},
+{
+"type":"color",
+"id":"btnclr",
+"label":"Text Color",
+"default":"#fff"
+
+},
+{
+"type":"color",
+"id":"btnbgclr",
+"label":"Background Color",
+"default":"#4472c4"
+
+},
+{
+"type":"range",
+"id":"mtop",
+  "min": 0,
+  "max": 30,
+  "step": 1,
+  "unit": "%",
+  "label": "Space Top",
+  "default": 0
+},
+{
+"type":"range",
+"id":"mbot",
+  "min": 0,
+  "max": 30,
+  "step": 1,
+  "unit": "%",
+  "label": "Space Bottom",
+  "default": 0
+},
+		{
+        "type": "header",
+        "content": "Video"
+        },
+        {
+        "type": "checkbox",
+        "id": "show_video",
+        "label": "Show Video",
+        "default": false
+        },
+        {
+        "type": "text",
+        "id": "link",
+        "label": "Video Link",
+        "default": "https://cdn.shopify.com/s/files/1/0382/4185/files/huraapps-intro.mp4?830",
+        "info": "MP4 videos only"
+        },
+        {
+        "type": "checkbox",
+        "id": "mute",
+        "label": "Mute",
+        "default": true
+        },
+        {
+        "type": "checkbox",
+        "id": "autoplay",
+        "label": "AutoPlay",
+        "default": true
+        },
+        {
+        "type": "checkbox",
+        "id": "controls",
+        "label": "Controls",
+        "default": false,
+        "info": "If you wanna show controls or hide them?"
+        },
+        {
+        "type": "checkbox",
+        "id": "loop",
+        "label": "Loop",
+        "default": true
+        }
+	],
+"presets": [
+        {
+        "category": "video",
+        "name": "video"
+        }
+    ]
+
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

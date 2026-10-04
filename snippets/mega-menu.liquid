@@ -1,0 +1,156 @@
+{% for block in blocks %}
+	{% if block.type == 'mega-menu' %}
+    {% assign menu_item = block.settings.menu_item | strip%}
+	{% assign link_title = link.title | strip %}
+		{% if menu_item == link_title or 'Headbands' == link_title %}
+		  {% assign item_block = block %}
+		{% endif %}
+	{% endif %}
+{% endfor %}
+
+{% assign menu = linklists[item_block.settings.menu] %}
+
+<div class="z-navicat-header_categoryOverlayContainer z-navicat-header_categoryOverlayContainer-open">
+  <div class="z-navicat-header_subCategoryContainer" tabindex="-1" test="{{menu_item}}--{{link_title}}">
+    <div class="VaE1kV C3wGFf JT3_zV z-navicat-header_overlayGrid">
+      <div class="adFHlH _0xLoFW _7ckuOK mROyo1" data-title="{{menu.title}}">
+        
+        {% if menu != blank %}
+        <div class="_4qWUe8 eBU9Ej" style="flex-basis:calc(25% * {{menu.links.size}});">
+          <div class="VaE1kV C3wGFf JT3_zV z-navicat-header_overlayLinks">
+            <div class="adFHlH _0xLoFW _7ckuOK mROyo1">
+             {% for childlink in menu.links %}
+              <div style="flex-basis:calc(100% / {{menu.links.size}});">
+                <div class="z-navicat-header_subCategoryHeading lpr5wT">
+                  <h5 class="ZcZXP0 ka2E9k uMhVZi Kq1JPK weHhRC">{{childlink.title}}</h5>
+                </div>
+                {% if childlink.links != blank %}
+                  {% for grandchild in childlink.links %}
+                    {%- assign link_value = grandchild.title | replace: 'ä', 'ae' | handle | prepend: 'nav-' | append: '.jpg' -%}
+	    			{%- assign link_image = images[link_value] | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+					{%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,300,400,600,800,1000,1200', image: link_image -%}{%- endcapture -%}
+                    <div class="JUrPjL">
+                      <span class="z-navicat-header_subCategoryLink" tabindex="-1">
+                        <span class="z-navicat-header_subCategoryIcon">
+                          <img 
+                             class="lazy fade-in" 
+							 alt="{{ shop.name | escape }}"
+							 data-src="{{ link_image }}" 	
+							 data-sizes="auto"
+							 data-widths="[{{ supported_sizes }}]"
+                             style="width:20px;height:auto;margin:auto" />
+                        </span>
+                        <a class="JctB9w CKDt_l LyRfpJ pVrzNP" href="{{grandchild.url}}" rel="">
+                          <span class="u-6V88 ka2E9k uMhVZi FxZV-M _6yVObe pVrzNP _27bY5q U2fWfp PGk4Ze NELsER _9bYLON sUjaF4 _2LebSa">{{grandchild.title}}</span>
+                        </a>
+                      </span>
+                    </div>
+                  {% endfor %}
+                {% endif %}
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if item_block.settings.image != blank and menu.links.size < 4 %}
+        <div class="_4qWUe8 _8ItdvX">
+          <div class="z-navicat-header_subCategoryImageContainer" style="background-color: {{item_block.settings.bg_color}};">
+            <a class="z-navicat-header_subCategoryImageLink" 
+               href="{{item_block.settings.url}}" tabindex="-1" style="padding:0px;width:100%;">
+              <div class="KLaowZ mo6ZnF ZkIJC- csmaMi bsVOrE HjQBqa teXInD jP-Ndk" alt="UNI START IN GERMANY" 
+                   style="background-image: url('{{item_block.settings.image | img_url: 'original'}}');"></div>
+            </a>
+            <span class="z-navicat-header_subCategoryLink z-navicat-header_subCategoryLink-imageText OXMl2N" tabindex="-1">
+              <a class="JctB9w CKDt_l LyRfpJ pVrzNP" href="{{item_block.settings.url}}" rel="">
+                <span class="u-6V88 ka2E9k uMhVZi dgII7d _6yVObe pVrzNP BDUtDm GhPDv6 s9VeF4 NELsER _9bYLON sUjaF4 _2LebSa">
+                  {{item_block.settings.image_caption}}
+                  <span class="u-6V88 ka2E9k uMhVZi dgII7d _6yVObe pVrzNP LTYjjX">
+                    <svg class="zds-icon RC794g X9n9TI DlJ4rT _8tuJWC IwlAj4 pVrzNP" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M.443 12c0 .414.336.75.75.75h20.869l-7.72 7.72a.75.75 0 0 0 1.06 1.06l7.94-7.94a2.252 2.252 0 0 0 0-3.18l-7.94-7.94a.75.75 0 0 0-1.06 1.06l7.72 7.72H1.192a.75.75 0 0 0-.75.75z"></path>
+                    </svg>
+                  </span>
+                </span>
+              </a>
+            </span>
+          </div>
+        </div>
+        {% endif %}
+        {% if item_block.settings.image_2 != blank and menu.links.size < 3%}
+        <div class="_4qWUe8 _8ItdvX">
+          <div class="z-navicat-header_subCategoryImageContainer" style="background-color: {{item_block.settings.bg_color_2}};">
+            <a class="z-navicat-header_subCategoryImageLink" 
+               href="{{item_block.settings.url_2}}" tabindex="-1" style="padding:0px;width:100%;">
+              <div class="KLaowZ mo6ZnF ZkIJC- csmaMi bsVOrE HjQBqa teXInD jP-Ndk" alt="UNI START IN GERMANY" 
+                   style="background-image: url('{{item_block.settings.image_2 | img_url: 'original'}}');"></div>
+            </a>
+            <span class="z-navicat-header_subCategoryLink z-navicat-header_subCategoryLink-imageText OXMl2N" tabindex="-1">
+              <a class="JctB9w CKDt_l LyRfpJ pVrzNP" href="{{item_block.settings.url_2}}" rel="">
+                <span class="u-6V88 ka2E9k uMhVZi dgII7d _6yVObe pVrzNP BDUtDm GhPDv6 s9VeF4 NELsER _9bYLON sUjaF4 _2LebSa">
+                  {{item_block.settings.image_caption_2}}
+                  <span class="u-6V88 ka2E9k uMhVZi dgII7d _6yVObe pVrzNP LTYjjX">
+                    <svg class="zds-icon RC794g X9n9TI DlJ4rT _8tuJWC IwlAj4 pVrzNP" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M.443 12c0 .414.336.75.75.75h20.869l-7.72 7.72a.75.75 0 0 0 1.06 1.06l7.94-7.94a2.252 2.252 0 0 0 0-3.18l-7.94-7.94a.75.75 0 0 0-1.06 1.06l7.72 7.72H1.192a.75.75 0 0 0-.75.75z"></path>
+                    </svg>
+                  </span>
+                </span>
+              </a>
+            </span>
+          </div>
+        </div>
+        {% endif %}
+        
+        {% if item_block.settings.image_3 != blank and menu.links.size < 2 %}
+        <div class="_4qWUe8 _8ItdvX">
+          <div class="z-navicat-header_subCategoryImageContainer" style="background-color: {{item_block.settings.bg_color_3}};">
+            <a class="z-navicat-header_subCategoryImageLink" 
+               href="{{item_block.settings.url_3}}" tabindex="-1" style="padding:0px;width:100%;">
+              <div class="KLaowZ mo6ZnF ZkIJC- csmaMi bsVOrE HjQBqa teXInD jP-Ndk" alt="UNI START IN GERMANY" 
+                   style="background-image: url('{{item_block.settings.image_3 | img_url: 'original'}}');"></div>
+            </a>
+            <span class="z-navicat-header_subCategoryLink z-navicat-header_subCategoryLink-imageText OXMl2N" tabindex="-1">
+              <a class="JctB9w CKDt_l LyRfpJ pVrzNP" href="{{item_block.settings.url_3}}" rel="">
+                <span class="u-6V88 ka2E9k uMhVZi dgII7d _6yVObe pVrzNP BDUtDm GhPDv6 s9VeF4 NELsER _9bYLON sUjaF4 _2LebSa">
+                  {{item_block.settings.image_caption_3}}
+                  <span class="u-6V88 ka2E9k uMhVZi dgII7d _6yVObe pVrzNP LTYjjX">
+                    <svg class="zds-icon RC794g X9n9TI DlJ4rT _8tuJWC IwlAj4 pVrzNP" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M.443 12c0 .414.336.75.75.75h20.869l-7.72 7.72a.75.75 0 0 0 1.06 1.06l7.94-7.94a2.252 2.252 0 0 0 0-3.18l-7.94-7.94a.75.75 0 0 0-1.06 1.06l7.72 7.72H1.192a.75.75 0 0 0-.75.75z"></path>
+                    </svg>
+                  </span>
+                </span>
+              </a>
+            </span>
+          </div>
+        </div>
+        {% endif %}
+        {% if item_block.settings.image_4 != blank and menu.links.size < 1 %}
+        <div class="_4qWUe8 _8ItdvX">
+          <div class="z-navicat-header_subCategoryImageContainer" style="background-color: {{item_block.settings.bg_color_4}};">
+            <a class="z-navicat-header_subCategoryImageLink" 
+               href="{{item_block.settings.url_4}}" tabindex="-1" style="padding:0px;width:100%;">
+              <div class="KLaowZ mo6ZnF ZkIJC- csmaMi bsVOrE HjQBqa teXInD jP-Ndk" alt="UNI START IN GERMANY" 
+                   style="background-image: url('{{item_block.settings.image_4 | img_url: 'original'}}');"></div>
+            </a>
+            <span class="z-navicat-header_subCategoryLink z-navicat-header_subCategoryLink-imageText OXMl2N" tabindex="-1">
+              <a class="JctB9w CKDt_l LyRfpJ pVrzNP" href="{{item_block.settings.url_4}}" rel="">
+                <span class="u-6V88 ka2E9k uMhVZi dgII7d _6yVObe pVrzNP BDUtDm GhPDv6 s9VeF4 NELsER _9bYLON sUjaF4 _2LebSa">
+                  {{item_block.settings.image_caption_4}}
+                  <span class="u-6V88 ka2E9k uMhVZi dgII7d _6yVObe pVrzNP LTYjjX">
+                    <svg class="zds-icon RC794g X9n9TI DlJ4rT _8tuJWC IwlAj4 pVrzNP" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M.443 12c0 .414.336.75.75.75h20.869l-7.72 7.72a.75.75 0 0 0 1.06 1.06l7.94-7.94a2.252 2.252 0 0 0 0-3.18l-7.94-7.94a.75.75 0 0 0-1.06 1.06l7.72 7.72H1.192a.75.75 0 0 0-.75.75z"></path>
+                    </svg>
+                  </span>
+                </span>
+              </a>
+            </span>
+          </div>
+        </div>
+        {% endif %}
+        
+        
+        
+      </div>
+    </div>
+  </div>
+</div>

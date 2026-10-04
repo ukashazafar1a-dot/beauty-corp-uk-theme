@@ -1,0 +1,47 @@
+<section class="section featured-collection">
+	<div class="site-width">
+		<div class="section__header">
+			<span class="section__subtitle">{{ section.settings.subtitle }}</span>
+			<h1 class="section__title">{{ section.settings.title }}</h1>
+		</div>
+	
+		<div class="featured-collection__content u-clearfix">
+			{%- for product in collections[section.settings.collection].products limit: 4 -%}
+				{%- render 'product-card', product: product, aspect_ratio: section.settings.aspect_ratio -%}
+			{%- endfor -%}
+		</div>
+	</div>
+</section>
+
+{% schema %}
+{
+	"name": "New-Featured-Collection",
+	"settings": [
+		{
+			"type": "collection",
+			"id": "collection",
+			"label": "Collection"
+		},
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		},
+		{
+			"type": "text",
+			"id": "subtitle",
+			"label": "Sub title"
+		},
+		{
+			"type": "header",
+			"content": "Image settings"
+		},
+		{
+			"type": "text",
+			"id": "aspect_ratio",
+			"label": "Aspect ratio",
+			"default": "1.0"
+		}
+	]
+}
+{% endschema %}

@@ -1,0 +1,426 @@
+<style>
+  
+  .main-content {
+  display: block;
+  padding-top: 35px; }
+  @media only screen and (min-width: 750px) {
+    .main-content {
+      padding-top: 55px; } }
+  
+              .grid {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                margin-left: -30px
+            }
+
+            .grid::after {
+                content: '';
+                display: table;
+                clear: both
+            }
+
+            @media only screen and (max-width: 749px) {
+                .grid {
+                    margin-left:-22px
+                }
+            }
+  
+              .grid__item {
+                float: left;
+                padding-left: 30px;
+                width: 100%
+            }
+
+            @media only screen and (max-width: 749px) {
+                .grid__item {
+                    padding-left:22px
+                }
+            }
+  
+  
+  
+  @media only screen and (min-width: 750px) {
+  .medium-up--six-tenths {
+    width: 60%; }
+  }
+  
+  @media only screen and (min-width: 750px){
+.medium-up--push-two-tenths {
+    left: 20%;
+}
+  }
+  
+              .grid__item[class*="--push"] {
+                position: relative
+            }
+  
+  
+  
+  .page-width {
+  *zoom: 1;
+  max-width: 1200px;
+  margin: 0 auto; }
+  .page-width::after {
+    content: '';
+    display: table;
+    clear: both; }
+  
+  .page-width {
+  padding-left: 55px;
+  padding-right: 55px; }
+  @media only screen and (max-width: 749px) {
+    .page-width {
+      padding-left: 22px;
+      padding-right: 22px; } }
+  
+  .text-center {
+  text-align: center !important; }
+
+  
+  hr {
+  margin: 55px 0;
+  border: 0;
+  border-bottom: 1px solid #ebebeb; }
+
+  .visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0; }
+  
+  .list-view-item {
+  margin-bottom: 22px; }
+  .list-view-item:last-child {
+    margin-bottom: 0; }
+  @media only screen and (min-width: 750px) {
+    .list-view-item {
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 22px; }
+      .list-view-item:last-child {
+        padding-bottom: 0;
+        border-bottom: 0; } }
+  
+  .product-card {
+  position: relative; }
+  .product-card:hover .product-card__image-wrapper, .product-card:focus-within .product-card__image-wrapper {
+    opacity: 0.8; }
+  .product-card:hover .product-card__title, .product-card:focus-within .product-card__title {
+    border-bottom-color: #3a3a3a; }
+  
+  .full-width-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2; }
+  
+  .list-view-item__link {
+  display: table;
+  table-layout: fixed;
+  width: 100%; }
+  
+  .list-view-item__image-column {
+  display: table-cell;
+  vertical-align: middle;
+  width: 130px;
+  min-height: 44px; }
+  @media only screen and (max-width: 749px) {
+    .list-view-item__image-column {
+      width: 85px; } }
+  
+  .list-view-item__image-wrapper {
+  position: relative;
+  margin-right: 35px; }
+  @media only screen and (max-width: 749px) {
+    .list-view-item__image-wrapper {
+      margin-right: 17.5px; } }
+  
+  .list-view-item__image {
+  max-height: 95px; }
+  
+  .list-view-item__title-column {
+  display: table-cell;
+  vertical-align: middle; }
+  
+  .list-view-item__title {
+  color: #3a3a3a;
+  min-width: 100px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: calc(((15 + 2) / (15)) * 1em); 
+  }
+  
+  @media only screen and (max-width: 749px) {
+    .list-view-item__title {
+      font-size: calc(((15 - 1) / (15)) * 1em); 
+        } 
+  }
+  
+  .product-card__title {
+  border-bottom: 1px solid transparent;
+  display: inline;
+  font-style: normal;
+  font-weight: 700; 
+    }
+  
+  .list-view-item__price-column {
+  display: table-cell;
+  text-align: right;
+  vertical-align: middle;
+  width: 20%;
+  font-size: calc(((15 + 1) / (15)) * 1em); 
+  }
+  
+  @media only screen and (max-width: 749px) {
+    .list-view-item__price-column {
+      font-size: calc(((15 - 1) / (15)) * 1em); 
+    } 
+  }
+  
+  .list-view-item__price-column .price {
+    align-items: flex-end; 
+  }
+  
+  .list-view-item__price-column .price dd {
+      margin: 0 0 0 0.5em; 
+  }
+  .list-view-item__price-column .price__regular,
+  .list-view-item__price-column .price__sale {
+    flex-basis: 100%;
+    justify-content: flex-end;
+    margin-right: 0; 
+  }
+  
+  .price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0;
+    margin-bottom: 0; 
+  }
+  
+  @media only screen and (max-width: 749px) {
+    .price {
+      font-size: calc(((15 - 1) / (15)) * 1em); 
+     } 
+  }
+  .price dl {
+    margin-top: 0; }
+  .price dd {
+    margin: 0 0.5em 0 0; }
+  
+  .price--unavailable {
+  visibility: hidden; }
+
+.price--compare-price-hidden .price__compare {
+  display: none; }
+
+.price__pricing-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+.price__regular {
+  display: block; }
+
+.price__regular,
+.price__sale {
+  margin-right: 0.625rem; }
+
+.price--on-sale .price__regular,
+.price--on-sale .price__availability {
+  display: none; }
+
+.price__availability {
+  display: none;
+  color: #333232;
+  font-size: 0.9em;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+
+.price--sold-out .price__availability {
+  display: block; }
+
+.price__sale {
+  display: none; }
+  .price--on-sale .price__sale {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+
+.price__vendor {
+  color: #333232;
+  font-size: 0.9em;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 5px 0 10px;
+  width: 100%;
+  -ms-flex-preferred-size: 100%;
+  -webkit-flex-basis: 100%;
+  -moz-flex-basis: 100%;
+  flex-basis: 100%; }
+
+.price__vendor--listing {
+  margin: 0 0 4px; }
+
+.price__unit {
+  -ms-flex-preferred-size: 100%;
+  -webkit-flex-basis: 100%;
+  -moz-flex-basis: 100%;
+  flex-basis: 100%;
+  display: none; }
+  .price--unit-available .price__unit {
+    display: block; }
+
+.price-item {
+  color: #333232;
+  font-weight: 700; 
+}
+
+.price-item--sale {
+  color: #EA0606; }
+
+.price--on-sale .price-item--regular {
+  text-decoration: line-through; }
+
+.price-unit-price {
+  color: #333232;
+  font-size: 0.8em; }
+
+.price-item__label {
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: 700; }
+
+.price__badges {
+  margin-top: 0; }
+
+.price__badge {
+  display: none;
+  align-self: center;
+  text-align: center;
+  font-size: 0.5em;
+  line-height: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: #ffffff;
+  border: 1px solid #3a3a3a;
+  border-radius: 2px;
+  padding: 0.2rem 0.5rem; }
+
+.price__badge--sale {
+  color: #ffffff;
+  border-color: #EA0606;
+  background-color: #EA0606; }
+  .price--on-sale .price__badge--sale {
+    display: flex; }
+  .price--sold-out .price__badge--sale {
+    display: none; }
+
+.price__badge--sold-out {
+  color: #333232;
+  border-color: #333232; }
+  .price--sold-out .price__badge--sold-out {
+    display: flex; }
+
+.price__badges--listing {
+  margin-top: 0.5rem; }
+  .price__badges--listing .price__badge {
+    font-size: 0.6em;
+    padding: 0.25rem 0.55rem; }
+  
+  
+  
+  
+</style>
+{% assign prod_count = 0 %}
+{% for item in search.results %}
+  {% if item.object_type == 'product' %}
+    {% if item.available %}
+	  {% assign prod_count = prod_count | plus: 1 %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+  <div class="page-width main-content">
+    {% if search.performed == false %}
+      <div class="text-center">
+        <h1 class="h2">{{ 'general.search.title' | t }}</h1>
+    {% else %}
+      <div class="text-center">
+        <h1 class="h2">
+          <span class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}:</span>
+          {{ 'general.search.results_with_count' | t: terms: search.terms, count: prod_count }}
+        </h1>
+    {% endif %}
+        <div class="grid">
+          <div class="grid__item medium-up--six-tenths medium-up--push-two-tenths">
+            {% if search.performed and search.results_count == 0 %}
+              <div class="rte search--no-results-found">
+                <p>{{ 'general.search.no_results' | t }}</p>
+              </div>
+            {% endif %}
+            {%- render 'search-bar' -%}
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+{% if search.performed %}
+  {% if search.results_count > 0 %}
+    <hr aria-hidden="true" />
+  {% endif %}
+
+  <h2 class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}</h2>
+
+  <ul class="page-width list-view-items">
+    {% for item in search.results %}
+      <li class="list-view-item">
+        {% if item.object_type == 'product' %}
+          {% if item.available %}
+            {% include 'product-card-list', product: item %}
+          {% endif %}
+        {% else %}
+          <div class="product-card product-card--list">
+            <a href="{{ item.url }}" class="full-width-link">
+              <span class="visually-hidden">{{ item.title }}</span>
+            </a>
+            <div class="list-view-item__link">
+              <div class="list-view-item__image-column">
+                <div class="list-view-item__image-wrapper product-card__image-wrapper">
+                  {% unless item.image == null %}
+                    <img class="list-view-item__image" src="{{ item.image.src | img_url: '600x600' }}" alt="{{ item.image.alt | escape }}">
+                  {% endunless %}
+                </div>
+              </div>
+
+              <div class="list-view-item__title-column">
+                <div class="list-view-item__title" aria-hidden="true">
+                  <span class="product-card__title">{{ item.title }}</span>
+                </div>
+                <div>
+                  {% if item.published_at %}{{ item.published_at | date: format: "date" }} &#8212; {% endif %}
+                  {{ item.content | strip_html | truncate: 200 }}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+{% if search.results_count < 2  %}
+  <div class="search--less-than-2-results"></div>
+{% endif %}

@@ -1,0 +1,46 @@
+<style>
+.announcement-bar{
+  background:{{section.settings.bg-color}};
+  --swiper-theme-color:#b7b7b7;
+--swiper-navigation-size:12px;
+}
+</style>
+
+<div class="announcement-bar swiper-container">
+  <div class="swiper-wrapper">
+    {%- for block in section.blocks -%}
+      <div class="swiper-slide">
+        <span>{{ block.settings.title }}</span>
+      </div>
+    {%- endfor -%}
+  </div>
+
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+{% schema %}
+{
+	"name": "Announcement Bar",
+	"settings": [
+	  {
+		"type": "color",
+		"id": "bg-color",
+		"label": "Background Color"
+	  }
+	],
+	"blocks": [
+		{
+			"type": "slide",
+			"name": "Slide",
+			"settings": [
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Title"
+        }
+			]
+		}
+	]
+}
+{% endschema %}

@@ -1,0 +1,152 @@
+{%- assign bag_note = 'bag.header.note' | t -%}
+{%- assign shipping_cost = 0 -%}
+{%- assign savings = 0 -%}
+
+<style>
+/* -- quantity box -- */
+
+.quantity {
+ display: inline-block; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border: 1px solid rgba(28,28,28,.1);
+    border-radius: 2px;
+}
+
+.quantity .input-text.qty {
+ width: 35px;
+ height: 30px;
+ padding: 0 5px;
+ text-align: center;
+ background-color: transparent;
+ border: 1px solid #efefef;
+}
+
+.quantity.buttons_added {
+ text-align: left;
+ white-space: nowrap;
+ vertical-align: top; }
+
+.quantity.buttons_added input {
+ display: inline-block;
+ margin: 0;
+ vertical-align: top;
+ box-shadow: none;
+}
+
+.quantity.buttons_added .minus,
+.quantity.buttons_added .plus {
+ padding: 5px 10px 8px;
+ height: 30px;
+ background-color: #ffffff;
+ border: 1px solid #efefef;
+ cursor:pointer;}
+
+.quantity.buttons_added .minus {
+ border-right: 0; }
+
+.quantity.buttons_added .plus {
+ border-left: 0; }
+
+.quantity.buttons_added .minus:hover,
+.quantity.buttons_added .plus:hover {
+ background: #eeeeee; }
+
+.quantity input::-webkit-outer-spin-button,
+.quantity input::-webkit-inner-spin-button {
+ -webkit-appearance: none;
+ -moz-appearance: none;
+ margin: 0; }
+ 
+ .quantity.buttons_added .minus:focus,
+.quantity.buttons_added .plus:focus {
+ outline: none; }
+</style>
+
+<div class="bag" id="cart-js">
+  <div class="bag__container">
+    <form action="{{ routes.cart_url }}" method="post" novalidate class="cart__form">
+      <div class="bag-main">
+        <header class="bag-header">
+          <h2 class="bag-header__title">
+            {{- 'bag.header.title' | t -}}
+            <span>({% raw %} {{ item_count }}{% endraw %} <spna style="font-size:18px;">{{- 'bag.header.article' | t -}}</spna>)</span>
+          </h2>
+          {%- comment -%}{%- unless bag_note contains 'translation missing' or bag_note == empty -%}
+          <span class="bag-header__note">{{ bag_note }}</span>
+          {%- endunless -%}{%- endcomment -%}
+        </header>
+        <div class="bag-main__content">
+          <ul class="bag-main__list u-nolist">
+            
+            {%- raw -%}
+            <cart-item
+                       v-for="item in items"
+                       :key="item.id"
+                       v-bind:id="item.id"
+                       v-bind:title="item.title"
+                       v-bind:url="item.url"
+                       v-bind:stock="item.stock"
+                       v-bind:quantity="item.quantity"
+                       v-bind:image="item.image"
+                       v-bind:price="item.price"
+                       v-on:update-item="updateItem"
+                       >
+            </cart-item>
+            {%- endraw -%}
+            
+            
+          </ul>
+        </div>
+      </div>
+
+      <div class="bag-footer">
+        <h2 class="bag-footer__title">{{ 'bag.footer.title' | t }}</h2>
+        <div class="bag-shipping">
+          <span>{{ 'bag.footer.shipping' | t }}</span>
+          <span>{{ 'bag.footer.calculateship' | t }}</span>
+        </div>
+        {%- if savings > 0 -%}
+        <div class="bag-savings">
+          <span>{{ 'bag.footer.savings' | t }}</span>
+          <span>{{ savings | money_with_currency }}</span>
+        </div>
+        {%- endif -%}
+        <div class="bag-total">
+          <p>
+            {{- 'bag.footer.total' | t -}}
+            <span class="bag-total__vat">{{ 'bag.footer.vat' | t }}</span>
+          </p>
+          <span data-bag-total><span class='ak-upsell-original-price'>{% raw %}{{formatPrice(summary.total)}}{% endraw %}</span><span class='ak-upsell-cart-total'></span></span>
+        </div>
+        <button class="btn btn-primary rf-check" type="submit" name="checkout">{{ 'bag.footer.checkout_button' | t }}</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+ <!-- Add recommendation widget -->
+
+<div id="ur-custom-widget"></div>
+
+<!-- End recommendation widget --> 
+{% schema %}
+  {
+    "name": "Rf cart",
+    "settings": [
+{
+            "type": "text",
+            "id": "bagheadertext",
+            "label": "Cart Title",
+            "default": "Dein Warenkorb"
+          }
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

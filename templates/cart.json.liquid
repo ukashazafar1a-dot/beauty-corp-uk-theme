@@ -1,0 +1,86 @@
+{%- layout none -%}
+
+{%- assign cart_json = cart | json -%}
+{%- assign cart_token = cart_json | split: 'token":"' | last | split: '"' | first -%}
+
+{%- assign shipping_costs = 0 | money_without_currency | replace: ',', '.' -%}
+{%- assign savings = 0 -%}
+
+{
+  "token": {{ cart_token | json }},
+  "attributes": {{ cart.attributes | json }},
+  "note": {{ cart.note | json }},
+  "itemCount": {{ cart.item_count }},
+  "items": [
+    {%- for item in cart.items -%}
+      {
+        "id": {{ item.variant.id }},
+        "title": {{ item.product.title | json }},
+        "properties": {{ item.properties | json }},
+        {%- unless item.product.has_only_default_variant -%}
+          "attributes": {{ item.options_with_values | json }},
+        {%- else -%}
+          "attributes": [],
+        {%- endunless -%}
+        "url": {{ item.variant.url | json }},
+        "image": {
+          "aspectRatio": {{ item.product.featured_image.aspect_ratio }},
+          "alt": {{ item.product.featured_image.alt | json }},
+          "src": {{ item.product.featured_image.src | json }}
+        },
+        "quantity": {{ item.quantity }},
+        "stock": {{ item.variant.inventory_quantity }},
+        "price": {
+          "unit": {
+            {%- unless item.variant.compare_at_price == blank -%}
+              "compareAt": {{ item.variant.compare_at_price | money_without_currency | replace: ',', '.' }},
+            {%- else -%}
+              "compareAt": null,
+            {%- endunless -%}
+            "regular": {{ item.original_price | money_without_currency | replace: ',', '.' }},
+            "discounted": {{ item.final_price | money_without_currency | replace: ',', '.' }}
+          },
+          "total": {
+            {%- unless item.variant.compare_at_price == blank -%}
+              {%- assign savings = savings | plus: item.variant.compare_at_price | minus: item.original_price | times: item.quantity -%}
+              "compareAt": {{ item.variant.compare_at_price | times: item.quantity | money_without_currency | replace: ',', '.' }},
+            {%- else -%}
+              "compareAt": null,
+            {%- endunless -%}
+            "regular": {{ item.original_line_price | money_without_currency | replace: ',', '.' }},
+            "discounted": {{ item.final_line_price | money_without_currency | replace: ',', '.' }}
+          }
+        },
+        "discount": {
+          "applied": {{ item.discount_allocations | json }},
+          "total": {{ item.total_discount | money_without_currency | replace: ',', '.' }}
+        }
+      }
+      {%- unless forloop.index == cart.items.size -%},{%- endunless -%}
+    {%- endfor -%}
+  ],
+  "summary": {
+    "currencyCode": {{ cart.currency.iso_code | json }},
+    "subtotal": {{ cart.items_subtotal_price | money_without_currency | replace: ',', '.' }},
+    "shippingCosts": 0,
+    "total": {{ cart.original_total_price | money_without_currency | replace: ',', '.' }},
+    "savings": "{{ savings | money_without_currency | replace: ',', '.' }}"
+  },
+  "translations": {
+    "title": {{ 'bag.header.title' | t | json }},
+    "announcement": {{ 'bag.header.announcement' | t | json }},
+    "note": {{ 'bag.header.note' | t | json }},
+    "shipping": {{ 'bag.footer.shipping' | t | json }},
+    "savings": {{ 'bag.footer.savings' | t | json }},
+    "total": 	{{ 'bag.footer.total' | t | json }},
+	"calculateship": {{'bag.footer.calculateship' | t | json}},
+    "vat": {{ 'bag.footer.vat' | t | json }},
+    "button": {{ 'bag.footer.checkout_button' | t | json }}
+  },
+  "discounted": {
+	"price_range": "{{settings.discounted_price_range}}",
+	"product_id": "{{ all_products[settings.discounted_product].selected_or_first_available_variant.id }}",
+	"product_price": "{{ all_products[settings.discounted_product].selected_or_first_available_variant.price | money_without_currency | replace: ',', '.' }}",
+	"note": "{{ settings.discounted_note }}" 
+  }
+}

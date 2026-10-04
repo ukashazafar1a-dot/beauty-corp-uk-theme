@@ -1,0 +1,41 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "general": {
+    "404": {
+      "title": "Not found",
+      "subtext_html": "The page you were looking for does not exist"
+    }
+  },
+  "collection": {
+    "header": {
+      "collection_label": "Kollektion: ",
+      "products_count": "{{ product_count }} Produkte gefunden"
+    },
+    "products": {
+      "empty_text": "Keine Produkte gefunden"
+    },
+    "pagination": {
+      "text": "Du hast {{ viewed_items }} von {{ total_items }} Produkten angesehen",
+      "show_more": "Mehr Produkte anzeigen"
+    }
+  },
+  "product": {
+    "meta": {
+      "vat": "inkl. MwSt."
+    },
+    "form": {
+      "add_to_cart": "In den Warenkorb",
+      "sold_out": "Ausverkauft",
+      "unavailable": "Nicht verfügbar",
+      "pre_order": "Jetzt vorbestellen"
+    }
+  }
+}

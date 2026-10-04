@@ -1,0 +1,229 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "general": {
+    "404": {
+      "title": "Not found",
+      "subtext_html": "The page you were looking for does not exist"
+    },
+    "social": {
+      "share_on_facebook": "Share",
+      "share_on_twitter": "Tweet",
+      "share_on_pinterest": "Pin it",
+      "alt_text": {
+        "share_on_facebook": "Share on Facebook",
+        "share_on_twitter": "Tweet on Twitter",
+        "share_on_pinterest": "Pin on Pinterest"
+      }
+    },
+    "search": {
+      "results_with_count": {
+        "one": "{{ count }} Result for \"{{ terms }}\"",
+        "other": "{{ count }} Results for \"{{ terms }}\""
+      }
+    },
+    "jobs-form": {
+      "title": "Apply Now",
+      "note": "necessary",
+      "name": "Name",
+      "email": "Email",
+      "send": "Send",
+      "success-message": "Thank you for your application! We will contact you."
+    }
+  },
+  "collection": {
+    "header": {
+      "collection_label": "collection: ",
+      "products_count": {
+        "one": "{{ count }} Products found",
+        "other": "{{ count }} Products found"
+      }
+    },
+    "products": {
+      "empty_text": "No Products Found"
+    },
+    "pagination": {
+      "text": "You have seen {{ viewed_items }} of {{ total_items }} products",
+      "show_more": "Show More Products",
+      "is_loading": "Loading..."
+    },
+    "actions": {
+      "filter": "Filter",
+      "sort_by": "sort ",
+      "sort_by_a11y": "by"
+    },
+    "filter": {
+      "title": "Filter",
+      "button": "Show all results"
+    },
+    "sort": {
+      "best-selling": "Bestseller",
+      "price-ascending": "Price Ascending",
+      "price-descending": "Descending Price",
+      "created-ascending": "New Hits"
+    }
+  },
+  "product": {
+    "meta": {
+      "vat": "incl. VAT."
+    },
+    "form": {
+      "add_to_cart": "Add to cart",
+      "sold_out": "Sold Out",
+      "unavailable": "Not Available",
+      "pre_order": "Pre-Order Now"
+    }
+  },
+  "products": {
+    "product": {
+      "regular_price": "Regular price",
+      "sold_out": "Sold out",
+      "unavailable": "Unavailable",
+      "availability": "Availability",
+      "on_sale": "Sale",
+      "from_lowest_price_html": "from {{ lowest_price }}",
+      "sale_price": "Sale price",
+      "quantity": "Quantity",
+      "add_to_cart": "Add to cart",
+      "loader_label": "Adding product to your cart",
+      "back_to_collection": "Back to",
+      "vendor": "Vendor",
+      "quantity_minimum_message": "Quantity must be 1 or more",
+      "include_taxes": "Tax included.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
+      "unit_price_label": "Unit price",
+      "view_cart": "View cart",
+      "view_in_space": "View in your space",
+      "view_in_space_label": "View in your space, loads item in augmented reality window"
+    }
+  },
+  "bag": {
+    "header": {
+      "title": "Your Cart",
+      "article": "article",
+      "announcement": "Free Shipping in Germany",
+      "note": "Items in the shopping cart are not reserved"
+    },
+    "footer": {
+      "title": "Summary",
+      "shipping": "Shipping",
+      "savings": "You save",
+      "total": "Total Sum",
+      "vat": "incl. VAT",
+      "checkout_button": "Now safely to the Checkout",
+      "calculateship": "Calculated at checkout"
+    }
+  },
+  "cart": {
+    "header": {
+      "title": "Your Cart"
+    },
+    "announcement": {
+      "text": "Free Shipping in Germany"
+    },
+    "body": {
+      "empty_title": "Your Shopping Cart is empty",
+      "button_text": "Shop now"
+    },
+    "footer": {
+      "subtotal_price": "Subtotal including VAT",
+      "shipping": "Shipping",
+      "checkout": "Now safely to the Checkout"
+    }
+  },
+  "blog": {
+    "search": {
+      "title": "Search"
+    }
+  },
+  "customer": {
+    "login": {
+      "title": "Sign In",
+      "email": "Email",
+      "password": "Password",
+      "signin": "Login",
+      "register": "Register"
+    },
+    "register": {
+      "title": "Sign Up",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Register",
+      "success": "Activate your account Hi! You have created a new customer account at GetFabulous. Now all you have to do is activate it. Within a short time you will receive an email with which you can activate your account."
+    },
+    "recover-password": {
+      "title": "Reset your password",
+      "subtitle": "We will send you an email to reset your password",
+      "success": "Form submitted Successfully. Please check your mail.",
+      "submit": "Submit",
+      "cancel": "Cancel"
+    },
+    "log_out": "Logout",
+    "account": {
+      "title": "Account",
+      "details": "Details",
+      "return": "Back",
+      "view_addresses": "View Addresses"
+    },
+    "orders": {
+      "title": "Order History",
+      "order_number": "Order",
+      "order_number_link": "Order number {{ number }}",
+      "date": "Date",
+      "payment_status": "Payment Status",
+      "fulfillment_status": "Fulfillment Status",
+      "total": "Total",
+      "none": "You haven't placed any orders yet."
+    },
+    "order": {
+      "title": "Order {{ name }}",
+      "date_html": "Placed on {{ date }}",
+      "cancelled_html": "Order Cancelled on {{ date }}",
+      "cancelled_reason": "Reason: {{ reason }}",
+      "billing_address": "Billing Address",
+      "payment_status": "Payment Status",
+      "shipping_address": "Shipping Address",
+      "fulfillment_status": "Fulfillment Status",
+      "discount": "Discount",
+      "shipping": "Shipping",
+      "tax": "Tax",
+      "product": "Product",
+      "sku": "SKU",
+      "price": "Price",
+      "quantity": "Quantity",
+      "total": "Total",
+      "fulfilled_at_html": "Fulfilled {{ date }}",
+      "subtotal": "Subtotal",
+      "track_shipment": "Track shipment"
+    },
+    "addresses": {
+      "title": "Addresses",
+      "add_new": "Add New",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "company": "Company ",
+      "address1": "Address 1",
+      "address2": "Address 2",
+      "city": "City",
+      "country": "Country",
+      "zip": "Zipcode",
+      "phone": "Phone #",
+      "set_default": "Default Address",
+      "add": "Save",
+      "cancel": "Cancel",
+      "default": "Default",
+      "save": "Save",
+      "delete": "Delete",
+      "edit": "Edit"
+    }
+  }
+}

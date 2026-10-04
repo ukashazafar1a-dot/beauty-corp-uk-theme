@@ -1,0 +1,53 @@
+<section class="section section-newsletter">
+	<div class="site-width">
+		<div class="section__header">
+			<span class="section__subtitle">{{ section.settings.subtitle }}</span>
+			<h2 class="section__title">{{ section.settings.title }}</h2>
+		</div>
+
+		<div class="section-newsletter__container">
+			<p class="section-newsletter__text">{{ section.settings.text | remove: '<p>' | remove: '</p>' | newline_to_br }}</p>
+			<div>{{ section.settings.html }}</div>
+			<span class="section-newsletter__microcopy">{{ section.settings.microcopy | remove: '<p>' | remove: '</p>' }}</span>
+		</div>
+	</div>
+</section>
+
+{% schema %}
+{
+	"name": "Newsletter (Sendinblue)",
+	"settings": [
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		},
+		{
+			"type": "text",
+			"id": "subtitle",
+			"label": "Subtitle"
+		},
+		{
+			"type": "richtext",
+			"id": "text",
+			"label": "Text"
+		},
+		{
+			"type": "html",
+			"id": "html",
+			"label": "HTML Snippet"
+		},
+		{
+			"type": "richtext",
+			"id": "microcopy",
+			"label": "Info Text"
+		}
+	],
+    "presets": [
+        {
+        "category": "Forms",
+        "name": "Newsletter (Sendinblue)"
+        }
+    ]
+}
+{% endschema %}

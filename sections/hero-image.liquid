@@ -1,0 +1,161 @@
+<style>
+  .hero-section{
+    overflow:hidden;
+  }
+
+  .hero-section .swiper-pagination {
+    position: relative;
+    bottom: 25px;
+  }
+  
+  .hero-section .swiper-pagination-bullet {
+    width: 64px;
+    height: 4px;
+    margin: 0 8px;
+    border-radius: 2px;
+    background-color: #9c9c9c;
+  }
+  
+  .hero-section .swiper-pagination-bullet-active {
+    background-color: #ffaa8f;
+  }
+  
+  @media (max-width:1008px){
+    width:35px;
+  }
+  
+</style>
+
+<section class="hero-section">
+  <div class="swiper-wrapper">
+  {% for block in section.blocks %}
+  <div class="hero-section__slide swiper-slide">
+	<div class="hero-section__content">
+		<div class="site-width">
+			<h2 class="hero__title">{{ block.settings.title }}</h2>
+			<h2 class="hero__subtitle">{{ block.settings.subtitle | remove: '<p>' | remove: '</p>' | newline_to_br }}</h2>
+			<a class="btn btn-primary" href="{{ block.settings.btn_url }}">{{ block.settings.btn_text }}</a>
+		</div>
+	</div>
+ 
+	<div class="hero-section__image -mobile">
+		{%- capture supported_sizes_mobile -%}{%- render 'image-size', sizes: '200,300,400,600,800,1000,1200,1400,1600', image: block.settings.image_mobile -%}{%- endcapture -%}
+		{%- assign image_mobile_url = block.settings.image_mobile | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+		<img 
+			class="lazy fade-in" 
+			alt="{{ block.settings.image_mobile.alt | escape }}"
+			data-src="{{ image_mobile_url }}" 	
+			data-sizes="auto"
+			data-widths="[{{ supported_sizes_mobile }}]"
+			>
+  </div>
+  
+    <div class="hero-section__image -desktop">
+		{%- capture supported_sizes_desktop -%}{%- render 'image-size', sizes: '200,300,400,600,800,1000,1200,1400,1600', image: block.settings.image_desktop -%}{%- endcapture -%}
+		{%- assign image_desktop_url = block.settings.image_desktop | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+		<img 
+			class="lazy fade-in" 
+			alt="{{ block.settings.image_desktop.alt | escape }}"
+			data-src="{{ image_desktop_url }}" 	
+			data-sizes="auto"
+			data-widths="[{{ supported_sizes_desktop }}]"
+			>
+  </div>
+  </div>
+  {% endfor %}
+  </div>
+  <div class="swiper-pagination"></div>
+</section>
+
+<script>
+  
+  (function(){
+  
+      let options = {
+        slidesPerView: 1,
+        loop: false,
+        autoplay: {
+          delay: parseInt({{section.settings.delay | times: 1000 }}),
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          type: 'bullets',
+        },
+      };
+
+      const swiper = new Swiper('.hero-section', options);
+
+  })();
+    
+</script>
+
+{% schema %}
+{
+	"name": "Hero Image",
+	"settings": [
+	  {
+		"type": "text",
+		"id": "delay",
+		"label": "Delay",
+		"default": "3",
+		"info": "Please use numeric vlaues e.g 2,3,2.5 etc"
+	  }
+	],
+	"blocks": [
+	  {
+		"name": "Slide",
+		"type": "slide",
+		"settings": [
+		  {
+              "type": "image_picker",
+              "id": "image_mobile",
+              "label": "Image (mobile)"
+          },
+          {
+              "type": "image_picker",
+              "id": "image_desktop",
+              "label": "Image (desktop)"
+          },
+          {
+              "type": "header",
+              "content": "Text Settings"
+          },
+          {
+              "type": "text",
+              "id": "title",
+              "label": "Title"
+          },
+          {
+              "type": "richtext",
+              "id": "subtitle",
+              "label": "Subtitle"
+          },
+          {
+              "type": "header",
+              "content": "Button Settings"
+          },
+          {
+              "type": "url",
+              "id": "btn_url",
+              "label": "Link"
+          },
+          {
+              "type": "text",
+              "id": "btn_text",
+              "label": "Text"
+          }
+		]
+	  }
+	],
+    "presets": [
+        {
+        "category": "Hero",
+        "name": "Image"
+        }
+    ]
+}
+{% endschema %}

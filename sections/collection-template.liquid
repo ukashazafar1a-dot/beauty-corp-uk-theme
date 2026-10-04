@@ -1,0 +1,171 @@
+{%- assign items_per_row_mobile  = section.settings.items_per_row_mobile | times: 1 -%}
+{%- assign items_per_page  = section.settings.items_per_page | times: 1 -%}
+
+{% assign collection_sort_by = collection.sort_by | default: collection.default_sort_by %}
+
+<section class="collection">
+	<div class="site-width">
+		<div class="collection__actions">
+			<div class="collection-filter">
+				<button>
+					<i></i>
+					<span>{{ 'collection.actions.filter' | t }}</span>
+				</button>
+			</div>
+			<div class="collection-sort">
+				<label for="sort-by">
+					<i></i>
+					<span>{{ 'collection.actions.sort_by' | t }}</span>
+					<span class="u-visually-hidden">{{ 'collection.actions.sort_by_a11y' | t }}</span>
+				</label>
+				<select id="sort-by" name="sort-by">
+					{%- for option in collection.sort_options -%}
+						{%- capture name_translation_string -%}collection.sort.{{ option.value }}{%- endcapture -%}
+						{%- assign name_translation = name_translation_string | t -%}
+
+						{%- unless name_translation contains 'translation missing' or name_translation == empty -%}
+							<option value="{{ option.value }}"{% if option.value == collection_sort_by %} selected{% endif %}>
+								{{ name_translation }}
+							</option>
+						{%- endunless -%}
+					{%- endfor -%}
+				</select>
+			</div>
+		</div>
+
+		<div class="collection__container">
+      <div id="filter" class="collection__start">
+        {%- comment -%}<div class="collection__start">
+          <button class="filter-close" aria-label="Filter schließen">
+            <span></span>
+            <span></span>
+          </button>
+          <div class="collection-start-container">
+            <div class="collection-filter__header">
+              <span class="collection-filter__title">{{ 'collection.filter.title' | t }}</span>
+            </div>
+
+            {%- assign groups = '' -%}
+
+            {%- for tag in collection.all_tags -%}
+              {%- assign parts = tag | split: '_' -%}
+
+              {%- if parts.size == 2 -%}
+                {%- assign groups = groups | append: parts.first | append: ',' -%}
+              {%- endif -%}
+            {%- endfor -%}
+
+            {%- assign groups = groups | split: ',' | compact | uniq -%}
+
+            <div class="filter-groups">
+              {%- for group in groups -%}
+                <div class="filter-group" data-filter-group="{{ group }}">
+                  <div class="filter-group__header">
+                    <p class="filter-group__title">
+                      {{- group | capitalize | escape -}}
+                      <span></span>
+                    </p>
+                    <button type="reset">Zurücksetzen</button>
+                  </div>
+                  <div class="filter-group__list">
+                    {%- for tag in collection.all_tags -%}
+                      {%- assign parts = tag | split: '_' -%}
+
+                      {%- if parts.size != 2 or parts.first != group -%}
+                        {%- continue -%}
+                      {%- endif -%}	
+
+                      <div class="filter-item{% if current_tags contains parts.last %} is-selected{% endif %}">
+                        <input
+                          id="{{ group}}-{{ parts.last }}"
+                          class="u-visually-hidden"
+                          type="checkbox"
+                          name="filter-{{ group }}"
+                          data-filter-group="{{ group }}"
+                          data-filter-value="{{ parts.last | replace: 'ü', 'ue' }}"
+                          >
+                        <label for="{{ group }}-{{ parts.last }}">
+                        <div class="filter-item__checkbox swatch-{{ parts.last }}"></div>
+                          <span>{{ parts.last | capitalize }}</span>
+                        </label>
+                      </div>
+                    {%- endfor -%}
+                  </div>
+                </div>
+              {%- endfor -%}
+            </div>
+
+            <div class="collection-filter__footer">
+              <button class="btn btn-primary">{{ 'collection.filter.button' | t }}</button>
+            </div>
+          </div>
+        </div>{%- endcomment -%}
+      </div>
+
+			<div class="collection__end">
+				<header class="section__header">
+					<h1 class="section__title">
+						<span class="u-visually-hidden">{{ 'collection.header.collection_label' | t }}</span>
+						{{- collection.title -}}
+					</h1>
+					<span class="section__subtitle section__subtitle--small" data-collection-count>{{ 'collection.header.products_count' | t: count: collection.products_count }}</span>
+        </header>
+
+        <div class="collection__products">
+          {%- for product in collection.products limit: items_per_page -%}
+            {%- render 'product-card', product: product, aspect_ratio: section.settings.aspect_ratio -%}
+          {%- else -%}
+            <p>{{ 'collection.products.empty_text' | t }}</p>
+          {%- endfor -%}
+        </div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% schema %}
+{
+	"name": "Collection",
+	"settings": [
+		{
+			"type": "header",
+			"content": "Collection header"
+		},
+		{
+			"type": "header",
+			"content": "Product grid"
+		},
+		{
+			"type": "range",
+			"id": "items_per_page",
+			"label": "Products per page",
+			"min": 4,
+			"max": 48,
+			"step": 4,
+			"default": 12
+		},
+		{
+			"type": "select",
+			"id": "items_per_row_mobile",
+			"label": "Products per row (mobile)",
+			"options": [
+			  {
+				"value": "1",
+				"label": "1"
+			  },
+			  {
+				"value": "2",
+				"label": "2"
+			  }
+			],
+			"default": "2"
+		},
+		{
+			"type": "text",
+			"id": "aspect_ratio",
+			"label": "Aspect ratio",
+			"default": "1.0"
+		}
+	]
+}
+{% endschema %}

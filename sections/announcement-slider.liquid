@@ -1,0 +1,184 @@
+<style>
+.announcement-bar-extra {
+    display: block;
+    width: 100%;
+    z-index: 990;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    justify-content: center;
+    z-index: 9999;
+}
+  .announcement-bar-extra {
+    z-index: 100;
+}
+  .announcement-v2 {
+    display: flex;
+    background-color: {{section.settings.bg-color}}!important;
+}
+  .announcement-bar-extra {
+    background: {{section.settings.bg-color}};
+    color: {{section.settings.color}};
+}
+  .mob-announcement-wrapper {
+  	height: 2rem;
+    z-index: 10;
+    background-color: {{section.settings.bg-color}}!important;
+    color: {{section.settings.color}};
+  }
+  .desk-announcement-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    height: 2rem;
+    max-width: 1200px;
+}
+  .info-item img {
+    display: inline;
+    margin-right: 6px;
+    width: 24px;
+}
+  .info-item a{
+  	display:flex;
+    align-items: center;
+  }
+  .info-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 250px;
+  }
+  .vertical-seperator {
+    background: hsla(0,0%,100%,.5);
+    width: 2px;
+    height: 0.6rem;
+    margin: 0 20px;
+}
+  .shipping-badges {
+    justify-self: end;
+    max-height: 20px;
+}
+  .mob-announcement-wrapper{
+  	display: none;
+  }
+  @media only screen and (max-width: 758px){
+    .desk-announcement-wrapper {
+        display: none;
+    }
+    .mob-announcement-wrapper{
+    	display:block;
+    }
+  }
+</style>
+
+<div class="announcement-bar-extra announcement-v2" {% unless section.settings.enabled %}style="display:none;"{% endunless %}>
+  <div class="desk-announcement-wrapper">
+    {% for block in section.blocks %}
+      <div class="info-item">
+        <a href="{{block.settings.link}}">
+          {% if block.settings.img != blank %}
+            <img src="{{block.settings.img | img_url: '40x'}}">
+          {% endif %}
+          <span>{{block.settings.text}}</span>
+        </a>
+      </div>
+      {% unless forloop.last %}
+      <div class="vertical-seperator"></div>
+      {% endunless %}
+    {% endfor %}
+  </div>
+</div>
+<div class="mob-announcement-wrapper announcement-bar-extra-swipper swiper-container" {% unless section.settings.enabled %}style="display:none;"{% endunless %}>
+    <div class="swiper-wrapper">
+      {%- for block in section.blocks -%}
+        <div class="swiper-slide">
+          <div class="info-item">
+            <a href="{{block.settings.link}}">
+              {% if block.settings.img != blank %}
+                <img src="{{block.settings.img | img_url: '40x'}}">
+              {% endif %}
+              <span>{{block.settings.text}}</span>
+            </a>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+</div>
+<script>
+  
+  (function(){
+      let options = {
+        slidesPerView: 1,
+        loop: false,
+        autoplay: {
+          delay: parseInt({{section.settings.delay | times: 1000 }}),
+          disableOnInteraction: false,
+        }
+      };
+      const swiper = new Swiper('.announcement-bar-extra-swipper', options);
+  })();
+</script>
+
+{% schema %}
+  {
+    "name": "Announcement Bar Extra",
+	"max_blocks": 4,
+    "settings": [
+	  {
+		"type": "checkbox",
+		"id": "enabled",
+		"label": "Enable",
+		"default": false
+	  },
+	  {
+		"type": "text",
+		"id": "delay",
+		"label": "Delay",
+		"default": "3",
+		"info": "Please use numeric vlaues e.g 2,3,2.5 etc"
+	  },
+	  {
+		"type": "color",
+		"id": "color",
+		"label": "Color"
+	  },
+	  {
+		"type": "color",
+		"id": "bg-color",
+		"label": "Background Color"
+	  }
+	],
+    "blocks": [
+	  {
+        "type": "slide",
+        "name": "Slide",
+        "settings": [
+		  {
+            "type": "image_picker",
+            "id": "img",
+            "label": "Image"
+          },
+		  {
+			"type": "text",
+			"id": "text",
+			"label": "Text"
+		  },
+		  {
+			"type": "url",
+			"id": "link",
+			"label": "Link"
+		  }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
